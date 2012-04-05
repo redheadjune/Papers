@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  5 APR 2012 15:47
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  5 APR 2012 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,166 +554,61 @@ File: utxsyc.fd 2000/12/15 v3.1
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 113.
-
-LaTeX Warning: Citation `girvan' on page 1 undefined on input line 117.
-
 [1
 
 
 ] [2] [3] [4]
-
-LaTeX Warning: Reference `table_variables' on page 5 undefined on input line 20
-2.
-
 LaTeX Font Info:    Try loading font information for U+bbold on input line 211.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
-
-LaTeX Warning: Reference `def_int_density' on page 5 undefined on input line 22
-7.
-
-
-LaTeX Warning: Reference `def_ext_density' on page 5 undefined on input line 22
-8.
-
-
-LaTeX Warning: Reference `def_int_set' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `def_ext_set' on page 5 undefined on input line 230.
-
-
-LaTeX Warning: Reference `def_conciseness' on page 5 undefined on input line 23
-1.
-
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
 [5] [6] [7]
 Chapter 2.
 [8
 
 ] [9] [10] [11] [12]
-
-LaTeX Warning: Reference `alg_greedy_single' on page 13 undefined on input line
- 342.
-
 Missing character: There is no ’ in font pplr7t!
-[13] [14]
-Missing character: There is no − in font txr!
- [15] [16]
+ [13] [14] [15] [16] [17] [18]
 Chapter 3.
-[17
+[19
 
 ]
 Chapter 4.
-[18
+[20
 
 ]
 Chapter 5.
-[19
+[21
 
 ]
 Overfull \vbox (270.94316pt too high) has occurred while \output is active []
 
 
-[20]
+[22]
 Chapter 6.
-[21
+[23
 
 ]
 Chapter 7.
-
-LaTeX Warning: Citation `fort' on page 22 undefined on input line 480.
-
-
-LaTeX Warning: Citation `porter' on page 22 undefined on input line 481.
-
-
-LaTeX Warning: Citation `kanna' on page 22 undefined on input line 482.
-
-
-LaTeX Warning: Citation `newman' on page 22 undefined on input line 483.
-
-
-LaTeX Warning: Citation `duch' on page 22 undefined on input line 484.
-
-
-LaTeX Warning: Citation `blondel' on page 22 undefined on input line 485.
-
-
-LaTeX Warning: Citation `mishra' on page 22 undefined on input line 486.
-
-
-LaTeX Warning: Citation `jain' on page 22 undefined on input line 487.
-
-
-LaTeX Warning: Citation `zhang' on page 22 undefined on input line 488.
-
-
-LaTeX Warning: Citation `andersen' on page 22 undefined on input line 489.
-
-
-LaTeX Warning: Citation `capocci' on page 22 undefined on input line 490.
-
-
-LaTeX Warning: Citation `lanc:2009' on page 22 undefined on input line 491.
-
-
-LaTeX Warning: Citation `danon' on page 22 undefined on input line 492.
-
-
-LaTeX Warning: Citation `leskovec' on page 22 undefined on input line 493.
-
-
-LaTeX Warning: Citation `hui' on page 22 undefined on input line 494.
-
-
-LaTeX Warning: Citation `maiya' on page 22 undefined on input line 495.
-
-
-LaTeX Warning: Citation `lan:2008' on page 22 undefined on input line 496.
-
-
-LaTeX Warning: Citation `hastings' on page 22 undefined on input line 497.
-
-
-LaTeX Warning: Citation `leskovec:2008' on page 22 undefined on input line 498.
-
-
-
-LaTeX Warning: Citation `chen' on page 22 undefined on input line 499.
-
-
-LaTeX Warning: Citation `lanc:2010' on page 22 undefined on input line 500.
-
-
-LaTeX Warning: Citation `girvan' on page 22 undefined on input line 501.
-
-[22
+[24
 
 ]
 Appendix A.
-(./thesis.bbl [23
+(./thesis.bbl [25
 
-]
+] [26
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [24
-
-] (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
+]) [27] (./thesis.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5859 strings out of 494150
- 83490 string characters out of 3152950
+ 5860 strings out of 494150
+ 83522 string characters out of 3152950
  209720 words of memory out of 3000000
- 8984 multiletter control sequences out of 15000+200000
+ 8985 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 38i,11n,51p,1178b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,51p,1329b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (34 pages).
+Output written on thesis.pdf (37 pages).

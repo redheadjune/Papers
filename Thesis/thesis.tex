@@ -334,7 +334,7 @@ Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now anal
 \mbox{\sc Volume} = |C|^2 I(C) + (1 - k)|C||V |E(C)
 \end{equation}
 \end{itemize}
-Hence, we can put all previously described metrics in terms of $I(C)$, $E(C)$, $|C|$, $|V|$, and $k$.  With a common parameterization of the metrics, we can already draw some inferences.  All metrics, besides {\sc Volume} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While, it is possible to find all disconnected components in linear time, it also provides no information about reasonable datasets.
+Hence, we can put all previously described metrics in terms of $I(C)$, $E(C)$, $|C|$, $|V|$, and $k$.  With a common parameterization of the metrics, we can already draw some inferences.  All metrics, besides {\sc Volume} and {\sc Conductance} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While, it is possible to find all disconnected components in linear time, it also provides no information about reasonable datasets.
 
 While these metrics are simple and easily understood by their parameterization, not all metrics have a closed form parameterization.  We can push a step further and obtain a general methodology for gaining understanding of what communities certain metrics prefer.  The methodology will be to use a simple greedy algorithm to incrementally improve a community according to a metric.  The progress of the algorithm is then tracked within the $(I, E)$ plane.  While these paths may even seem random.  We can visualize how a metric categorizes communities in the $(I, E)$ plane with level sets.  With the visualized categories in the $(I, E)$ plane understanding the metric becomes a visual explanation.
 
@@ -358,35 +358,73 @@ The simple greedy algorithm is an expansion of the community process, greedily e
 Some metrics require minimization rather than maximization, this algorithm is easily adapted accordingly.
 For each metric we start the algorithm with a simple subset of two connected nodes and track the communities that result in improvements, according to a given metric. As the algorithm expands the community, the metric determines which node is optimal at each step. We record this better community and for each metric, $M$, get a set of $C_1 \subset C_2 \subset \dots \subset C_n$, such that the metric is increasing $M(C_i) < M(C_{i+1})$. While this is not an encompassing algorithm as it can only find local maximums, it will reveal a metric’s biasenesses toward communities of certain $I(C)$, $E(C)$, values.
 
-Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.
+Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.  The metrics in this category are {\sc Expansion}, {\sc Edge Cuts}, and {\sc Cut Ratio}.  We can visualize how the plane is viewed by these metrics with level sets.  For all points of the $I,E$ plane, we evaluate the metric and graph the contour curves, or level sets\cite{}.  In level set figures, any two points in the $I,E$ plane connected by a curve have the same metric value. In our greedy algorithm\ref{alg_greedy_single}, if the algorithm can add a node to the community that crosses a level set to a higher metric valuation the algorithm will add that node.  Visually, the more level sets crossed by a change to the community, corresponds to a higher change in the metric.  Traditionally, level sets are used in this manner to show gradient descent to find a local minimum.  The optimum that a gradient descent will find, can be found by traveling perpendicular to the level sets.  While we find in practice this is a good analogy to understand the behavior of optimizing these metrics,  we can not quite finish the analogy as the metrics are discrete.  Hence, we can not quite use level sets to compute communities.  But, we can use level sets as a visual categorization of the $(I, E)$ plane according to a metric.
 
+JTODO add level sets of all four types
+
+We now add in trackers of the progress of the community evaluations
+
+JTODO add levels sets of all four types, plus tracking of the the karate club
+
+JTODO add levels sets of all four types, plus tracking of the football network
+
+JTODO add levels sets of all four types, plus tracking of the physics archive network
+
+While we have observed how metrics are affected by $I(C)$ and $E(C)$ values, we have not checked the last affect of the last variable that these metrics depended on.  For each network, we can consider $|V|$ to be a constant, but the size of the community does affect the metric evaluation.  The variable is $k$.
+
+JTODO add plots of how $k$ affects the metrics.
+
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c | c  c  |}
+ \hline Metric & Optimal $C$ & $(I(C), E(C))$ \\ \hline
+{\sc Conductance} & $G$& $(x, 0)$\\ \hline
+{\sc Cut Ratio}  & $G$ & $(x, 0)$\\ \hline
+{\sc Edge Cuts}  & $G$& $(x, 0)$ \\ \hline
+{\sc Expansion}  & $G$&$(x, 0)$ \\ \hline
+{\sc Internal Density}  & any clique & $(1, x)$ \\ \hline
+{\sc Volume}  & $G$& $(x, 0)$ \\ \hline
+\end{tabular}
+\caption{Communities that optimize each metric.  A value of $x$, indicates that the optimization is independent of that value.}
+\label{tbl_single_optimal_communities}
+\end{table}
+
+% New Section******************************
 \section{Set of Communities Based Metrics}
 
-Our original parameterization of internal and external density can not be directly applied to a set of communities, $S = \{C_1,C_2,...C_n\}$. Though if we follow the same logic we will arrive at a similar parameterization. An ideal set of communities are cliques such that every edge is within some community. In addition, the community description of the network should not have an exponential number of communities, but rather some concise set of communities. Hence an ideal set of communities has three parameters. Internal density is a representation of how close the set of communities is to being a set of cliques. External density is a representation of how close the set of communities are to covering all edges in the graph. Size of the set of communities is a representation of how concise the set of communities are. We pick the following representations, but note that different representations do not yield different conclusions in the following sections.
+We now explore metrics that evaluate the strength of a set of communities.  A majority of these community detection methods are based on finding a partitioning of the network into communities.  For a given network, community detection produces a set of communities, $S$, where each node $u$ belongs to exactly one community, $C_i \in S$.  The most popular of these detection methods is, maximizing modularity \cite{}.  Modularity returns a single valued evaluation of a set of communities.
 
-\subsection{Internal Density, External Sparsity, and Conciseness}
+As with individual community based metrics, we will develop an understanding of the pertinent parameters of a set of communities.  Through these parameters, there exist some closed form parameterizations for metrics on sets of communities.  Primarily, though, we will build the space of these parameters that a set of communities may evaluate to and analyze how these metrics valuate communities of different parameters.  Again, our conclusions are independent of a specific network.
 
-\begin{definition}[Internal Density of a Set of Communities]
+
+% New Subsection **********************************************
+\subsection{Internal Density, External Density, and Conciseness}
+
+Our parameterization of internal and external density for single community metrics can not be directly applied to a set of communities, $S = \{C_1,C_2,...C_n\}$. Though if we follow the same logic we will arrive at a similar parameterization. An ideal set of communities are cliques such that every edge is within some community. In addition, the community description of the network should not have an exponential number of communities, but rather some concise set of communities. Hence an ideal set of communities has three parameters. Internal density is a representation of how close the set of communities is to being a set of cliques. External density is a representation of how close the set of communities are to covering all edges in the graph. Size of the set of communities is a representation of how concise the set of communities are. With the same methodology for parameterizing and understanding metrics of individual communities we proceed to parameterize metrics for sets of communities with {\it internal density}, {\it external density}, and {\it conciseness}.  Formal definitions follow.
+
+\begin{definition}[Internal Density of a Set of Communities] For a set of communities, $S = \{C_1, C_2, \dots, C_n\}$, the internal density of the set is ratio between the sum of the number of edges that do exist within each community to the maximal value of that sum.  The maximal value is achieved by all communities being cliques.
 \begin{equation}
-I(S) = \sum_{C \in S} \frac{\sum_{u \in C} \sum_{v \in C} w(u,v)}{\sum_{C \in S}|C|(|C| − 1)}
+I(S) = \sum_{C \in S} \frac{\sum_{u \in C} \sum_{v \in C} w(u,v)}{\sum_{C \in S}|C|(|C| - 1)}
 \end{equation}
 \label{def_int_set}
 \end{definition}
 
-\begin{definition}[External Density of a Set of Communities]
+\begin{definition}[External Density of a Set of Communities] In a set of communities $S$, the {\sc Ext\_Edges} are the edges, not covered by any community.  Hence, external density is the fraction of edges not covered by any community.
 \begin{equation}
-E(S) = \frac{\sum_{u, v \in \mbox{\sc Ext\_Edges}} w(u,v)} {\sum_{u,v \in V}w(u,v)}
+E(S) = \frac{\sum_{(u, v) \in \mbox{\sc Ext\_Edges}} w(u,v)} {\sum_{u,v \in V}w(u,v)}
 \end{equation}
 \label{def_ext_set}
 \end{definition}
 
-\begin{definition}[Conciseness of a Set of Communities]
+\begin{definition}[Conciseness of a Set of Communities]  Conciseness is the size of the description necessary to describe all of the communities.
 \begin{equation}
 \mbox{\sc Conciseness}(S) = |S|
 \end{equation}
 \label{def_conciseness}
 \end{definition}
 
+An useful byproduct of our choice of defining the parameters, is the ability to analyze, any set of communities, including overlapping communities.  Our definition of internal density for a set of communities, allows nodes to be placed in multiple communities, but insists that a high internal density corresponds to a node being well connected to all communities it belongs to.  External density is independent of overlapping communities, as well as conciseness.
 
 To date we do not know of any previous metrics that have a closed form parameterization in terms of $I(S)$, $E(S)$, and $|S|$. We release a linear metric pertaining to these parameters in a later section.
 \begin{definition}[Ideal Set of Communities]
@@ -398,8 +436,16 @@ I(S) &=& 1\\
 \end{eqnarray*}
 \end{definition}
 
-\subsection{Study of Related Metrics}
 
+All three parameters are necessary to ensure a complete description of a set of communities.  For any two parameters, there exists a set of communities that can maximize those two parameters, but not the third parameter, revealing an undesired property of the set of communities.
+
+JTODO include figure of all 3 cases.
+
+% New subsection********************
+\subsection{Study of Relevant Metrics}
+
+
+% New Chapter *****************
 \chapter{A New Metric: Linearity}
 
 \section{Single Community Detection}

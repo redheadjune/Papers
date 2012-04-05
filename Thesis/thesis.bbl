@@ -1,3 +1,117 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{andersen}
+R.~Andersen, F.~Chung, and K.~Lang.
+\newblock Local graph partitioning using pagerank vectors.
+\newblock 2006.
+
+\bibitem{blondel}
+V.~Blondel, J.~Guillaume, R.~Lambiotte, and E.~Lefebvre.
+\newblock Fast unfolding of communities in large networks.
+\newblock {\em J. Stat. Mech.}, JTODO, 2008.
+
+\bibitem{capocci}
+A.~Cappocci, V.D.P. Servedio, G.~Calarelli, and F.~Colaiori.
+\newblock Detecting communities in large networks.
+\newblock {\em Physica A}, 352:669--676, 2005.
+
+\bibitem{chen}
+D.~Chen, Y.~Fu, and M.~Shang.
+\newblock A fast and efficient heuristic algorithm for detecting community
+  structures in complex networks.
+\newblock {\em Physica A}, 388:2741--2749, 2009.
+
+\bibitem{danon}
+L.~Danon, A.~Diaz-Guilera, J.~Duch, and A.~Arenas.
+\newblock Comparing community structure identification.
+\newblock {\em Journal of Statistical Mechanics: Theory and Experiment}, JTODO,
+  2005.
+
+\bibitem{duch}
+J.~Duch and A.~Arenas.
+\newblock Community detection in complex networks using extremal optimization.
+\newblock {\em Physical Review E}, 72(027104 JTODO), 2005.
+
+\bibitem{fort}
+S.~Fortunato.
+\newblock Community detection in graphs.
+\newblock {\em Physics Reports}, 486:75--174, November 2010.
+
+\bibitem{girvan}
+M.~Girvan and M.~E.~J. Newman.
+\newblock Community structure in social and biolgical networks.
+\newblock {\em PNAS}, 99(12):7821--7826, June 2002.
+
+\bibitem{hastings}
+M.~B. Hastings.
+\newblock Community detection as an inference problem.
+\newblock {\em Archive JTODO}, 2006.
+
+\bibitem{hui}
+P.~Hui, E.~Yoneki, S.~Chan, and J.~Crowcroft.
+\newblock Distributed community detection in delay tolerant networks.
+\newblock Kyoto, Japan, August 2007. MobiArch.
+
+\bibitem{jain}
+A.~Jain.
+\newblock Data clustering: 50 years beyond k-means.
+\newblock 2008.
+
+\bibitem{kanna}
+R.~Kannan, S.~Vempala, and A.~Vetta.
+\newblock On clusterings: Good, bad, and spectral.
+\newblock {\em Journal of the ACM}, 51(3):497--515, May 2004.
+
+\bibitem{lanc:2009}
+A.~Lancichinetti and S.~Fortunato.
+\newblock Community detection algorithms: A comparative analysis.
+\newblock {\em Physical Review E}, 80(056117 JTODO), 2009.
+
+\bibitem{lan:2008}
+A.~Lancichinetti, S.~Fortunato, and F.~Radicchi.
+\newblock Benchmark graphs for testing community detection algorithms.
+\newblock {\em Physical Review E}, 78(046110 JTODO), 2008.
+
+\bibitem{lanc:2010}
+A.~Lancichinetti, M.~Kivela, J.~Saramaki, and S.~Fortunato.
+\newblock Characterizing the community structure of complex networks.
+\newblock {\em PloS ONE}, 5, August 2010.
+
+\bibitem{leskovec:2008}
+J.~Leskovec, K.~Lang, A.~Dasgupta, and M.~Mahoney.
+\newblock Statistical properties of community structure in large social and
+  informatino networks.
+\newblock Beijing, China, April 2008. WWW 2008.
+
+\bibitem{leskovec}
+J.~Leskovec, K.~Lang, and M.~Mahoney.
+\newblock Empirical comparison of algorithms for network community detection.
+\newblock Raleigh, NC, April 2010. WWW 2010.
+
+\bibitem{maiya}
+A.~Maiya and T.~Berger-Wolf.
+\newblock Sampling community structure.
+\newblock Raleigh, NC, April 2010. WWW 2010.
+
+\bibitem{mishra}
+N.~Mishra, R.~Schreiber, I.~Stanton, and R.~Tarjan.
+\newblock Finding strongly-knit clusters in social networks.
+\newblock {\em Internet Mathematics}, 5:155--174, 2009.
+
+\bibitem{newman}
+M.~Newman.
+\newblock Modularity and community structure in networks.
+\newblock {\em PNAS}, 103(23):8577--8582, 2006.
+
+\bibitem{porter}
+M.~Porter, J.~Onnela, and P.~Mucha.
+\newblock Communities in networks.
+\newblock {\em Notices of the AMS}, 56(9):1082--1097, October 2009.
+
+\bibitem{zhang}
+S.~Zhang, R.~Wang, and X.~Zhang.
+\newblock Identification of overlapping community structure in complex networks
+  using fuzzy c-means clustering.
+\newblock {\em Physica A}, 374:483--490, 2007.
 
 \end{thebibliography}
