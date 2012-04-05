@@ -1,0 +1,58 @@
+\relax 
+\citation{modularity}
+\citation{conductance}
+\citation{louvain}
+\citation{leskovec:empirical}
+\citation{louvain}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
+\citation{conductance}
+\citation{cut_ratio}
+\citation{edges_cut}
+\citation{expansion}
+\citation{i_density}
+\citation{volume}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Metrics for Single Communities}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Specific Metrics}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Parameterizations}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Greedy Optimization}{2}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Greedy Single Community Metric Optimization}}{2}}
+\newlabel{alg1}{{1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Seeding the greedy algorithm with two connected nodes, we track the communities produced by optimizing each metric in the $I, E$ plane. The black star is the definition of an ideal community and the black square is the $I,E$ value of a community encompassing the entire graph.}}{3}}
+\newlabel{fig_single_metrics}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Level Sets}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {II-D}1}Conductance Level Sets}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\it  Conductance is optimized at $E=0$.}The inclusion of level sets makes the movement of conductance across the $I,E$ plane more comprehensible. The more level sets conductance crosses to make it towards $E=0$, the better the conductance value of the communities is.}}{3}}
+\newlabel{fig_conductance_karate}{{2}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\it  Conductance is optimized at $0$.} The affect the size of the community has on {\sc  Conductance}. Notice that the worst values of conductance correspond to small communities, irregardless of the $I,E$ quality of the community. Similarly, the best conductance values correspond to the largest communities, irregardless of the internal and external density.}}{4}}
+\newlabel{fig_conductance_a}{{3}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-E}}Cut Ratio, Edge Cuts, and Expansion}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-F}}Internal Density}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\it  Metrics optimized at $E(C) = 0$.} Level sets show how cut ratio, edge cuts, and expansion evaluate the $I,E$ plane. The path corresponds to the $I,E$ values of communities expanded to optimize all three metrics. Because the level sets are the same, all three metrics produce the same path of optimizing communities in the Karate Club and CFL data sets.}}{4}}
+\newlabel{fig_cuts_expansion}{{4}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Given a fixed $E(C)$, $f(k)$ is the constant multiple within each of the metrics, that incorporates a factor according to the size of $|C| = k|V$. These values are specific for the size of communities within the Karate Club.}}{4}}
+\newlabel{fig_cuts_expansion_a}{{5}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-G}}Volume}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-H}}Linearity}{4}}
+\citation{modularity}
+\citation{louvain}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Given a fixed $E(C)$, $f(a)$ is the constant multiple within each of the metrics, that incorporates a factor according to the size of $|C| = k|V|$. These values are specific for the size of communities within the Karate Club.}}{5}}
+\newlabel{fig_volume}{{6}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-I}}Optimal Communities}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Metrics for Sets of Communities}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Modularity}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The level sets of how {\sc  Modularity} treats the $I(C)$, $E(C)$ space for one community of size 9 in the CFL. Note the sharp transition from a region that heavily favors improvements in external density to a region that heavily favors improvements in internal density($E(C) < 0.1$).}}{6}}
+\newlabel{fig_f_cfl}{{7}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Linearity for Sets of Communities}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Performance}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The series of sets of communities produced by optimizing modularity and linearity, plotted by their $(I(S), E(S))$ values. The third parameter not displayed is how many communities are within each set. Linearity produces 16 and 18 communities for the karate club and the CFL respectively. Similarly. modularity produces 5 and 13 communities.}}{7}}
+\newlabel{fig_k_cfl}{{8}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Using the astrophysics citation network from [], with approximately 19k nodes and 200k edges, we apply the Louvain algorithm for modularity maximization and the adapted Louvain algorithm for linearity maximization. For the dimension not shown, conciseness, modularity produced 1523 communities and linearity produced 1258 communities. The points shown for linearity are an evenly spaced sample of changes to the set of communities. The points shown for modularity are the value of the communities at each stage of the dendogram. The black star corresponds to the ideal values for a set of communities. The black diamond corresponds to the value of a community encompassing the entire graph. Overall, linearity uses slightly fewer communities to have significantly higher internal density with comparable coverage of all edges of the graph.}}{7}}
+\newlabel{fig_astro}{{9}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusion}{7}}
+\bibcite{leskovec:empirical}{1}
+\bibcite{louvain}{2}
+\bibcite{modularity}{3}
+\bibcite{conductance}{4}
+\bibcite{clauset}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Future Work}{8}}
+\@writefile{toc}{\contentsline {section}{References}{8}}
