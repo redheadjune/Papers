@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  5 APR 2012 14:46
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  5 APR 2012 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,16 +561,42 @@ LaTeX Warning: Citation `girvan' on page 1 undefined on input line 117.
 
 
 ] [2] [3] [4]
+
+LaTeX Warning: Reference `table_variables' on page 5 undefined on input line 20
+2.
+
 LaTeX Font Info:    Try loading font information for U+bbold on input line 211.
 
- (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
+
+LaTeX Warning: Reference `def_int_density' on page 5 undefined on input line 22
+7.
+
+
+LaTeX Warning: Reference `def_ext_density' on page 5 undefined on input line 22
+8.
+
+
+LaTeX Warning: Reference `def_int_set' on page 5 undefined on input line 229.
+
+
+LaTeX Warning: Reference `def_ext_set' on page 5 undefined on input line 230.
+
+
+LaTeX Warning: Reference `def_conciseness' on page 5 undefined on input line 23
+1.
+
 [5] [6] [7]
 Chapter 2.
 [8
 
 ] [9] [10] [11] [12]
+
+LaTeX Warning: Reference `alg_greedy_single' on page 13 undefined on input line
+ 342.
+
 Missing character: There is no ’ in font pplr7t!
- [13] [14]
+[13] [14]
 Missing character: There is no − in font txr!
  [15] [16]
 Chapter 3.
@@ -676,6 +702,9 @@ LaTeX Warning: Empty `thebibliography' environment on input line 3.
 ] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
