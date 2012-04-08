@@ -39,52 +39,77 @@
 \newlabel{def_int_density}{{3}{10}}
 \newlabel{def_ext_density}{{4}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{11}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces {\sc  Greedy Single Community Metric Optimization}}}{14}}
-\newlabel{alg_greedy_single}{{1}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Communities that optimize each metric. A value of $x$, indicates that the optimization is independent of that value.}}{15}}
-\newlabel{tbl_single_optimal_communities}{{2.1}{15}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{16}}
-\newlabel{def_int_set}{{6}{17}}
-\newlabel{def_ext_set}{{7}{17}}
-\newlabel{def_conciseness}{{8}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{18}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{19}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Communities that optimize each metric. A value of $x$, indicates that the optimization is independent of that value.}}{13}}
+\newlabel{tbl_single_optimal_communities}{{2.1}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Level Sets in the $(I, E)$ plane for different metrics of a single community.}}{14}}
+\newlabel{fig_single_ls}{{2.1}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{Greedy Algorithm}{14}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces {\sc  Greedy Single Community Metric Optimization}}}{15}}
+\newlabel{alg_greedy_single}{{1}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{Internal Density as previously defined}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Influence of size of community on the values of external density based metrics.}}{17}}
+\newlabel{fig_k_e_based}{{2.2}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{Volume}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces External Density based metrics({\sc  Cut Ratio}, {\sc  Edges Cut}, and {\sc  Expansion}) optimized in different networks. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph. The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community. The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm 1\hbox {}}}{18}}
+\newlabel{fig_real_e_based}{{2.3}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Tracing of communities found by volume through the IE plane. The paths are much longer, extending until the community includes the entire graph. We cut the paths short once they progress towards including the entire community. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph. The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community. The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm 1\hbox {}.}}{19}}
+\newlabel{fig_real_volume}{{2.4}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces The affect, increasing the size of the community has on volume, even for a constant $I(C)$ and $E(C)$.}}{19}}
+\newlabel{fig_volume_k}{{2.5}{19}}
+\@writefile{toc}{\contentsline {subsubsection}{Conductance}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Influence of size of community on the value of conductance.}}{20}}
+\newlabel{fig_k_conductance}{{2.6}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces The progression of communities that optimize conductance. Note, the entire graph optimizes conductance, we stop following the progression of conductance once it becomes obvious the entire graph will be engulfed. (In the case of the college football league, a local optimum was reached.)}}{21}}
+\newlabel{fig_real_e_based}{{2.7}{21}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{22}}
+\newlabel{def_int_set}{{6}{23}}
+\newlabel{def_ext_set}{{7}{23}}
+\newlabel{def_conciseness}{{8}{23}}
+\citation{modularity}
+\citation{louvain}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces The communities that optimize $2$ out of $3$ parameters. Nodes are in red, lines are edges, and communities are blue ellipses. The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$. The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at$I(S) = {\begingroup 1\endgroup \over 2}$. The right configuration optimizes $I(S) = 1$ and nearly conciseness at $|S| = 2$, but does not optimize external density at $E(S) = {\begingroup 1\endgroup \over 3}$}}{25}}
+\newlabel{fig_corner_sets}{{2.8}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Here we plot the $(I(S), E(S))$ values produced by each level of the dendogram stages in maximizing modularity with the Louvain algorithm \cite  {}.}}{27}}
+\newlabel{fig_real_mod_sets}{{2.9}{27}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{28}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Single Community Detection}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Results}{19}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Multiple Community Detection}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Results}{19}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Parallel Community Detection}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Single Community Detection}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Results}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Multiple Community Detection}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Results}{30}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Parallel Community Detection}{31}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Algorithm}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Seeds}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Expansion}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Probability of Correctness}{20}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Performance}{20}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Case Studies of Networks}{21}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{31}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Algorithm}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Seeds}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Expansion}{31}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Probability of Correctness}{31}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Performance}{31}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Case Studies of Networks}{32}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Amazon Product Network}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Collaboration Networks}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}General Relativity}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Enron Email Network}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Epinions Social Network}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Physics Citation Network}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.7}Web Graphs}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}Google}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.8}Wiki Network}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8.1}Communication Network}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{22}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evolution of Communities}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Amazon Product Network}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Collaboration Networks}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}General Relativity}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Enron Email Network}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Epinions Social Network}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Physics Citation Network}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Web Graphs}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7.2}Google}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.8}Wiki Network}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8.1}Communication Network}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{33}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evolution of Communities}{34}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \citation{fort}
@@ -109,11 +134,11 @@
 \citation{chen}
 \citation{lanc:2010}
 \citation{girvan}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{24}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{35}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibdata{thesis}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{25}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{36}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{andersen}{1}
@@ -130,7 +155,7 @@
 \bibcite{kanna}{12}
 \bibcite{lanc:2009}{13}
 \bibcite{lan:2008}{14}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{26}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{37}}
 \bibcite{lanc:2010}{15}
 \bibcite{leskovec:2008}{16}
 \bibcite{leskovec}{17}

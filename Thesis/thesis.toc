@@ -23,39 +23,44 @@
 \contentsline {section}{\numberline {2.2}Individual Community Based Metrics}{8}
 \contentsline {subsection}{\numberline {2.2.1}Internal Density and External Sparsity}{9}
 \contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{11}
-\contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{16}
-\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{16}
-\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{18}
-\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{19}
-\contentsline {section}{\numberline {3.1}Single Community Detection}{19}
-\contentsline {subsection}{\numberline {3.1.1}Results}{19}
-\contentsline {section}{\numberline {3.2}Multiple Community Detection}{19}
-\contentsline {subsection}{\numberline {3.2.1}Results}{19}
-\contentsline {chapter}{\numberline {4}Parallel Community Detection}{20}
-\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{20}
-\contentsline {section}{\numberline {4.2}Algorithm}{20}
-\contentsline {subsection}{\numberline {4.2.1}Seeds}{20}
-\contentsline {subsection}{\numberline {4.2.2}Expansion}{20}
-\contentsline {section}{\numberline {4.3}Probability of Correctness}{20}
-\contentsline {section}{\numberline {4.4}Performance}{20}
-\contentsline {chapter}{\numberline {5}Case Studies of Networks}{21}
-\contentsline {section}{\numberline {5.1}Amazon Product Network}{22}
-\contentsline {section}{\numberline {5.2}Collaboration Networks}{22}
-\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{22}
-\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{22}
-\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{22}
-\contentsline {subsection}{\numberline {5.2.4}General Relativity}{22}
-\contentsline {section}{\numberline {5.3}Enron Email Network}{22}
-\contentsline {section}{\numberline {5.4}Epinions Social Network}{22}
-\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{22}
-\contentsline {section}{\numberline {5.6}Physics Citation Network}{22}
-\contentsline {section}{\numberline {5.7}Web Graphs}{22}
-\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{22}
-\contentsline {subsection}{\numberline {5.7.2}Google}{22}
-\contentsline {section}{\numberline {5.8}Wiki Network}{22}
-\contentsline {subsection}{\numberline {5.8.1}Communication Network}{22}
-\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{22}
-\contentsline {chapter}{\numberline {6}Evolution of Communities}{23}
-\contentsline {chapter}{\numberline {7}Conclusions}{24}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{25}
-\contentsline {chapter}{Bibliography}{26}
+\contentsline {subsubsection}{Greedy Algorithm}{14}
+\contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{15}
+\contentsline {subsubsection}{Internal Density as previously defined}{16}
+\contentsline {subsubsection}{Volume}{17}
+\contentsline {subsubsection}{Conductance}{19}
+\contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{22}
+\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{22}
+\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{24}
+\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{28}
+\contentsline {section}{\numberline {3.1}Single Community Detection}{28}
+\contentsline {subsection}{\numberline {3.1.1}Results}{29}
+\contentsline {section}{\numberline {3.2}Multiple Community Detection}{29}
+\contentsline {subsection}{\numberline {3.2.1}Results}{30}
+\contentsline {chapter}{\numberline {4}Parallel Community Detection}{31}
+\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{31}
+\contentsline {section}{\numberline {4.2}Algorithm}{31}
+\contentsline {subsection}{\numberline {4.2.1}Seeds}{31}
+\contentsline {subsection}{\numberline {4.2.2}Expansion}{31}
+\contentsline {section}{\numberline {4.3}Probability of Correctness}{31}
+\contentsline {section}{\numberline {4.4}Performance}{31}
+\contentsline {chapter}{\numberline {5}Case Studies of Networks}{32}
+\contentsline {section}{\numberline {5.1}Amazon Product Network}{33}
+\contentsline {section}{\numberline {5.2}Collaboration Networks}{33}
+\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{33}
+\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{33}
+\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{33}
+\contentsline {subsection}{\numberline {5.2.4}General Relativity}{33}
+\contentsline {section}{\numberline {5.3}Enron Email Network}{33}
+\contentsline {section}{\numberline {5.4}Epinions Social Network}{33}
+\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{33}
+\contentsline {section}{\numberline {5.6}Physics Citation Network}{33}
+\contentsline {section}{\numberline {5.7}Web Graphs}{33}
+\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{33}
+\contentsline {subsection}{\numberline {5.7.2}Google}{33}
+\contentsline {section}{\numberline {5.8}Wiki Network}{33}
+\contentsline {subsection}{\numberline {5.8.1}Communication Network}{33}
+\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{33}
+\contentsline {chapter}{\numberline {6}Evolution of Communities}{34}
+\contentsline {chapter}{\numberline {7}Conclusions}{35}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{36}
+\contentsline {chapter}{Bibliography}{37}

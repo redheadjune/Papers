@@ -316,10 +316,10 @@ Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now anal
 \end{equation}
 \item {\sc Cut Ratio} is the fraction of existing to possible edges leaving the community \cite{}.
 \begin{equation}
-\mbox{\sc Cut Ratio} = k(1 - k)|V |^2E(C)
+\mbox{\sc Cut Ratio} = E(C)
 \end{equation}
 \item {\sc Edges Cut} is the number of edges connecting the community to the rest of the graph \cite{}.\begin{equation}
-\mbox{\sc Edges Cut} = E(C)
+\mbox{\sc Edges Cut} = k (1-k) |V|^2 E(C)
 \end{equation}
 \item {\sc Expansion} the average number of edges leaving the community per node \cite{}.
 \begin{equation}
@@ -331,15 +331,42 @@ Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now anal
 \end{equation}
 \item {\sc Volume} is the total degree of nodes within the community \cite{}.
 \begin{equation}
-\mbox{\sc Volume} = |C|^2 I(C) + (1 - k)|C||V |E(C)
+\mbox{\sc Volume} = |C|^2 I(C) + k(1-k)|V|^2E(C)
 \end{equation}
 \end{itemize}
 Hence, we can put all previously described metrics in terms of $I(C)$, $E(C)$, $|C|$, $|V|$, and $k$.  With a common parameterization of the metrics, we can already draw some inferences.  All metrics, besides {\sc Volume} and {\sc Conductance} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While, it is possible to find all disconnected components in linear time, it also provides no information about reasonable datasets.
 
-While these metrics are simple and easily understood by their parameterization, not all metrics have a closed form parameterization.  We can push a step further and obtain a general methodology for gaining understanding of what communities certain metrics prefer.  The methodology will be to use a simple greedy algorithm to incrementally improve a community according to a metric.  The progress of the algorithm is then tracked within the $(I, E)$ plane.  While these paths may even seem random.  We can visualize how a metric categorizes communities in the $(I, E)$ plane with level sets.  With the visualized categories in the $(I, E)$ plane understanding the metric becomes a visual explanation.
+While these metrics are simple and easily understood by their parameterization, not all metrics have a closed form parameterization.  We can push a step further and obtain a general methodology for gaining understanding of what communities certain metrics prefer.  The methodology will be to use a simple greedy algorithm to incrementally improve a community according to a metric.  The progress of the algorithm is then tracked within the $(I, E)$ plane.  While these paths may even seem random.  We can visualize how a metric categorizes communities in the $(I, E)$ plane with level sets.  The progression of communities chosen by the metric can then be seen as a progression through categories of communities that optimize the metric.
 
 
-The simple greedy algorithm is an expansion of the community process, greedily engulfing the node that improves a given {\sc Metric} the most. The algorithm is the {\it Greedy Single Community Metric Optimization} Algorithm: \ref{alg_greedy_single}.
+\begin{figure}[!h]
+\includegraphics[width=3in]{Figures/e_based_ls}
+\includegraphics[width=3in]{Figures/prev_int_ls}
+\includegraphics[width=3in]{Figures/volume_ls}
+\includegraphics[width=3in]{Figures/cond_ls}
+\caption{Level Sets in the $(I, E)$ plane for different metrics of a single community.}
+\label{fig_single_ls}
+\end{figure}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c | c  c  |}
+ \hline Metric & Optimal $C$ & $(I(C), E(C))$ \\ \hline
+{\sc Conductance} & $G$& $(x, 0)$\\ \hline
+{\sc Cut Ratio}  & $G$ & $(x, 0)$\\ \hline
+{\sc Edges Cut}  & $G$& $(x, 0)$ \\ \hline
+{\sc Expansion}  & $G$&$(x, 0)$ \\ \hline
+{\sc Internal Density}  & any clique & $(1, x)$ \\ \hline
+{\sc Volume}  & $G$& $(x, 0)$ \\ \hline
+\end{tabular}
+\caption{Communities that optimize each metric.  A value of $x$, indicates that the optimization is independent of that value.}
+\label{tbl_single_optimal_communities}
+\end{table}
+
+% subsubsection*************************************
+\subsubsection{Greedy Algorithm}
+
+The simple greedy algorithm is an expansion of the community, greedily engulfing the node that improves a given {\sc Metric} the most. The algorithm is the {\it Greedy Single Community Metric Optimization} Algorithm: \ref{alg_greedy_single}.
 \begin{algorithm}                              % enter the algorithm environment
 \caption{{\sc Greedy Single Community Metric Optimization}}         % give the algorithm a caption
 \label{alg_greedy_single}                                   % and a label for \ref{} commands later in the document
@@ -358,37 +385,90 @@ The simple greedy algorithm is an expansion of the community process, greedily e
 Some metrics require minimization rather than maximization, this algorithm is easily adapted accordingly.
 For each metric we start the algorithm with a simple subset of two connected nodes and track the communities that result in improvements, according to a given metric. As the algorithm expands the community, the metric determines which node is optimal at each step. We record this better community and for each metric, $M$, get a set of $C_1 \subset C_2 \subset \dots \subset C_n$, such that the metric is increasing $M(C_i) < M(C_{i+1})$. While this is not an encompassing algorithm as it can only find local maximums, it will reveal a metric’s biasenesses toward communities of certain $I(C)$, $E(C)$, values.
 
-Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.  The metrics in this category are {\sc Expansion}, {\sc Edge Cuts}, and {\sc Cut Ratio}.  We can visualize how the plane is viewed by these metrics with level sets.  For all points of the $I,E$ plane, we evaluate the metric and graph the contour curves, or level sets\cite{}.  In level set figures, any two points in the $I,E$ plane connected by a curve have the same metric value. In our greedy algorithm\ref{alg_greedy_single}, if the algorithm can add a node to the community that crosses a level set to a higher metric valuation the algorithm will add that node.  Visually, the more level sets crossed by a change to the community, corresponds to a higher change in the metric.  Traditionally, level sets are used in this manner to show gradient descent to find a local minimum.  The optimum that a gradient descent will find, can be found by traveling perpendicular to the level sets.  While we find in practice this is a good analogy to understand the behavior of optimizing these metrics,  we can not quite finish the analogy as the metrics are discrete.  Hence, we can not quite use level sets to compute communities.  But, we can use level sets as a visual categorization of the $(I, E)$ plane according to a metric.
+% subsubsection*************************************
+\subsubsection{Expansion, Edges Cut, and Cut Ratio}
 
-JTODO add level sets of all four types
-
-We now add in trackers of the progress of the community evaluations
-
-JTODO add levels sets of all four types, plus tracking of the the karate club
-
-JTODO add levels sets of all four types, plus tracking of the football network
-
-JTODO add levels sets of all four types, plus tracking of the physics archive network
-
-While we have observed how metrics are affected by $I(C)$ and $E(C)$ values, we have not checked the last affect of the last variable that these metrics depended on.  For each network, we can consider $|V|$ to be a constant, but the size of the community does affect the metric evaluation.  The variable is $k$.
-
-JTODO add plots of how $k$ affects the metrics.
+Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.  The metrics in this category are {\sc Expansion}, {\sc Edges Cut}, and {\sc Cut Ratio}.  We can visualize how the plane is viewed by these metrics with level sets.  For all points of the $I,E$ plane, we evaluate the metric and graph the contour curves, or level sets\cite{}.  In level set figures, any two points in the $I,E$ plane connected by a curve have the same metric value. In our greedy algorithm\ref{alg_greedy_single}, if the algorithm can add a node to the community that crosses a level set to a higher metric valuation the algorithm will add that node.  Visually, the more level sets crossed by a change to the community, corresponds to a higher change in the metric.  Traditionally, level sets are used in this manner to show gradient descent to find a local minimum.  The optimum that a gradient descent will find, can be found by traveling perpendicular to the level sets.  While we find in practice this is a good analogy to understand the behavior of optimizing these metrics,  we can not quite finish the analogy as the metrics are discrete.  Hence, we can not quite use level sets to compute communities.  But, we can use level sets as a visual categorization of the $(I, E)$ plane according to a metric.
 
 
-\begin{table}[!h]
+The level sets of cut ratio, edge cuts, and expansion, figure \ref{fig_corner_sets}, across the $I,E$ plane reveal the $I,E$ values of the communities that optimize these metrics.  While, the three metrics have different definitions, their level sets are identical only with different values.  The level sets are horizontal lines, whose metric's are optimized by improvements in $E(C)$, irregardless of changes to $I(C)$.  Accordingly, the node that has the greatest improvement in $E(C)$ is the same for all three metrics, and each metric results in the same path through the $I,E$ plane.
+
+
+Though it does not make a difference in our examples, the difference between these metrics is their treatment of $k = \frac{|C|}{|V|}$.  Cut ratio is unresponsive to changes in the size of the community, while expansion linearly discounts against larger communities.  Edges cut heavily favors very large or very small communities.  See {\it Fig. \ref{fig_k_e_based}}
+
+\begin{figure}[!h]
 \centering
-\begin{tabular}{|c | c  c  |}
- \hline Metric & Optimal $C$ & $(I(C), E(C))$ \\ \hline
-{\sc Conductance} & $G$& $(x, 0)$\\ \hline
-{\sc Cut Ratio}  & $G$ & $(x, 0)$\\ \hline
-{\sc Edge Cuts}  & $G$& $(x, 0)$ \\ \hline
-{\sc Expansion}  & $G$&$(x, 0)$ \\ \hline
-{\sc Internal Density}  & any clique & $(1, x)$ \\ \hline
-{\sc Volume}  & $G$& $(x, 0)$ \\ \hline
-\end{tabular}
-\caption{Communities that optimize each metric.  A value of $x$, indicates that the optimization is independent of that value.}
-\label{tbl_single_optimal_communities}
-\end{table}
+\includegraphics[width=4in]{Figures/k_influence_e_based}
+\caption{Influence of size of community on the values of external density based metrics.}
+\label{fig_k_e_based}
+\end{figure}
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/cee_karate}
+\includegraphics[width=2.8in]{Figures/cee_cfl}
+\includegraphics[width=2.8in]{Figures/cee_relativity}
+\includegraphics[width=2.8in]{Figures/cee_astro}
+\caption{External Density based metrics({\sc Cut Ratio}, {\sc Edges Cut}, and {\sc Expansion}) optimized in different networks.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm \ref{alg_greedy_single}}
+\label{fig_real_e_based}
+\end{figure}
+
+
+
+
+% subsubsection*************************************
+\subsubsection{Internal Density as previously defined}
+
+On the polar extreme of cut ratio, edge cuts, and expansion, is internal density.  Internal density is a function of internal density and is unresponsive to changes in the the external density.  We do not include indepth analysis, but rather a summary.  The level sets of internal density are vertical lines in the $I,E$ plane.  The paths produced by the greedy algorithm grow out the original community to the largest clique it can find(if forced to), as the internal density of two connected notes is already maximal.  Any clique is an optimization of internal density, irregardless of external connectivity.
+
+
+% subsubsection*************************************
+\subsubsection{Volume}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/volume_karate}
+\includegraphics[width=2.8in]{Figures/volume_cfl}
+\caption{Tracing of communities found by volume through the IE plane.  The paths are much longer, extending until the community includes the entire graph.  We cut the paths short once they progress towards including the entire community.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm \ref{alg_greedy_single}.}
+\label{fig_real_volume}
+\end{figure}
+
+A metric that takes both internal and external density into account is volume.  The next conclusion is not apparent just from the equation parameterized in terms of internal and external density.  However, observing the level sets of volume reveal that the optimal community is at $(I, E) = (0, 0)$ and volume as a metric is optimal for communities with low external density and low internal density.  Apart from communities of disconnected nodes, volume can best be optimized by a community encompassing the entire graph.  Volume directly contradicts our intuition that communities should have good internal connectivity.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/volume_k}
+\caption{The affect, increasing the size of the community has on volume, even for a constant $I(C)$ and $E(C)$.}
+\label{fig_volume_k}
+\end{figure}
+
+
+% subsubsection*************************************
+\subsubsection{Conductance}
+For conductance the level sets are rays radiating from $(I, E) = (0, 0)$, see {\it Fig. \ref{fig_single_ls}}.  As the rays become closer to horizontal, $E = 0$, conductance becomes optimal.  Hence, no matter the data set, conductance desires communities with $I,E$ values closer to $(I,E) = (x, 0)$, for any arbitrary $I(C) = x$.  Including more nodes that continually increase $I(C)$ is rare in networks and much more common is decreasing $E(C)$ by encompassing more of the graph.  Since, conductance is fairly, unresponsive to changes in $I(C)$, optimizing conductance results decreasing $E(C)$ as much as possible.  How much conductance is biased towards small improvements in $E(C)$ verse large improvements in $I(C)$ depends on where in the $I,E$ domain the seed communities originate.   In the College Football League, the seed community begins a portion of the domain where improvements in $I$ and $E$ are balanced.  For Zarchary's Karate Club, the seed community quickly falls into a portion of the $I,E$ domain where small and easy improvements in $E$ benefit conductance more than large and hard changes in $I$.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=4in]{Figures/k_influence_conductance}
+\caption{Influence of size of community on the value of conductance.}
+\label{fig_k_conductance}
+\end{figure}
+
+The last parameter that must be taken into account is $k$, the proportion of the graph covered by the community.  Now we fix the $I, E$ ratio and observe how changes in $|C| = k |V|$ affect conductance.  The conclusion,   If the expansion of the community is greatly affected by $k$, then our previous analysis will yield to conductance favoring the largest possible community as demonstrated in {\it Fig. \ref{fig_k_conductance}}.  This affect can be seen in the change of $C_1$ to $C_2$ in the plotted paths in {\it Fig. \ref{fig_conductance_karate}}, as the relative size change of adding just one node is large.
+
+That conductance favors large disconnected communities, even with low internal density, is experimentally confirmed by \cite{}.  However, as long as the community is of medium size and has a much larger $I(C)$ value than $E(C)$ conductance will make improvements that correspond to our intuition that an ideal community is internal dense and externally sparse.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/conductance_karate}
+\includegraphics[width=2.8in]{Figures/conductance_cfl}
+\includegraphics[width=2.8in]{Figures/conductance_relativity}
+\includegraphics[width=2.8in]{Figures/conductance_astro}
+\caption{The progression of communities that optimize conductance.  Note, the entire graph optimizes conductance, we stop following the progression of conductance once it becomes obvious the entire graph will be engulfed. (In the case of the college football league, a local optimum was reached.)}
+\label{fig_real_e_based}
+\end{figure}
+
 
 % New Section******************************
 \section{Set of Communities Based Metrics}
@@ -437,22 +517,90 @@ I(S) &=& 1\\
 \end{definition}
 
 
-All three parameters are necessary to ensure a complete description of a set of communities.  For any two parameters, there exists a set of communities that can maximize those two parameters, but not the third parameter, revealing an undesired property of the set of communities.
+All three parameters are necessary to ensure a complete description of a set of communities.  For any two parameters, there exists a set of communities that can maximize those two parameters, but not the third parameter, revealing an undesired property of the set of communities. Figure \ref{fig_corner_sets}, illustrates the types of communities that can optimize for any two parameters.
 
-JTODO include figure of all 3 cases.
+\begin{figure}[!h]
+\includegraphics[width=6in]{Figures/pathological_graphs}
+\caption{The communities that optimize $2$ out of $3$ parameters.  Nodes are in red, lines are edges, and communities are blue ellipses.  The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$.  The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at$I(S) = \frac{1}{2}$.  The right configuration optimizes $I(S) = 1$ and nearly conciseness at $|S| = 2$, but does not optimize external density at $E(S) = \frac{1}{3}$}
+\label{fig_corner_sets}
+\end{figure}
 
 % New subsection********************
 \subsection{Study of Relevant Metrics}
 
 
+Modularity is a partitioning of the network, and each partition is deemed a community.  For each module its modularity is the difference of the existing internal edges and expected number of internal edges, had the graph been random, with the same distribution of node degrees.  The total modularity is then the sum of the modularity of each partition.  Modularity was developed by [] and has found wide spread use due to the fast algorithms for maximizing modularity \cite{modularity}.  In particular, the use of dendograms in the Louvain Algorithm \cite{louvain} runs in minutes for large networks.
+
+There is not a closed form parameterization of modularity in terms of our definitions of $I(S)$, $E(S)$, and $|S|$.  But we find $I(S)$ and $E(S)$ to be intuitive enough to provide the space in which to analyze metrics of sets of communities.
+
+Still, we would like to be able to use level sets for some visual explanation of how modularity behaves with regard to some internal and external density.  The parameterization of modularity we can provide is in terms of $I(C)$ and $E(C)$ for single communities.  If we allow, $p=\frac{|C|(|C|-1)}{2L}$ and $q=\frac{|C|(|V|-|C|)}{2L}$ to be constants:
+\begin{equation}
+ \mbox{\sc Modularity}(S) = \sum_{C \in S} p I(C) - \left(p I(C) + q E(C)\right)^2.
+\end{equation}
+
+We can draw loose conclusions from this parameterization.  The first check is that a set of disjoint cliques are the only communities that optimize modularity.  There are no counter intuitive communities that optimize modularity.  Overall, modularity is a two part optimization.  For seed communities, in the case of modularity individual nodes, the typical initial values are high in external density.  When $E(C)$ is high it is the dominating term and the optimization is to decrease $E(C)$ as quickly as possible.  Once, external density is not the dominating term the optimization is then center around trying to improve $I(C)$.  The transition between these two phases of optimization is sudden as attested by the level sets.
+
+We would like to recommend modularity should be designed to optimize for improvements in internal density first to find the dense cores of communities and then optimize over external density to cover more of the graph.  The reasoning is that improvements in external density can be made at any time by increasing the size of communities.  However, improvements in internal density can only be made while the communities are small and closer to cliques.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/modularity_karate_sets}
+\includegraphics[width=2.8in]{Figures/modularity_cfl_sets}
+\includegraphics[width=2.8in]{Figures/modularity_relativity_sets}
+\includegraphics[width=2.8in]{Figures/modularity_astro_sets}
+\caption{Here we plot the $(I(S), E(S))$ values produced by each level of the dendogram stages in maximizing modularity with the Louvain algorithm \cite{}.}
+\label{fig_real_mod_sets}
+\end{figure}
+
+
 % New Chapter *****************
 \chapter{A New Metric: Linearity}
 
+Through our understanding of how existing metrics handle the balance between internal and external density
+
+
 \section{Single Community Detection}
+We maintain that the variables of internal and external density incorporate our full intuition of communities, metrics are just a matter of balancing between the two.  We have shown how previous metrics single communities balance the two or select one to optimize for.  We propose a linear metric that transparently balances between the two variables.
+\begin{definition}[Linearity]
+ Our metric for single communities:
+  \begin{equation}
+   \mbox{\sc Linearity} = M_L(C) = a I(C) - b E(C)
+  \end{equation}
+\end{definition}
+Many metrics incorporated the size of the community into their weighting.  Indeed, it is more significant for a large community to gain nearly the same internal density as small community.  Accordingly, there is a generalization of {\sc Linearity} that can account for any desired weighting between internal and external density, with weighting for any size of community.
+\begin{definition}[General Metric]
+ Our metric for single communities in its greatest generality:
+  \begin{equation}
+   \mbox{\sc General} = M_G(C)  = \sum\limits_{i = 0} f_i(C) I(C)^i - g_i(C) E(C)^i
+  \end{equation}
+\end{definition}
+Where $f_i$ and $g_i$ can be any function of the size of a community.
+
+Linearity behaves similarly to conductance, when conductance is in a region of the $I,E$ plane where there is a fair balance between improvements of $I$ and $E$.  Unlike conductance though, linearity does not have a critical point in the $I,E$ plane, where the balance is shifted towards only favoring improvements in $E$.  The result is that with the same initial seeds in the Karate Club and CFL, linearity follows the same path as conductance for the first few expansions and stops, rather than engulfing the network.
+
 
 \subsection{Results}
 
 \section{Multiple Community Detection}
+
+
+We now present a linear metric for sets of communities with regard to $I(S)$, $E(S)$, and $|S|$.  It follows the same intuition of creating the linear metric for a single community.  The ideal community is located at $(I(S), E(S), |S|) = (1, 0, 0)$ and accordingly the level sets are parallel planes emanating from around the ideal community.  Hence, the linearity of the metric.  How to balance between improvements in each of the parameters is set by the user.
+\begin{definition}[Linearity]
+ Our metric for a set of communities:
+  \begin{equation}
+   \mbox{\sc Linearity}(S) = a I(S) - b E(S) - c |S|,
+  \end{equation}
+where $a,b,c \geq 0$.
+\end{definition}
+Depending on the application, communities of certain characteristics may be desired.  Communities of size smaller than a certain size may be desired to be penalized or trade offs between improvements in $E(S)$ and $I(S)$ may depend on existing values.  A general form of this equation is available.
+\begin{definition}[General Metric]
+ Our metric for single communities in its greatest generality:
+  \begin{equation}
+   \mbox{\sc General} (S) = \sum\limits_{i = 0} f_i(S) I(S)^i - g_i(S) E(S)^i - h_i |S|^i
+  \end{equation}
+\end{definition}
+
+
 
 \subsection{Results}
 
