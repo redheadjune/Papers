@@ -112,27 +112,53 @@ It goes without saying, these people have been inspiring forces of nature to wor
 
 \section{History of Community Detection}
 
-Community detection has been subconsiously performed by scientists for decades.  Marine biology studied the interaction between pods of dolphins \cite{} with the idea that certain dolphins belonged to specific pods.  The study of ... finds which species are similar and searches for a common ancestors to explain why groups of species are similar \cite{}.  Blank studied the lunch time interactions between members of a karate club and found two groups emerged \cite{}.  For these cases nodes are dolphins, species, and people, edges are interactions and similarities.  And, just like that we are in the domain of network theory.  For each of the examples, the graph sizes were small and conclusions could be drawn by intuitively assuming the communities.  Once the communities were determined, larger view results could be obtained.  That pods of dolphins interact in such and such a way, even though individual dolphins may vary from the overall conclusion.  That a common ancestor to a set of species must exist, eventhough individual specie comparisons may appear more random.  That a club already had a division, even though the resultant split was surprising.
+In many applications, data can be stored in a graph where objects of interest are the nodes and interactions between the objects are the edges.  If the nodes and edges form a very distinct pattern, say a circle or disconnected sets of cliques, the graph is easy to analyze.  Of particular interest is if the graph contains a set of nodes, ie a community, whose members interact with each other in a particular way and interact with non-members of the community in a different way. If such a community is found, then two questions arise.  How are members of the community related?  How does the community interact with the rest of the graph?  For social networks, we know that groups exist \cite{JTODO} and would like to answer those two questions.  However, large social networks have thousands of nodes with complicated interactions and no simple pattern to reveal the communities.  Hence, in order to find the communities, we must develop the ability to see the forest through the trees.  This is the object of community detection.
 
-The power of knowing the communities within a network is to draw conclusions on a much larger scale.  Hence the study of communities commenses.  The goal is that any application, that can draw a network representing their trade, can be decomposed into communities.  If the decomposition can be done on the network, the human time to by hand understand all interactions and hypothosize what the communities are can be saved.  Communities found, must be such that conclusions based on aggregate interactions between communities are meaningful.  It is argueable that the kickoff to mathematically studying the detection of communities began with Girvan and Newman in \cite{girvan}.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.2in]{Figures/visually_simple}
+\caption{A simple graph of people and their friendships.  The graph is regular enough to reveal two communities.}
+\label{fig_simple}
+\end{figure}
 
-From these origins community detection began, looking for how to partition a network into communities.  Several avenues of research have been developed.  We now briefly survey the major methods developed for finding communities.
+Given a graph, there are two prominant questions community detection seeks to answer.  The first is, for the graph, what is a community?  The second is, for the graph, what are the communities?  Several approaches have been developed to answer these two questions, some with a particular application as motivation.  We outline the coupling of a few sciences and one of their preferred detection methods in table \ref{tbl_app_method}.  Before about the year $2002$, most development of community detection was done within the fields of the applications.  Since then, computer scientists have contributed a large volume of advances towards answering these two questions for applications in general.  The first goal of this thesis to try and tie together a portion of these advances into a cohesive understanding of community detection.  The second is to use our perspective to create fast and parallel algorithms.
 
-The underlying assumption of these approaches, is that communities should have a dense set of connections within themselves, and as sparse as possible set of connections leaving the community.
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|l}
+Application & Community Detection Method \\ \hline
+Parallel Computation Distribution & $k-$means clustering \cite{JTODO} \\
+Physics & Belief Propogation \cite{JTODO}\\
+Search Queries & \cite{JTODO} \\
+Sociology & \cite{JTODO} \\
+Storage of Large Matrices & Spectral Analysis \cite{JTODO} \\
+Taxonomy & Neighbor Joining \cite{JTODO} \\
+\end{tabular}
+\caption{A subset of applications and one of their preferred community detection methods.}
+\label{tbl_app_method}
+\end{table}
 
-JTODO: figure showing what is going on.  Use a toy group, like karate or dolphins or football.
 
-Notice that an intuitive grouping has a high number of {\it internal edges}, or edges between two nodes within the same community.  Additionally, a community has a low number of {\it external edges}, or edges between two nodes in different communities.
+\section{Graph Partitioning Methods}
 
-\section{Betweenness and Centrality measures}
 
-\section{Metric Based Approaches}
 
-The question was, given a partition of the network, how good is that partition?  Of course, the more distinct the partition, the more useful the found communities would be in coming to global conclusions.  To measure the quality of a partition, several metrics exist.  For each of these metrics then, finding the best partitioning is a matter of optimizing the metric.
 
-The first use of a metric was in circuit board partitioning \cite{}.  Since then modularity has become the overwhelmingly popular metric with other attempts as well.
+% New section*********************************
+\subsection{Top Down Approaches}
 
-\subsection{Conductance}
+
+\subsubsection{Betweenness and Centrality Measures}
+
+
+***********STOP***************
+
+Betweenness and centrality measures were first presented by JTODO in \cite{JTODO}
+
+To develop our intuition of betweenness, let us consider a network of roads.  Say we are driving around in city $C$.  If I want to travel between any two points in the city the density of roads allows me to take several different, even non-overlapping, routes.  Now, if we wish to travel to another city, chances one of a limited number of highways will be traveled. ...
+
+
+\subsubsection{Conductance}
 
 JTODO find a concrete paper on conductance
 
@@ -142,60 +168,77 @@ Conductance is a measure of the value of a cut within the graph.  The lower the 
 %\text{\sc Conductance}(C) = \frac{\sum\limits_{i \in C, j \notin C} e_{ij}}{\sum}
 %\end{align*}
 
+\subsection{Bottom Up Approaches}
 
-\subsection{Modularity}
+
+
+The question was, given a partition of the network, how good is that partition?  Of course, the more distinct the partition, the more useful the found communities would be in coming to global conclusions.  To measure the quality of a partition, several metrics exist.  For each of these metrics then, finding the best partitioning is a matter of optimizing the metric.
+
+The first use of a metric was in circuit board partitioning \cite{}.  Since then modularity has become the overwhelmingly popular metric with other attempts as well.
+
+
+
+
+\subsubsection{Modularity}
 
 Here is modularity.
 
-\subsection{Variations of Modularity}
-
-\subsection{Other Approaches}
+mention variationes
 
 
+\section{Overlapping Community Detection}
 
-\section{Alpha Beta Clustering}
+We call two communities overlapping, if there exists a node that is a member of both communities.  In practice these communities are not unusual.  For example, think of the community of your colleagues and the community of your family. You are a member of both communities, and while they are different communities, they are overlapping.  In fact, for most social networks, we expect there to be many overlapping communities.  Without a careful definition of a community, there can be an exponential number of communities within a network.
 
+We now present two different approaches to finding overlapping communities.
 
+\subsection{Alpha Beta Clustering}
 
-\section{Spectral Approaches}
+In previous sections, communities were the partitions of a graph.  Each node was placed in exactly one community.  So if it was optimal to place node, $n$, in community $C_1$, then node $n$ would not be placed in community $C_2$.  Alpha beta clustering makes a change to this step.  If adding node $n$ to community $C_2$ has a high value, alpha beta clustering adds node $n$ to community $C_2$, as well as $C_1$.  This simple change dramatically restructures community detection.  The new structure is a two part process:
+\begin{enumerate}
+\item Create a definition of a community that does not depend on other communities in the graph.
+\item Find each community seperately.
+\end{enumerate}
 
-\section{Approaches to Large Networks}
+We now present Mishra's et al \cite{mishra} approach following these guidelines.  Let us say the strength of a connection between a node and a community is the number of edges the node has to members of the community, denoted as $|E(n, C)|$.  See table \ref{tbl_variables} for a list of all notation. Mishra et al \cite{mishra} use this notion of strength to define a community satisfying the first guideline.  In particular, no node outside of the community is more strongly connect to the community than any of the nodes inside the community.  This an $(\alpha, \beta)$ community with a formal definition following.
+\begin{definition}[$(\alpha, \beta) - $ Community]
+For community $C$, let:
+\begin{eqnarray*}
+\alpha(C) &=& \min\limits_{n \in C} |E(n, C)|\\
+\beta(C) &=& \max\limits_{n \notin C} |E(n, C)|
+\end{eqnarray*}
+If $\alpha(C) > \beta(C)$, then $C$ is an $(\alpha, \beta)$ community.
+\end{definition}
 
+Given this definition, Mishra et al\cite{mishra} are able to find communities quickly and in parallel.  In our development of a parallel algorithm we use the same guidelines.
 
+\section {More Approaches}
 
-\section {Other Approaches}
+So far we have introduced the community detection methods that have provided inspirations to this thesis.  There are countless more methods.  We briefly outline the most prominent of those methods.
 
 \begin{itemize}
-\item Betweeness
 \item Swapping of Kernighan-Lin
 \item $k$-Clique Percolation
-\item Hierarchical
 \item Belief Propogation
+\item heirarchy methods
 \item Principle Component Analysis
+\item Spectral Analysis
 \end{itemize}
 
 
 \section {Desired Improvements}
 
-The most widely accepted community detection specific method is modularity maximization.
-
-As data gets larger and more diverse, our understanding of what a community is, has changed.  Additionally, partitions are no longer as meaningful.
-
-Paragraph on what we desire to understand about larger networks
+In the field of community detection both algorithms and data sets are increasing in complexity.  Hence, a useful theoretical result is the ability to compare and understand complex algorithms.  Additionally, a useful experimental result is the ability to compute overlapping communities in parallel on large networks.
 
 We deliver on the these results:
 \begin{itemize}
-\item The theoretical ability to compare existing community detection methods.
-\item A way to handle overlapping communities.
-\item A parallel algorithm with near perfect scalability to analyze arbitrarily large networks.
-\item An understanding of what network structure is.
+\item A framework for comparing existing community detection methods.
+\item A community definition encouraging overlapping communities.
+\item A parallel algorithm with near perfect scalability to analyze large networks.
 \end{itemize}
 
+An incredible result would be the ability to automatically analyze the communities found in a network.  We have not provided that result.  But, we do some processing of the communities found in sample networks.
 
-For another time:
-\begin{itemize}
-\item way to algorithmically understand communities, once found
-\end{itemize}
 
 \section{Notation}
 
@@ -580,6 +623,10 @@ Linearity behaves similarly to conductance, when conductance is in a region of t
 
 
 \subsection{Results}
+
+\begin{theorem}[Single Community Optimization]
+If a single metric is optimized and looses $delta_I$, it will not gain it back 
+\end{theorem}
 
 \section{Multiple Community Detection}
 
