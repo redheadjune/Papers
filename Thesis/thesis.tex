@@ -64,16 +64,11 @@
 \maketitle
 \makecopyright
 
+
 \begin{abstract}
-Networks are large and demand attention at being understood for these reasons.
 
-With the impossibility of understanding a network a node at a time and the incompleteness of data, we seek to find clumps of data that exhibit cohesion.  We call these communities.
+Graphs are used to represent various large and complex networks in scientific applications.  In order to understand the structure of these graphs, it is useful to treat a set of nodes with similar characteristics as one community and analyze the community's behavior as a whole.  Finding all such communities within the graph is the object of community detection.  In our research, we compare dozens of existing community detection methods and develop a new class of algorithms for finding communities.
 
-With community detection we hope to better our understanding of large networks.  This thesis makes advances towards understanding existing methods, introduces a greedy algorithm within current community detection and steps outside towards the creation of parallel community detection method.
-
-Your abstract goes here. Make sure it sits inside the brackets. If not,
-your biosketch page may not be roman numeral iii, as required by the
-graduate school.
 \end{abstract}
 
 \begin{biosketch}
@@ -83,9 +78,13 @@ She is now completeing her doctoral degree in Applied Mathematics at Cornell Uni
 \end{biosketch}
 
 \begin{dedication}
-Here's to you Da.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=3in]{Figures/windy}
+\caption{\it Phil Andrews 1955 - 2011}
+\end{figure}
 
-"There are more things in heaven and hell, Horatio, than are dreamt of in your philosophy." - the Bard.
+Here's to you Da.
 \end{dedication}
 
 \begin{acknowledgements}
@@ -110,18 +109,19 @@ It goes without saying, these people have been inspiring forces of nature to wor
 
 \chapter{Introduction}
 
-\section{History of Community Detection}
+\section{Community Detection}
 
-In many applications, data can be stored in a graph where objects of interest are the nodes and interactions between the objects are the edges.  If the nodes and edges form a very distinct pattern, say a circle or disconnected sets of cliques, the graph is easy to analyze.  Of particular interest is if the graph contains a set of nodes, ie a community, whose members interact with each other in a particular way and interact with non-members of the community in a different way. If such a community is found, then two questions arise.  How are members of the community related?  How does the community interact with the rest of the graph?  For social networks, we know that groups exist \cite{JTODO} and would like to answer those two questions.  However, large social networks have thousands of nodes with complicated interactions and no simple pattern to reveal the communities.  Hence, in order to find the communities, we must develop the ability to see the forest through the trees.  This is the object of community detection.
-
-\begin{figure}[!h]
+\begin{figure}[!b]
 \centering
-\includegraphics[width=2.2in]{Figures/visually_simple}
+\includegraphics[width=3in]{Figures/visually_simple}
 \caption{A simple graph of people and their friendships.  The graph is regular enough to reveal two communities.}
 \label{fig_simple}
 \end{figure}
 
-Given a graph, there are two prominant questions community detection seeks to answer.  The first is, for the graph, what is a community?  The second is, for the graph, what are the communities?  Several approaches have been developed to answer these two questions, some with a particular application as motivation.  We outline the coupling of a few sciences and one of their preferred detection methods in table \ref{tbl_app_method}.  Before about the year $2002$, most development of community detection was done within the fields of the applications.  Since then, computer scientists have contributed a large volume of advances towards answering these two questions for applications in general.  The first goal of this thesis to try and tie together a portion of these advances into a cohesive understanding of community detection.  The second is to use our perspective to create fast and parallel algorithms.
+Consider an application that studies objects and the interactions between those objects.  The application could study anything from people and their friendships, to papers and their citations; a variety of applications fall into this format.  If we let nodes represent the objects and edges represent the interactions between those objects, we can store the application's data in a graph.  While it can be possible for the application to draw conclusions by looking at every node within the graph, if the graph is large and complex, analyzing every node can be unmanageable and can produce incomprehensible results.   We simplify the graph by finding communities of nodes.  In particular, we want communities, whose members interact with each other in a particular way and interact with non-members of the community in a different way. If such a community is found, then two questions arise.  How are members of the community related?  How does the community interact with the rest of the graph?  Given answers to these questions, we can comprehend what is happening in the graph at a local level.  For social networks, we know that communities exist \cite{JTODO}.  Due to the large, complex nature of social networks, communities can be hard to find.  In order to find communities, we must develop the ability to see the forest through the trees.  We have to be able to extract the communities of nodes from the interactions of the graph.  This is the object of community detection.
+
+
+Given a graph, there are two prominant questions community detection seeks to answer.  The first, what is a community and the second, what are the communities?  Several approaches have been developed to answer these two questions, some with a particular application as motivation.  We outline the coupling of a few sciences and one of their preferred detection methods in Table \ref{tbl_app_method}. Prior to $2002$, most development of community detection was done within the fields of the applications.  Since then, computer scientists have contributed a large volume of advances towards answering these two questions for applications in general.  The first goal of this thesis to try and tie together a portion of these advances into a cohesive understanding of community detection.  The second is to use our perspective to create fast and parallel algorithms.
 
 \begin{table}[!h]
 \centering
@@ -141,57 +141,79 @@ Taxonomy & Neighbor Joining \cite{JTODO} \\
 
 \section{Graph Partitioning Methods}
 
+For many applications the object is to partition the graph into disjoint components.  We call each component a community.  There are an exponential number of possible partitions, but not every partition will provide useful information.  While much analysis of useful or unuseful information must be left up to the application, there are two characteristics that most applications want in communities.  The first is that nodes within a community be well connected.  The second is that the community is not well connected to the rest of the graph.  The definition of well connected is different for each community detection method.
 
-
+There are two genres of finding good partitions of the graph, top down approaches that recursively cut the graph and bottom up approaches that union existing partitions.
 
 % New section*********************************
 \subsection{Top Down Approaches}
 
+Top down approaches work by recursively dividing the graph, see Algorithm \ref{alg_rec_part} for their structure.  For methods in this cateogry there are two necessary components.  The first is the ability to tell if a set of nodes $C$ is a community.  The second, if a set of nodes is not a community, then the algorithm finds a way to divide the nodes but without splitting up any communities.
 
-\subsubsection{Betweenness and Centrality Measures}
+\begin{algorithm}                              % enter the algorithm environment
+\caption{{\sc Recursive Partitioning}}         % give the algorithm a caption
+\label{alg_top_down}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G=(V, E)$
+\IF{ $V$ is a community}
+\RETURN $V$
+\ELSE
+\STATE divide $V$ into $C$ and $V - C$
+\RETURN $\{\mbox{\sc Recursive Partitioning}(C),\mbox{\sc Recursive Partitioning}(V-C)\}$
+\ENDIF
+\end{algorithmic}
+\label{alg_rec_part}
+\end{algorithm}
 
-
-***********STOP***************
-
-Betweenness and centrality measures were first presented by JTODO in \cite{JTODO}
-
-To develop our intuition of betweenness, let us consider a network of roads.  Say we are driving around in city $C$.  If I want to travel between any two points in the city the density of roads allows me to take several different, even non-overlapping, routes.  Now, if we wish to travel to another city, chances one of a limited number of highways will be traveled. ...
-
-
+% new section**************
 \subsubsection{Conductance}
 
-JTODO find a concrete paper on conductance
+Conductance is a measure of a cut within the graph developed by JTODO \cite{JTODO}.  For a given cut, if conductance is low, then there are relatively few edges crossing the cut.  Inutitively, this implies that the cut does not divide a community.  If further divisions do not improve conductance, then we have found a community.
 
-Conductance is a measure of the value of a cut within the graph.  The lower the value of the cut, the more likely that one side of the cut is indeed a community \cite{}.  In particular, for a given cut between $C$ and $\bar{C}$, the conductance value of the cut is the ratio of external edges of $C$ to all edges that have an end point in $C$.  If $C$ and $\bar{C}$ are disconnected, the value of the cut is then $0$, the minimal value of conductance, the most likely senario for predicting the existance of a community $C$.
+\begin{equation}
+\mbox{\sc Conductance}(C) = \frac{\sum\limits_{u \in C, v \notin C} w(u,v)}{\sum\limits_{u \in C, v \notin C} w(u,v)  + \sum\limits_{u,v \in C} w(u, v)}
+\end{equation}
 
-%\begin{align*}
-%\text{\sc Conductance}(C) = \frac{\sum\limits_{i \in C, j \notin C} e_{ij}}{\sum}
-%\end{align*}
+While this algorithm is not in heavy use, conductance is used as a measure of whether or not other algorithms that cut the graph have split a community.
 
+% new section**************
+\subsubsection{Betweenness and Centrality Measures}
+
+Betweenness and centrality measures were first presented by Givan and Newman \cite{girvan}.  The intuition is, if an edge lies between two communities, then several shortest paths between nodes of the two communities will traverse the edge.  We remove these edges to divide the network into components.  When there are no preferential edges for shortest paths within a component, there are no more edges between communities, and the component is a community.
+
+% new section**************
 \subsection{Bottom Up Approaches}
 
+Bottom up approaches work by unioning together subsets of nodes until the subset is a community.  See Algorithm \ref{alg_rec_union} for their structure.  For algorithms in this category there are two components.  The first is the determination of which subsets to union.  The second is the determination of when a set of nodes is a community.  To accomplish these, most bottom up approaches use a metric over the set of subsets.  If no two subsets can be unioned to increase the metric then, every subset is a community.
 
+\begin{algorithm}                              % enter the algorithm environment
+\caption{{\sc Recursive Unioning}}         % give the algorithm a caption
+\label{alg_bottom_up}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $S = \{C_1, C_2, \dots \}$
+\IF{There exists $C_i$ and $C_j$, such that $C_i \cup C_j$ is a community}
+\RETURN {\sc Recursive Unioning}$(\{S - C_i - C_j\} \cup \{C_i \cup C_j\})$
+\ELSE
+\RETURN $S$
+\ENDIF
+\end{algorithmic}
+\label{alg_rec_union}
+\end{algorithm}
 
-The question was, given a partition of the network, how good is that partition?  Of course, the more distinct the partition, the more useful the found communities would be in coming to global conclusions.  To measure the quality of a partition, several metrics exist.  For each of these metrics then, finding the best partitioning is a matter of optimizing the metric.
-
-The first use of a metric was in circuit board partitioning \cite{}.  Since then modularity has become the overwhelmingly popular metric with other attempts as well.
-
-
-
-
+% new section**************
 \subsubsection{Modularity}
 
-Here is modularity.
+The overwhelmingly popular metric in this category is modularity.  Modularity was first presented by Newman \cite{newman}.  The metric measures the distance between a provided set of communities and a randomly generated set of communities.  Maximizing modularity finds the least random set of communities.
 
-mention variationes
+Fast algorithms have been developed for maximizing modularity.  In this paper we use the Louvain Algorithm developed by Blondel et. al\cite{blondel}.  The same fast algorithm can be used for the similar metric, modularity ratio \cite{JTODO}.
 
-
+% new section**************
 \section{Overlapping Community Detection}
 
-We call two communities overlapping, if there exists a node that is a member of both communities.  In practice these communities are not unusual.  For example, think of the community of your colleagues and the community of your family. You are a member of both communities, and while they are different communities, they are overlapping.  In fact, for most social networks, we expect there to be many overlapping communities.  Without a careful definition of a community, there can be an exponential number of communities within a network.
+We call two communities overlapping, if there exists a node that is a member of both communities.  In practice, these communities are not unusual.  For example, think of the community of your colleagues and the community of your family. You are a member of both communities, and while they are different communities, they are overlapping.  In fact, for most social networks, we expect there to be many overlapping communities.
 
-We now present two different approaches to finding overlapping communities.
 
+% new section**************
 \subsection{Alpha Beta Clustering}
 
 In previous sections, communities were the partitions of a graph.  Each node was placed in exactly one community.  So if it was optimal to place node, $n$, in community $C_1$, then node $n$ would not be placed in community $C_2$.  Alpha beta clustering makes a change to this step.  If adding node $n$ to community $C_2$ has a high value, alpha beta clustering adds node $n$ to community $C_2$, as well as $C_1$.  This simple change dramatically restructures community detection.  The new structure is a two part process:
@@ -200,7 +222,7 @@ In previous sections, communities were the partitions of a graph.  Each node was
 \item Find each community seperately.
 \end{enumerate}
 
-We now present Mishra's et al \cite{mishra} approach following these guidelines.  Let us say the strength of a connection between a node and a community is the number of edges the node has to members of the community, denoted as $|E(n, C)|$.  See table \ref{tbl_variables} for a list of all notation. Mishra et al \cite{mishra} use this notion of strength to define a community satisfying the first guideline.  In particular, no node outside of the community is more strongly connect to the community than any of the nodes inside the community.  This an $(\alpha, \beta)$ community with a formal definition following.
+We now present Mishra's et al \cite{mishra} approach following these guidelines.  Let us say the strength of a connection between a node and a community is the number of edges the node has to members of the community, denoted as $|E(n, C)|$.  See Table \ref{table_variables} for a list of all notation. Mishra et al \cite{mishra} use this notion of strength to define a community satisfying the first guideline.  In particular, no node outside of the community is more strongly connect to the community than any of the nodes inside the community.  This an $(\alpha, \beta)$ community with a formal definition following.
 \begin{definition}[$(\alpha, \beta) - $ Community]
 For community $C$, let:
 \begin{eqnarray*}
@@ -214,15 +236,14 @@ Given this definition, Mishra et al\cite{mishra} are able to find communities qu
 
 \section {More Approaches}
 
-So far we have introduced the community detection methods that have provided inspirations to this thesis.  There are countless more methods.  We briefly outline the most prominent of those methods.
+So far, we have introduced the community detection methods that have provided inspirations for this thesis.  There are countless more methods.  We briefly outline the most prominent of those methods.
 
 \begin{itemize}
-\item Swapping of Kernighan-Lin
+\item Kernighan-Lin Algorithm
 \item $k$-Clique Percolation
 \item Belief Propogation
-\item heirarchy methods
+\item Heirarchy methods
 \item Principle Component Analysis
-\item Spectral Analysis
 \end{itemize}
 
 
@@ -237,14 +258,24 @@ We deliver on the these results:
 \item A parallel algorithm with near perfect scalability to analyze large networks.
 \end{itemize}
 
-An incredible result would be the ability to automatically analyze the communities found in a network.  We have not provided that result.  But, we do some processing of the communities found in sample networks.
-
 
 \section{Notation}
 
-This thesis will use consistent notation and assumptions.  Here, we provide a reference for all variables in table \ref{table_variables} and assumptions.  There exist several similies in community detection, for clarity we mention them now.  A network is also a graph.  A node is also a vertex, person, paper, or any type of object within the network.  An edge is also an interaction between two people, a citation between two papers, or a connection between any two objects within the network.
+We provide a reference for all variables in Table \ref{table_variables}.  There exist several similies in community detection, for clarity we mention them now.  A network is also a graph.  A node is also a vertex, person, paper, or any type of object within the network.  An edge is also an interaction between two people, a citation between two papers, or a connection between any two objects within the network.
 
-\begin{table}[ht]
+The assumptions we make are:
+\begin{itemize}
+\item {\it Self-Loops.}  We presume there are no self loops in the networks.  As a node will always be in the same community as itself, self-loops provide redundant information.  Accordingly, $w(u, u) = 0$, for all $u \in V$.
+\item {\it Edges} We presume that all edges exist and are weighted between $0$ and $1$.  The edge weight function is $w : VxV \rightarrow \mathbb{R}_{[0, 1]}$  Unweighted graphs can easily be adapted into this notation.
+\end{itemize}
+\begin{definition}[Internal Edges]
+Internal edges are edges between members of the same community $C$.
+\end{definition}
+\begin{definition}[External Edges]
+External edges are edges between a member of community $C$ and a non-member.
+\end{definition}
+
+\begin{table}
 \caption{Notation}
 \begin{center}
 \begin{tabular}{|c|c|c|} \hline
@@ -262,35 +293,20 @@ $S$ & Set of Communities & $S = \{C_1,C_2,\dots,C_n\}$\\ \hline
 \label{table_variables}
 \end{table}
 
-\begin{table}[ht]
+\begin{table}
 \caption{Introduced Functions}
 \begin{center}
 \begin{tabular}{|c|c|} \hline
 Function & Description \\ \hline
-$I(C)$ & Internal Density of a single Community, $C$, definition \ref{def_int_density} \\ \hline
-$E(C)$ & External Density of a single Community, $C$, definition  \ref{def_ext_density} \\ \hline
-$I(S)$ & Internal Density of a set of Communities, $S$, definition \ref{def_int_set} \\ \hline
-$E(S)$ & External Density of a set of Communities, $S$, definition \ref{def_ext_set} \\ \hline
-{\sc Conciseness}$(S)$ & Conciseness of a set of Communities, $S$, definition \ref{def_conciseness} \\ \hline
+$I(C)$ & Internal Density of a single Community, $C$, Definition \ref{def_int_density} \\ \hline
+$E(C)$ & External Density of a single Community, $C$, Definition  \ref{def_ext_density} \\ \hline
+$I(S)$ & Internal Density of a set of Communities, $S$, Definition \ref{def_int_set} \\ \hline
+$E(S)$ & External Density of a set of Communities, $S$, Definition \ref{def_ext_set} \\ \hline
+{\sc Conciseness}$(S)$ & Conciseness of a set of Communities, $S$, Definition \ref{def_conciseness} \\ \hline
 \end{tabular}
 \end{center}
 \label{table_new_functions}
 \end{table}
-
-The assumptions we make are:
-\begin{itemize}
-\item {\it Self-Loops.}  We presume there are no self loops in the networks.  As a node will always be in the same community as itself, self-loops provide redundant information.  Accordingly, $w(u, u) = 0$, for all $u \in V$.
-\item {\it Edges} We presume that all edges exist and are weighted between $0$ and $1$.  The edge weight function is $w : VxV \rightarrow \mathbb{R}_{[0, 1]}$  Unweighted graphs can easily be adapted into this notation.
-\end{itemize}
-
-\begin{definition}[Internal Edges]
-Internal edges are edges between members of the same community $C$.
-\end{definition}
-
-\begin{definition}[External Edges]
-External edges are edges between a member of community $C$ and a non-member.
-\end{definition}
-
 
 % New Chapter
 \chapter{A Framework for the Comparing Metric Based Detection Methods}
@@ -431,10 +447,10 @@ For each metric we start the algorithm with a simple subset of two connected nod
 % subsubsection*************************************
 \subsubsection{Expansion, Edges Cut, and Cut Ratio}
 
-Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.  The metrics in this category are {\sc Expansion}, {\sc Edges Cut}, and {\sc Cut Ratio}.  We can visualize how the plane is viewed by these metrics with level sets.  For all points of the $I,E$ plane, we evaluate the metric and graph the contour curves, or level sets\cite{}.  In level set figures, any two points in the $I,E$ plane connected by a curve have the same metric value. In our greedy algorithm\ref{alg_greedy_single}, if the algorithm can add a node to the community that crosses a level set to a higher metric valuation the algorithm will add that node.  Visually, the more level sets crossed by a change to the community, corresponds to a higher change in the metric.  Traditionally, level sets are used in this manner to show gradient descent to find a local minimum.  The optimum that a gradient descent will find, can be found by traveling perpendicular to the level sets.  While we find in practice this is a good analogy to understand the behavior of optimizing these metrics,  we can not quite finish the analogy as the metrics are discrete.  Hence, we can not quite use level sets to compute communities.  But, we can use level sets as a visual categorization of the $(I, E)$ plane according to a metric.
+Let us look at how $E(C)$ based metrics categorize the $(I, E)$ plane.  The metrics in this category are {\sc Expansion}, {\sc Edges Cut}, and {\sc Cut Ratio}.  We can visualize how the plane is viewed by these metrics with level sets.  For all points of the $I,E$ plane, we evaluate the metric and graph the contour curves, or level sets\cite{}.  In level set figures, any two points in the $I,E$ plane connected by a curve have the same metric value. In our Greedy Algorithm \ref{alg_greedy_single}, if the algorithm can add a node to the community that crosses a level set to a higher metric valuation the algorithm will add that node.  Visually, the more level sets crossed by a change to the community, corresponds to a higher change in the metric.  Traditionally, level sets are used in this manner to show gradient descent to find a local minimum.  The optimum that a gradient descent will find, can be found by traveling perpendicular to the level sets.  While we find in practice this is a good analogy to understand the behavior of optimizing these metrics,  we can not quite finish the analogy as the metrics are discrete.  Hence, we can not quite use level sets to compute communities.  But, we can use level sets as a visual categorization of the $(I, E)$ plane according to a metric.
 
 
-The level sets of cut ratio, edge cuts, and expansion, figure \ref{fig_corner_sets}, across the $I,E$ plane reveal the $I,E$ values of the communities that optimize these metrics.  While, the three metrics have different definitions, their level sets are identical only with different values.  The level sets are horizontal lines, whose metric's are optimized by improvements in $E(C)$, irregardless of changes to $I(C)$.  Accordingly, the node that has the greatest improvement in $E(C)$ is the same for all three metrics, and each metric results in the same path through the $I,E$ plane.
+The level sets of cut ratio, edge cuts, and expansion, fFgure \ref{fig_corner_sets}, across the $I,E$ plane reveal the $I,E$ values of the communities that optimize these metrics.  While, the three metrics have different definitions, their level sets are identical only with different values.  The level sets are horizontal lines, whose metric's are optimized by improvements in $E(C)$, irregardless of changes to $I(C)$.  Accordingly, the node that has the greatest improvement in $E(C)$ is the same for all three metrics, and each metric results in the same path through the $I,E$ plane.
 
 
 Though it does not make a difference in our examples, the difference between these metrics is their treatment of $k = \frac{|C|}{|V|}$.  Cut ratio is unresponsive to changes in the size of the community, while expansion linearly discounts against larger communities.  Edges cut heavily favors very large or very small communities.  See {\it Fig. \ref{fig_k_e_based}}
@@ -453,7 +469,7 @@ Though it does not make a difference in our examples, the difference between the
 \includegraphics[width=2.8in]{Figures/cee_cfl}
 \includegraphics[width=2.8in]{Figures/cee_relativity}
 \includegraphics[width=2.8in]{Figures/cee_astro}
-\caption{External Density based metrics({\sc Cut Ratio}, {\sc Edges Cut}, and {\sc Expansion}) optimized in different networks.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm \ref{alg_greedy_single}}
+\caption{External Density based metrics({\sc Cut Ratio}, {\sc Edges Cut}, and {\sc Expansion}) optimized in different networks.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm \ref{alg_greedy_single}}
 \label{fig_real_e_based}
 \end{figure}
 
@@ -473,7 +489,7 @@ On the polar extreme of cut ratio, edge cuts, and expansion, is internal density
 \centering
 \includegraphics[width=2.8in]{Figures/volume_karate}
 \includegraphics[width=2.8in]{Figures/volume_cfl}
-\caption{Tracing of communities found by volume through the IE plane.  The paths are much longer, extending until the community includes the entire graph.  We cut the paths short once they progress towards including the entire community.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using greedy algorithm \ref{alg_greedy_single}.}
+\caption{Tracing of communities found by volume through the IE plane.  The paths are much longer, extending until the community includes the entire graph.  We cut the paths short once they progress towards including the entire community.  The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm \ref{alg_greedy_single}.}
 \label{fig_real_volume}
 \end{figure}
 
