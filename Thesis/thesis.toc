@@ -19,47 +19,47 @@
 \contentsline {section}{\numberline {1.6}Notation}{9}
 \contentsline {chapter}{\numberline {2}A Framework for the Comparing Metric Based Detection Methods}{11}
 \contentsline {section}{\numberline {2.1}Previous Comparisons}{11}
-\contentsline {section}{\numberline {2.2}Individual Community Based Metrics}{11}
-\contentsline {subsection}{\numberline {2.2.1}Internal Density and External Sparsity}{12}
-\contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{14}
-\contentsline {subsubsection}{Greedy Algorithm}{17}
-\contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{18}
-\contentsline {subsubsection}{Internal Density as previously defined}{19}
-\contentsline {subsubsection}{Volume}{20}
-\contentsline {subsubsection}{Conductance}{22}
+\contentsline {section}{\numberline {2.2}Individual Community Based Metrics}{12}
+\contentsline {subsection}{\numberline {2.2.1}Internal Density and External Sparsity}{13}
+\contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{15}
+\contentsline {subsubsection}{Greedy Algorithm}{18}
+\contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{19}
+\contentsline {subsubsection}{Internal Density as previously defined}{20}
+\contentsline {subsubsection}{Volume}{22}
+\contentsline {subsubsection}{Conductance}{23}
 \contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{25}
-\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{25}
-\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{27}
-\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{31}
-\contentsline {section}{\numberline {3.1}Single Community Detection}{31}
-\contentsline {subsection}{\numberline {3.1.1}Results}{32}
-\contentsline {section}{\numberline {3.2}Multiple Community Detection}{32}
-\contentsline {subsection}{\numberline {3.2.1}Results}{33}
-\contentsline {chapter}{\numberline {4}Parallel Community Detection}{34}
-\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{34}
-\contentsline {section}{\numberline {4.2}Algorithm}{34}
-\contentsline {subsection}{\numberline {4.2.1}Seeds}{34}
-\contentsline {subsection}{\numberline {4.2.2}Expansion}{34}
-\contentsline {section}{\numberline {4.3}Probability of Correctness}{34}
-\contentsline {section}{\numberline {4.4}Performance}{34}
-\contentsline {chapter}{\numberline {5}Case Studies of Networks}{35}
-\contentsline {section}{\numberline {5.1}Amazon Product Network}{36}
-\contentsline {section}{\numberline {5.2}Collaboration Networks}{36}
-\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{36}
-\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{36}
-\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{36}
-\contentsline {subsection}{\numberline {5.2.4}General Relativity}{36}
-\contentsline {section}{\numberline {5.3}Enron Email Network}{36}
-\contentsline {section}{\numberline {5.4}Epinions Social Network}{36}
-\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{36}
-\contentsline {section}{\numberline {5.6}Physics Citation Network}{36}
-\contentsline {section}{\numberline {5.7}Web Graphs}{36}
-\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{36}
-\contentsline {subsection}{\numberline {5.7.2}Google}{36}
-\contentsline {section}{\numberline {5.8}Wiki Network}{36}
-\contentsline {subsection}{\numberline {5.8.1}Communication Network}{36}
-\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{36}
-\contentsline {chapter}{\numberline {6}Evolution of Communities}{37}
-\contentsline {chapter}{\numberline {7}Conclusions}{38}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{39}
-\contentsline {chapter}{Bibliography}{40}
+\contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{26}
+\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{28}
+\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{32}
+\contentsline {section}{\numberline {3.1}Single Community Detection}{32}
+\contentsline {subsection}{\numberline {3.1.1}Results}{33}
+\contentsline {section}{\numberline {3.2}Multiple Community Detection}{33}
+\contentsline {subsection}{\numberline {3.2.1}Results}{34}
+\contentsline {chapter}{\numberline {4}Parallel Community Detection}{35}
+\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{35}
+\contentsline {section}{\numberline {4.2}Algorithm}{35}
+\contentsline {subsection}{\numberline {4.2.1}Seeds}{35}
+\contentsline {subsection}{\numberline {4.2.2}Expansion}{35}
+\contentsline {section}{\numberline {4.3}Probability of Correctness}{35}
+\contentsline {section}{\numberline {4.4}Performance}{35}
+\contentsline {chapter}{\numberline {5}Case Studies of Networks}{36}
+\contentsline {section}{\numberline {5.1}Amazon Product Network}{37}
+\contentsline {section}{\numberline {5.2}Collaboration Networks}{37}
+\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{37}
+\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{37}
+\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{37}
+\contentsline {subsection}{\numberline {5.2.4}General Relativity}{37}
+\contentsline {section}{\numberline {5.3}Enron Email Network}{37}
+\contentsline {section}{\numberline {5.4}Epinions Social Network}{37}
+\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{37}
+\contentsline {section}{\numberline {5.6}Physics Citation Network}{37}
+\contentsline {section}{\numberline {5.7}Web Graphs}{37}
+\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{37}
+\contentsline {subsection}{\numberline {5.7.2}Google}{37}
+\contentsline {section}{\numberline {5.8}Wiki Network}{37}
+\contentsline {subsection}{\numberline {5.8.1}Communication Network}{37}
+\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{37}
+\contentsline {chapter}{\numberline {6}Evolution of Communities}{38}
+\contentsline {chapter}{\numberline {7}Conclusions}{39}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{40}
+\contentsline {chapter}{Bibliography}{41}
