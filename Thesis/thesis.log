@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  13 APR 2012 20:11
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  15 APR 2012 14:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -603,36 +603,36 @@ LaTeX Font Info:    Try loading font information for U+bbold on input line 271.
 [9] [10]
 Chapter 2.
 
-LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 322.
+LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 324.
 
 
-LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 322.
+LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 324.
 
 [11
 
 ]
 
-LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 329.
+LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 331.
 
 [12] [13] [14]
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 379.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 381.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 383.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 385.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 387.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 389.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 390.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 392.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 394.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 396.
 
 [15]
 
-LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 398.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 400.
 
 File: Figures/e_based_ls.pdf Graphic file (type QTm)
 <use  "Figures/e_based_ls.pdf" >
@@ -643,87 +643,62 @@ File: Figures/volume_ls.pdf Graphic file (type QTm)
 <use  "Figures/volume_ls.pdf" >
 File: Figures/cond_ls.pdf Graphic file (type QTm)
  <use  "Figures/cond_ls.pdf" >
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 409--414
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 411--416
 [][] []
  []
 
 
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 409--414
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 411--416
 [] []
  []
 
-[16] [17]
-Missing character: There is no ’ in font pplr7t!
- [18] [19]
+[16] [17] [18] [19]
+File: Figures/cee_karate.pdf Graphic file (type QTm)
+ <use  "Figures/cee_karate.pdf" >
+File: Figures/cee_cfl.pdf Graphic file (type QTm)
+
+<use  "Figures/cee_cfl.pdf" >
+File: Figures/cee_relativity.pdf Graphic file (type QTm)
+ <use  "Figures/cee_relativity.pdf" >
+File: Figures/cee_astro.pdf Graphic file (type QTm)
+
+<use  "Figures/cee_astro.pdf" > [20]
 File: Figures/k_influence_e_based.pdf Graphic file (type QTm)
  <use  "Figures/k_influence_e_based.pdf" >
-File: Figures/cee_karate.pdf Graphic file (type QTm)
-
-<use  "Figures/cee_karate.pdf" >
-File: Figures/cee_cfl.pdf Graphic file (type QTm)
- <use  "Figures/cee_cfl.pdf" >
-File: Figures/cee_relativity.pdf Graphic file (type QTm)
-
-<use  "Figures/cee_relativity.pdf" >
-File: Figures/cee_astro.pdf Graphic file (type QTm)
- <use  "Figures/cee_astro.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20]
+[21]
 File: Figures/volume_karate.pdf Graphic file (type QTm)
  <use  "Figures/volume_karate.pdf" >
 File: Figures/volume_cfl.pdf Graphic file (type QTm)
  <use  "Figures/volume_cfl.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[21]
 File: Figures/volume_k.pdf Graphic file (type QTm)
- <use  "Figures/volume_k.pdf" >
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22]
-File: Figures/k_influence_conductance.pdf Graphic file (type QTm)
- <use  "Figures/k_influence_conductance.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig_conductance_karate' on page 23 undefined on input
- line 527.
-
-[23]
+<use  "Figures/volume_k.pdf" > [22] [23]
 File: Figures/conductance_karate.pdf Graphic file (type QTm)
- <use  "Figures/conductance_karate.pdf" >
-File: Figures/conductance_cfl.pdf Graphic file (type QTm)
 
-<use  "Figures/conductance_cfl.pdf" >
+<use  "Figures/conductance_karate.pdf" >
+File: Figures/conductance_cfl.pdf Graphic file (type QTm)
+ <use  "Figures/conductance_cfl.pdf" >
 File: Figures/conductance_relativity.pdf Graphic file (type QTm)
 
 <use  "Figures/conductance_relativity.pdf" >
 File: Figures/conductance_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/conductance_astro.pdf" >
+<use  "Figures/conductance_astro.pdf" > [24]
+File: Figures/k_influence_conductance.pdf Graphic file (type QTm)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[24] [25] [26] [27]
+<use  "Figures/k_influence_conductance.pdf" > [25] [26] [27]
 File: Figures/pathological_graphs.pdf Graphic file (type QTm)
- <use  "Figures/pathological_graphs.pdf" >
-Overfull \hbox (14.45378pt too wide) in paragraph at lines 592--593
+
+<use  "Figures/pathological_graphs.pdf" >
+Overfull \hbox (14.45378pt too wide) in paragraph at lines 594--595
 [][]
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `modularity' on page 28 undefined on input line 603.
 
 
-LaTeX Warning: Citation `modularity' on page 28 undefined on input line 601.
-
-
-LaTeX Warning: Citation `louvain' on page 28 undefined on input line 601.
+LaTeX Warning: Citation `louvain' on page 28 undefined on input line 603.
 
 [28] [29]
 File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
@@ -736,23 +711,19 @@ File: Figures/modularity_relativity_sets.pdf Graphic file (type QTm)
 <use  "Figures/modularity_relativity_sets.pdf" >
 File: Figures/modularity_astro_sets.pdf Graphic file (type QTm)
 
-<use  "Figures/modularity_astro_sets.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[30] [31]
+<use  "Figures/modularity_astro_sets.pdf" > [30]
 Chapter 3.
-[32
+[31
 
-] [33] [34]
+] [32] [33]
 Chapter 4.
-[35
+[34
 
 ]
 Chapter 5.
-[36
+[35
 
-]
+] [36]
 Overfull \vbox (270.94316pt too high) has occurred while \output is active []
 
 
@@ -780,11 +751,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  5935 strings out of 494150
- 84938 string characters out of 3152950
+ 84927 string characters out of 3152950
  208720 words of memory out of 3000000
  9030 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 38i,10n,51p,1512b,420s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,51p,1820b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on thesis.pdf (53 pages).

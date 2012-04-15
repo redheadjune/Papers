@@ -24,25 +24,25 @@
 \contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{15}
 \contentsline {subsubsection}{Greedy Algorithm}{18}
 \contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{19}
-\contentsline {subsubsection}{Internal Density as previously defined}{20}
+\contentsline {subsubsection}{Internal Density as Previously Defined}{21}
 \contentsline {subsubsection}{Volume}{22}
 \contentsline {subsubsection}{Conductance}{23}
 \contentsline {section}{\numberline {2.3}Set of Communities Based Metrics}{25}
 \contentsline {subsection}{\numberline {2.3.1}Internal Density, External Density, and Conciseness}{26}
 \contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{28}
-\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{32}
-\contentsline {section}{\numberline {3.1}Single Community Detection}{32}
-\contentsline {subsection}{\numberline {3.1.1}Results}{33}
-\contentsline {section}{\numberline {3.2}Multiple Community Detection}{33}
-\contentsline {subsection}{\numberline {3.2.1}Results}{34}
-\contentsline {chapter}{\numberline {4}Parallel Community Detection}{35}
-\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{35}
-\contentsline {section}{\numberline {4.2}Algorithm}{35}
-\contentsline {subsection}{\numberline {4.2.1}Seeds}{35}
-\contentsline {subsection}{\numberline {4.2.2}Expansion}{35}
-\contentsline {section}{\numberline {4.3}Probability of Correctness}{35}
-\contentsline {section}{\numberline {4.4}Performance}{35}
-\contentsline {chapter}{\numberline {5}Case Studies of Networks}{36}
+\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{31}
+\contentsline {section}{\numberline {3.1}Single Community Detection}{31}
+\contentsline {subsection}{\numberline {3.1.1}Results}{32}
+\contentsline {section}{\numberline {3.2}Multiple Community Detection}{32}
+\contentsline {subsection}{\numberline {3.2.1}Results}{33}
+\contentsline {chapter}{\numberline {4}Parallel Community Detection}{34}
+\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{34}
+\contentsline {section}{\numberline {4.2}Algorithm}{34}
+\contentsline {subsection}{\numberline {4.2.1}Seeds}{34}
+\contentsline {subsection}{\numberline {4.2.2}Expansion}{34}
+\contentsline {section}{\numberline {4.3}Probability of Correctness}{34}
+\contentsline {section}{\numberline {4.4}Performance}{34}
+\contentsline {chapter}{\numberline {5}Case Studies of Networks}{35}
 \contentsline {section}{\numberline {5.1}Amazon Product Network}{37}
 \contentsline {section}{\numberline {5.2}Collaboration Networks}{37}
 \contentsline {subsection}{\numberline {5.2.1}Astrophysics}{37}
