@@ -20,7 +20,7 @@
 \contentsline {chapter}{\numberline {2}A Framework for the Comparing Metric Based Detection Methods}{11}
 \contentsline {section}{\numberline {2.1}Previous Comparisons}{11}
 \contentsline {section}{\numberline {2.2}Individual Community Based Metrics}{12}
-\contentsline {subsection}{\numberline {2.2.1}Internal Density and External Sparsity}{13}
+\contentsline {subsection}{\numberline {2.2.1}Internal and External Density}{13}
 \contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{15}
 \contentsline {subsubsection}{Greedy Algorithm}{18}
 \contentsline {subsubsection}{Expansion, Edges Cut, and Cut Ratio}{19}

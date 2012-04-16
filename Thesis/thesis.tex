@@ -321,7 +321,7 @@ The networks used for comparison are described in depth in Chapter \ref{ch:datas
 % New Section*****************
 \section{Previous Comparisons}
 
-Communities are defined by two characteristics, members of the community interact with each other in a particular way and interact with non-members of the community in a different way. The first characteristic is typically defined as community members interact frequently, ie the community has a high internal density see Definition \ref{JTODO}.  The second, is defined as community members must interact infrequently with non-community members, ie the community has a low external density see Definition \ref{JTODO}.  Detection methods vary in their formulation of density and their prioritization of finding communities with better internal density verse external density.
+Communities are defined by two characteristics, members of the community interact with each other in a particular way and interact with non-members of the community in a different way. The first characteristic is typically defined as community members interact frequently, ie the community has a high internal density see Definition \ref{def:int_density_single}.  The second, is defined as community members must interact infrequently with non-community members, ie the community has a low external density see Definition \ref{def:ext_density_single}.  Detection methods vary in their formulation of density and their prioritization of finding communities with better internal density verse external density.
 
 All known comparisons have been experimental.  The experiments are run by first a selecting set of networks.  Then, each detection method finds the communities within each network.  Finally, using a set of metrics the communities found by each method are compared.  Lancichinetti and Fortunato \cite{lanc:2009} compared three popular partition algorithms with generated graphs and used normalized mutual information as the comparison metric.  Their results conclude that partition algorithms are fast and work well for non-overlapping communities.  Leskovec et. al \cite{leskovec} conducted a broader study.  They used $8$ classes of algorithms over $40$ networks and compared the results with a series of metrics covered in this chapter.
 
@@ -337,11 +337,12 @@ With knowledge of how a metric evaluates the two dimensional space, we can descr
 We also show that the use of these metrics to evaluate communities, hides revealing information about the communities.  We then proceed to evaluate algorithms in the entire two dimensional space without the use of a metric.
 
 % New subsection********************************
-\subsection{Internal Density and External Sparsity}
+\subsection{Internal and External Density}
 
 It is accepted that the most distinct community is a clique, disconnected from the rest of the graph.  There are two characteristics of this ideal community.  The first is that it has high connectivity between the nodes of the community.  We deem this property, {\it internal density}.  The second characteristic is that the community has low connectivity to the rest of the graph.  We deem this property {\it external density}.  Formal definitions follow.
 
 \begin{definition}[Internal Density]
+\label{def:int_density_single}
 Internal density is the number of edges that exist between members of the community, {\it internal edges}, compared to the number of all edges that could exist within the community.  Hence, $I(C) : C \rightarrow \mathbb{R}_{[0, 1]}$, where
 \begin{equation}
  I(C) =\frac{\sum_{u \in C} \sum_{v \in C} w(u,v)}{|C|(|C| - 1)} .
@@ -351,7 +352,8 @@ Internal density is the number of edges that exist between members of the commun
 
 For a community $C$ that has no edges between its members, the {\it internal density} will be minimized with, $I(C) = 0$.  For a community $C$ that is a clique, {\it internal density} will be maximized with $I(C) = 1$.  The closer a community, $C$ is to an {\it internal density} value of $1$, the close it is to being a clique.  If the graph is indeed a weighted graph, where $w$ has values between $0$ and $1$, the same evaluation applies; {\it internal density} reflects how close a community is to being a maximally weighted clique.
 
-\begin{definition}[External Sparsity]
+\begin{definition}[External Density]
+\label{def:ext_density_single}
 External sparsity is the number of edges that exist between a member of the community and a non-member of the community, {\it external edges}, compared to all possible edges that could exist leaving the community:
 \begin{equation}
  E(C) = \frac{\sum_{u \in C, v \notin C} w(u,v)}{|C|(|V| - |C|)}.
@@ -404,16 +406,14 @@ Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now anal
 \end{itemize}
  With this parameterization of the metrics, we can already infer.  All metrics, besides {\sc Volume} and {\sc Conductance} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While it is possible to find all disconnected components in linear time, it also provides no information about reasonable datasets.
 
-(JTODO important paragraph to get right)
-For the metrics that have been parameterized, we can use level sets.  Level sets are a way to visually categorize a space.  Let us pick the metric conductance.  An optimal value of conductance is $0$.  We can find all points of $(I(C), E(C))$ (without knowing $C$) that evaluate to {\sc Conductance}$(C) = 0$.  The points form a line in the $(I, E)$ space.  Now we find all the points of $(I(C), E(C))$ that have a conductance value of {\sc Conductance}$(C) = \delta$.  These points will also form a line in the $(I, E)$ space.  Based off of the continuity of conductance, any community, $C$, that evaluates to an $(I, E)$ point that lies between these two lines must have a conductance value of {\sc Conductance}$(C) \in (0, \delta)$.  In this way we can visually categorize the space.
+For the metrics that can be parameterized in terms of $I(C)$ and $E(C)$, we can use level sets.  Level sets are a way to visually categorize a space.  Let us pick the metric conductance.  An optimal value of conductance is $0$.  We can find all points of $(I(C), E(C))$ (without knowing $C$) that evaluate to {\sc Conductance}$(C) = 0$.  The points form a line in the $(I, E)$ space.  Now we find all the points of $(I(C), E(C))$ that have a conductance value of {\sc Conductance}$(C) = \delta$.  These points will also form a line in the $(I, E)$ space.  Because of the continuity of conductance, any community, $C$, that evaluates to an $(I, E)$ point that lies between these two lines must have a conductance value of {\sc Conductance}$(C) \in (0, \delta)$.  In this way we can visually categorize the space.
 
 \begin{figure}
 \includegraphics[width=3in]{Figures/e_based_ls}
 \includegraphics[width=3in]{Figures/prev_int_ls}
 \includegraphics[width=3in]{Figures/volume_ls}
 \includegraphics[width=3in]{Figures/cond_ls}
-\caption{Level Sets in the $(I, E)$ plane for different metrics of a single community.  There are four ways the $(I, E)$ space is categorized.
-JTODO get conductance with E from 0 to 1}
+\caption{Level Sets in the $(I, E)$ plane for different metrics of a single community.  There are four ways the $(I, E)$ space is categorized.}
 \label{fig_single_ls}
 \end{figure}
 
@@ -506,7 +506,7 @@ A metric that takes both internal and external density into account is volume.  
 \centering
 \includegraphics[width=2.8in]{Figures/volume_karate}
 \includegraphics[width=2.8in]{Figures/volume_cfl}
-\caption{Tracing of communities found by volume through the IE plane for hte first JTODO(30) steps. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm \ref{alg_greedy_single}.}
+\caption{Tracing of communities found by volume through the IE plane for the first 100 steps. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph.  The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community.  The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm \ref{alg_greedy_single}.}
 \label{fig_real_volume}
 \end{figure}
 
@@ -592,26 +592,30 @@ All three parameters are necessary to ensure a complete description of a set of 
 
 \begin{figure}[!h]
 \includegraphics[width=6in]{Figures/pathological_graphs}
-\caption{The communities that optimize $2$ out of $3$ parameters.  Nodes are in red, lines are edges, and communities are blue ellipses.  The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$.  The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at $I(S) = \frac{1}{2}$.  The right configuration optimizes $I(S) = 1$ and nearly conciseness at $|S| = 2$, but does not optimize external density at $E(S) = \frac{1}{3}$ JTODO: use 1 community of 1 node}
+\caption{The communities that optimize $2$ out of $3$ parameters.  Nodes are in red, lines are edges, and communities are blue ellipses.  The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$.  The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at $I(S) = \frac{1}{2}$.  The right configuration optimizes $I(S) = 1$ and conciseness at $|S| = 1$, but does not optimize external density at $E(S) = 1$}
 \label{fig_corner_sets}
 \end{figure}
 
 % New subsection********************
 \subsection{Study of Relevant Metrics}
 
+Modularity is the most popular of these metrics.  It compares the number of internal edges found, to the number of expected edges in a random graph.  Modularity was developed by Newman in \cite{newman} and has found wide spread use due to the fast algorithms for maximizing modularity.  In particular, the use of dendograms in the Louvain Algorithm \cite{blondel} runs in minutes for large networks.
 
-Modularity is a partitioning of the network, and each partition is deemed a community.  For each module its modularity is the difference of the existing internal edges and expected number of internal edges, had the graph been random, with the same distribution of node degrees.  The total modularity is then the sum of the modularity of each partition.  Modularity was developed by [] and has found wide spread use due to the fast algorithms for maximizing modularity \cite{modularity}.  In particular, the use of dendograms in the Louvain Algorithm \cite{louvain} runs in minutes for large networks.
-
-There is not a closed form parameterization of modularity in terms of our definitions of $I(S)$, $E(S)$, and $|S|$.  But we find $I(S)$ and $E(S)$ to be intuitive enough to provide the space in which to analyze metrics of sets of communities.
-
-Still, we would like to be able to use level sets for some visual explanation of how modularity behaves with regard to some internal and external density.  The parameterization of modularity we can provide is in terms of $I(C)$ and $E(C)$ for single communities.  If we allow, $p=\frac{|C|(|C|-1)}{2L}$ and $q=\frac{|C|(|V|-|C|)}{2L}$ to be constants:
+There is not a closed form parameterization of modularity in terms of our definitions of $I(S)$, $E(S)$, and $|S|$.  However, for each module's contribution there is a closed form parameterization in terms of internal and external density for a single community, $I(C)$ and $E(C)$.  If we allow, $p=\frac{|C|(|C|-1)}{2L}$ and $q=\frac{|C|(|V|-|C|)}{2 L}$, where $L$ is the number of edges in the graph then:
 \begin{equation}
  \mbox{\sc Modularity}(S) = \sum_{C \in S} p I(C) - \left(p I(C) + q E(C)\right)^2.
 \end{equation}
 
-We can draw loose conclusions from this parameterization.  The first check is that a set of disjoint cliques are the only communities that optimize modularity.  There are no counter intuitive communities that optimize modularity.  Overall, modularity is a two part optimization.  For seed communities, in the case of modularity individual nodes, the typical initial values are high in external density.  When $E(C)$ is high it is the dominating term and the optimization is to decrease $E(C)$ as quickly as possible.  Once, external density is not the dominating term the optimization is then center around trying to improve $I(C)$.  The transition between these two phases of optimization is sudden as attested by the level sets.
+We first note that if there exists a set of disjoint cliques in the graph, only a partitioning of each clique into a module maximizes modularity.  Modularity aligns more strongly with our understanding of strong communities than previous metrics.  
 
-We would like to recommend modularity should be designed to optimize for improvements in internal density first to find the dense cores of communities and then optimize over external density to cover more of the graph.  The reasoning is that improvements in external density can be made at any time by increasing the size of communities.  However, improvements in internal density can only be made while the communities are small and closer to cliques.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=3in]{Figures/cfl_mod_ls}
+\caption{The level sets of how {\sc Modularity} treats the $I(C)$, $E(C)$ space for one community of size 9 in the CFL.  Note the sharp transition from a region that heavily favors improvements in external density to a region that heavily favors improvements in internal density($E(C) < 0.1$).}
+\label{fig:mod_ls}
+\end{figure}
+
+We can not plot the level sets for modularity over a set of communities, but we can plot the level sets for the contribution to modularity from each community.  In Figure \ref{fig:mod_ls} we find that modularity is a two part optimization.  When $E(C)$ is large, modularity maximization attempts to decrease $E(C)$ as quickly as posisble.  Once a threshold of $E(C)$ is crossed, modularity maximization attempts to increase $I(C)$ as quickly as posisble.  The transition between these two phases of optimization is sudden and revealed by a dramatic turn in  the level set curves.  The larger the graph the more sudden this transition.
 
 \begin{figure}[!h]
 \centering
@@ -619,7 +623,7 @@ We would like to recommend modularity should be designed to optimize for improve
 \includegraphics[width=2.8in]{Figures/modularity_cfl_sets}
 \includegraphics[width=2.8in]{Figures/modularity_relativity_sets}
 \includegraphics[width=2.8in]{Figures/modularity_astro_sets}
-\caption{Here we plot the $(I(S), E(S))$ values produced by each level of the dendogram stages in maximizing modularity with the Louvain algorithm \cite{}.}
+\caption{Here we run the Louvain Algorithm \cite{blondel} to maximize modularity.  The $(I(S), E(S))$ path is each level of the dendogram. The $(I(G), E(G))$ value for the entire graph is the diamond in the lower left.  In the general relativity and astrophysics co-author networks, modularity does not present much of an improvement over $I(G)$ and has a much higher $E(G)$ value.}
 \label{fig_real_mod_sets}
 \end{figure}
 

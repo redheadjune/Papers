@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  15 APR 2012 14:38
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  15 APR 2012 18:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -550,14 +550,14 @@ File: utxsyc.fd 2000/12/15 v3.1
  [8
 
 
-] (./thesis.lof)
+] (./thesis.lof [9
+
+
+])
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
- [9
-
-
-] [10]
+ [10]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 112.
@@ -602,12 +602,6 @@ LaTeX Font Info:    Try loading font information for U+bbold on input line 271.
  (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
 [9] [10]
 Chapter 2.
-
-LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 324.
-
-
-LaTeX Warning: Reference `JTODO' on page 11 undefined on input line 324.
-
 [11
 
 ]
@@ -616,23 +610,23 @@ LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 331.
 
 [12] [13] [14]
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 381.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 383.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 385.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 387.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 389.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 391.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 392.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 394.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 396.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 398.
 
 [15]
 
-LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 400.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 402.
 
 File: Figures/e_based_ls.pdf Graphic file (type QTm)
 <use  "Figures/e_based_ls.pdf" >
@@ -643,12 +637,12 @@ File: Figures/volume_ls.pdf Graphic file (type QTm)
 <use  "Figures/volume_ls.pdf" >
 File: Figures/cond_ls.pdf Graphic file (type QTm)
  <use  "Figures/cond_ls.pdf" >
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 411--416
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 412--416
 [][] []
  []
 
 
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 411--416
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 412--416
 [] []
  []
 
@@ -694,15 +688,12 @@ Overfull \hbox (14.45378pt too wide) in paragraph at lines 594--595
 [][]
  []
 
-
-LaTeX Warning: Citation `modularity' on page 28 undefined on input line 603.
-
-
-LaTeX Warning: Citation `louvain' on page 28 undefined on input line 603.
-
-[28] [29]
+[28]
+File: Figures/cfl_mod_ls.pdf Graphic file (type QTm)
+ <use  "Figures/cfl_mod_ls.pdf" > [29]
 File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
- <use  "Figures/modularity_karate_sets.pdf" >
+
+<use  "Figures/modularity_karate_sets.pdf" >
 File: Figures/modularity_cfl_sets.pdf Graphic file (type QTm)
 
 <use  "Figures/modularity_cfl_sets.pdf" >
@@ -750,10 +741,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5935 strings out of 494150
- 84927 string characters out of 3152950
+ 5937 strings out of 494150
+ 84995 string characters out of 3152950
  208720 words of memory out of 3000000
- 9030 multiletter control sequences out of 15000+200000
+ 9031 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  38i,10n,51p,1820b,418s stack positions out of 5000i,500n,10000p,200000b,50000s

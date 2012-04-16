@@ -10,6 +10,7 @@
 \@writefile{toc}{\contentsline {section}{List of Tables}{viii}}
 \newlabel{lof}{{}{ix}}
 \@writefile{toc}{\contentsline {section}{List of Figures}{ix}}
+\citation{blondel}
 \citation{JTODO}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -66,8 +67,10 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Previous Comparisons}{11}}
 \citation{JTODO}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Individual Community Based Metrics}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Internal Density and External Sparsity}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Internal and External Density}{13}}
+\newlabel{def:int_density_single}{{4}{13}}
 \newlabel{def_int_density}{{4}{13}}
+\newlabel{def:ext_density_single}{{5}{14}}
 \newlabel{def_ext_density}{{5}{14}}
 \citation{JTODO}
 \citation{JTODO}
@@ -76,7 +79,7 @@
 \citation{JTODO}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Study of Relevant Metrics}{15}}
 \citation{JTODO}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Level Sets in the $(I, E)$ plane for different metrics of a single community. There are four ways the $(I, E)$ space is categorized. JTODO get conductance with E from 0 to 1}}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Level Sets in the $(I, E)$ plane for different metrics of a single community. There are four ways the $(I, E)$ space is categorized.}}{17}}
 \newlabel{fig_single_ls}{{2.1}{17}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Communities that optimize each metric. A value of $x$, indicates that the optimization is independent of that value. }}{18}}
 \newlabel{tbl_single_optimal_communities}{{2.1}{18}}
@@ -89,7 +92,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Influence of size of community on the values of external density based metrics.}}{21}}
 \newlabel{fig_k_e_based}{{2.3}{21}}
 \@writefile{toc}{\contentsline {subsubsection}{Internal Density as Previously Defined}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Tracing of communities found by volume through the IE plane for hte first JTODO(30) steps. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph. The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community. The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm 3\hbox {}.}}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Tracing of communities found by volume through the IE plane for the first 100 steps. The lower left diamond is the $(I(C), E(C))$ point corresponding to a community of the entire graph. The lower right diamond is the $(I(C), E(C))$ point corresponding to an ideal community. The path corresponds to the intermediatory $(I, E)$ values of adding nodes that optimize the metrics using Greedy Algorithm 3\hbox {}.}}{22}}
 \newlabel{fig_real_volume}{{2.4}{22}}
 \@writefile{toc}{\contentsline {subsubsection}{Volume}{22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces The affect, increasing the size of the community has on volume, even for a constant $I(C)$ and $E(C)$.}}{23}}
@@ -105,13 +108,17 @@
 \newlabel{def_int_set}{{7}{27}}
 \newlabel{def_ext_set}{{8}{27}}
 \newlabel{def_conciseness}{{9}{27}}
-\citation{modularity}
-\citation{louvain}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces The communities that optimize $2$ out of $3$ parameters. Nodes are in red, lines are edges, and communities are blue ellipses. The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$. The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at $I(S) = {\begingroup 1\endgroup \over 2}$. The right configuration optimizes $I(S) = 1$ and nearly conciseness at $|S| = 2$, but does not optimize external density at $E(S) = {\begingroup 1\endgroup \over 3}$ JTODO: use 1 community of 1 node}}{28}}
+\citation{newman}
+\citation{blondel}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces The communities that optimize $2$ out of $3$ parameters. Nodes are in red, lines are edges, and communities are blue ellipses. The left community configuration optimizes $I(S) = 1$ and $E(S) = 0$, but not conciseness at $|S| = 3$. The middle configuration optimizes $E(S) = 0$, $|S| = 1$, but not internal density at $I(S) = {\begingroup 1\endgroup \over 2}$. The right configuration optimizes $I(S) = 1$ and conciseness at $|S| = 1$, but does not optimize external density at $E(S) = 1$}}{28}}
 \newlabel{fig_corner_sets}{{2.8}{28}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Study of Relevant Metrics}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Here we plot the $(I(S), E(S))$ values produced by each level of the dendogram stages in maximizing modularity with the Louvain algorithm \cite  {}.}}{30}}
-\newlabel{fig_real_mod_sets}{{2.9}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces The level sets of how {\sc  Modularity} treats the $I(C)$, $E(C)$ space for one community of size 9 in the CFL. Note the sharp transition from a region that heavily favors improvements in external density to a region that heavily favors improvements in internal density($E(C) < 0.1$).}}{29}}
+\newlabel{fig:mod_ls}{{2.9}{29}}
+\citation{blondel}
+\citation{blondel}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Here we run the Louvain Algorithm \cite  {blondel} to maximize modularity. The $(I(S), E(S))$ path is each level of the dendogram. The $(I(G), E(G))$ value for the entire graph is the diamond in the lower left. In the general relativity and astrophysics co-author networks, modularity does not present much of an improvement over $I(G)$ and has a much higher $E(G)$ value.}}{30}}
+\newlabel{fig_real_mod_sets}{{2.10}{30}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}A New Metric: Linearity}{31}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
