@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  15 APR 2012 18:38
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  19 APR 2012 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,11 +433,7 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@theorem=\count146
 \c@definition=\count147
 
-(./thesis.aux
-
-LaTeX Warning: Label `fig_real_e_based' multiply defined.
-
-)
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 62.
@@ -454,8 +450,7 @@ LaTeX Font Info:    ... okay on input line 62.
 LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 62.
 LaTeX Font Info:    Try loading font information for OMS+txsy on input line 62.
 
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omstxsy.fd
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 62.
@@ -550,10 +545,28 @@ File: utxsyc.fd 2000/12/15 v3.1
  [8
 
 
-] (./thesis.lof [9
+] (./thesis.lof
+
+LaTeX Warning: Reference `alg_greedy_single' on page 20 undefined on input line
+ 6.
 
 
-])
+LaTeX Warning: Reference `alg_greedy_single' on page 22 undefined on input line
+ 8.
+
+[9
+
+
+]
+
+LaTeX Warning: Reference `alg_greedy_single' on page 34 undefined on input line
+ 17.
+
+
+LaTeX Warning: Reference `fig:conductance' on page 34 undefined on input line 1
+7.
+
+)
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
@@ -606,27 +619,27 @@ Chapter 2.
 
 ]
 
-LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 331.
+LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 333.
 
 [12] [13] [14]
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 383.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 381.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 387.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 385.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 391.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 389.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 394.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 392.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 398.
+LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 396.
 
 [15]
 
-LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 402.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 400.
 
 File: Figures/e_based_ls.pdf Graphic file (type QTm)
 <use  "Figures/e_based_ls.pdf" >
@@ -637,63 +650,81 @@ File: Figures/volume_ls.pdf Graphic file (type QTm)
 <use  "Figures/volume_ls.pdf" >
 File: Figures/cond_ls.pdf Graphic file (type QTm)
  <use  "Figures/cond_ls.pdf" >
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 412--416
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 410--414
 [][] []
  []
 
 
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 412--416
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 410--414
 [] []
  []
 
-[16] [17] [18] [19]
+[16] [17] [18]
 File: Figures/cee_karate.pdf Graphic file (type QTm)
  <use  "Figures/cee_karate.pdf" >
 File: Figures/cee_cfl.pdf Graphic file (type QTm)
-
-<use  "Figures/cee_cfl.pdf" >
+ <use  "Figures/cee_cfl.pdf" >
 File: Figures/cee_relativity.pdf Graphic file (type QTm)
- <use  "Figures/cee_relativity.pdf" >
-File: Figures/cee_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/cee_astro.pdf" > [20]
+<use  "Figures/cee_relativity.pdf" >
+File: Figures/cee_astro.pdf Graphic file (type QTm)
+ <use  "Figures/cee_astro.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19]
 File: Figures/k_influence_e_based.pdf Graphic file (type QTm)
  <use  "Figures/k_influence_e_based.pdf" >
-[21]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20] [21]
 File: Figures/volume_karate.pdf Graphic file (type QTm)
  <use  "Figures/volume_karate.pdf" >
 File: Figures/volume_cfl.pdf Graphic file (type QTm)
  <use  "Figures/volume_cfl.pdf" >
 File: Figures/volume_k.pdf Graphic file (type QTm)
 
-<use  "Figures/volume_k.pdf" > [22] [23]
+<use  "Figures/volume_k.pdf" > [22]
 File: Figures/conductance_karate.pdf Graphic file (type QTm)
-
-<use  "Figures/conductance_karate.pdf" >
+ <use  "Figures/conductance_karate.pdf" >
 File: Figures/conductance_cfl.pdf Graphic file (type QTm)
- <use  "Figures/conductance_cfl.pdf" >
+
+<use  "Figures/conductance_cfl.pdf" >
 File: Figures/conductance_relativity.pdf Graphic file (type QTm)
 
 <use  "Figures/conductance_relativity.pdf" >
 File: Figures/conductance_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/conductance_astro.pdf" > [24]
+<use  "Figures/conductance_astro.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23]
 File: Figures/k_influence_conductance.pdf Graphic file (type QTm)
+ <use  "Figures/k_influence_conductance.pdf" >
 
-<use  "Figures/k_influence_conductance.pdf" > [25] [26] [27]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] [25] [26]
 File: Figures/pathological_graphs.pdf Graphic file (type QTm)
-
-<use  "Figures/pathological_graphs.pdf" >
-Overfull \hbox (14.45378pt too wide) in paragraph at lines 594--595
+ <use  "Figures/pathological_graphs.pdf" >
+Overfull \hbox (14.45378pt too wide) in paragraph at lines 596--597
 [][]
  []
 
-[28]
-File: Figures/cfl_mod_ls.pdf Graphic file (type QTm)
- <use  "Figures/cfl_mod_ls.pdf" > [29]
-File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
 
-<use  "Figures/modularity_karate_sets.pdf" >
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[27]
+File: Figures/cfl_mod_ls.pdf Graphic file (type QTm)
+ <use  "Figures/cfl_mod_ls.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28]
+File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
+ <use  "Figures/modularity_karate_sets.pdf" >
 File: Figures/modularity_cfl_sets.pdf Graphic file (type QTm)
 
 <use  "Figures/modularity_cfl_sets.pdf" >
@@ -702,51 +733,97 @@ File: Figures/modularity_relativity_sets.pdf Graphic file (type QTm)
 <use  "Figures/modularity_relativity_sets.pdf" >
 File: Figures/modularity_astro_sets.pdf Graphic file (type QTm)
 
-<use  "Figures/modularity_astro_sets.pdf" > [30]
+<use  "Figures/modularity_astro_sets.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Citation `JTODO' on page 29 undefined on input line 633.
+
+[29] [30]
 Chapter 3.
+
+LaTeX Warning: Citation `JTODO' on page 31 undefined on input line 643.
+
 [31
 
-] [32] [33]
+]
+File: Figures/linear_single_ls.pdf Graphic file (type QTm)
+ <use  "Figures/linear_single_ls.pdf" >
+File: Figures/linear_single_k.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_single_k.pdf" > [32]
+File: Figures/linear_single_karate.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_single_karate.pdf" >
+File: Figures/linear_single_cfl.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_single_cfl.pdf" >
+File: Figures/linear_single_relativity.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_single_relativity.pdf" >
+File: Figures/linear_single_astro.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_single_astro.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[33] [34]
+File: Figures/linear_sets_karate.pdf Graphic file (type QTm)
+ <use  "Figures/linear_sets_karate.pdf" >
+File: Figures/linear_sets_cfl.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_sets_cfl.pdf" >
+File: Figures/linear_sets_relativity.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_sets_relativity.pdf" >
+File: Figures/linear_sets_astro.pdf Graphic file (type QTm)
+
+<use  "Figures/linear_sets_astro.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35] [36]
 Chapter 4.
-[34
+[37
 
 ]
 Chapter 5.
-[35
-
-] [36]
-Overfull \vbox (270.94316pt too high) has occurred while \output is active []
-
-
-[37]
-Chapter 6.
 [38
 
 ]
+Overfull \vbox (206.42775pt too high) has occurred while \output is active []
+
+
+[39]
+Chapter 6.
+[40
+
+]
 Chapter 7.
-[39
+[41
 
 ]
 Appendix A.
-(./thesis.bbl [40
+(./thesis.bbl [42
 
-] [41
+] [43
 
-]) [42] (./thesis.aux)
+]) [44] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5937 strings out of 494150
- 84995 string characters out of 3152950
+ 5963 strings out of 494150
+ 85628 string characters out of 3152950
  208720 words of memory out of 3000000
- 9031 multiletter control sequences out of 15000+200000
+ 9047 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
- 38i,10n,51p,1820b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,51p,1511b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (53 pages).
+Output written on thesis.pdf (55 pages).

@@ -3,51 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
+Warning--I didn't find a database entry for "JTODO"
 Warning--empty booktitle in andersen
 Warning--empty booktitle in hui
 Warning--empty booktitle in jain
 Warning--empty booktitle in leskovec:2008
 Warning--empty booktitle in leskovec
 Warning--empty booktitle in maiya
-You've used 22 entries,
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            615 strings with 6624 characters,
-and the built_in function-call counts, 6929 in all, are:
-= -- 672
-> -- 367
+            623 strings with 6763 characters,
+and the built_in function-call counts, 7213 in all, are:
+= -- 701
+> -- 374
 < -- 0
-+ -- 145
-- -- 122
-* -- 506
-:= -- 1215
-add.period$ -- 70
-call.type$ -- 22
-change.case$ -- 127
++ -- 149
+- -- 124
+* -- 524
+:= -- 1263
+add.period$ -- 73
+call.type$ -- 23
+change.case$ -- 131
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 247
-empty$ -- 516
-format.name$ -- 122
-if$ -- 1396
+cite$ -- 29
+duplicate$ -- 258
+empty$ -- 542
+format.name$ -- 124
+if$ -- 1456
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 22
-newline$ -- 113
-num.names$ -- 44
-pop$ -- 123
+int.to.str$ -- 23
+missing$ -- 23
+newline$ -- 118
+num.names$ -- 46
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 108
 quote$ -- 0
-skip$ -- 155
+skip$ -- 162
 stack$ -- 0
-substring$ -- 353
-swap$ -- 18
+substring$ -- 380
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 92
 warning$ -- 6
-while$ -- 61
-width$ -- 24
-write$ -- 239
-(There were 6 warnings)
+while$ -- 64
+width$ -- 25
+write$ -- 250
+(There were 7 warnings)

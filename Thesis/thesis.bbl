@@ -108,6 +108,11 @@ M.~Porter, J.~Onnela, and P.~Mucha.
 \newblock Communities in networks.
 \newblock {\em Notices of the AMS}, 56(9):1082--1097, October 2009.
 
+\bibitem{zachary}
+W.~W. Zachary.
+\newblock An information flow model for conflict and fission in small groups.
+\newblock {\em Journal of Anthropological Research}, 33:452--473, 1977.
+
 \bibitem{zhang}
 S.~Zhang, R.~Wang, and X.~Zhang.
 \newblock Identification of overlapping community structure in complex networks
