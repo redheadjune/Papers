@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  19 APR 2012 14:18
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  25 APR 2012 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,40 +436,40 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 62.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 62.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 64.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 64.
 
  (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 62.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 64.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 64.
 
  (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 62.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 64.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 64.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 62.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 62.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 64.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 64.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 62.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 64.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
@@ -479,12 +479,12 @@ Title page
 
 ]
 Copyleft page
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 67.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
  [2
 
 ]
@@ -494,7 +494,7 @@ Abstract
 ]
 Vita
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 74.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 76.
 [3
 
 
@@ -545,50 +545,26 @@ File: utxsyc.fd 2000/12/15 v3.1
  [8
 
 
-] (./thesis.lof
-
-LaTeX Warning: Reference `alg_greedy_single' on page 20 undefined on input line
- 6.
+] (./thesis.lof [9
 
 
-LaTeX Warning: Reference `alg_greedy_single' on page 22 undefined on input line
- 8.
-
-[9
-
-
-]
-
-LaTeX Warning: Reference `alg_greedy_single' on page 34 undefined on input line
- 17.
-
-
-LaTeX Warning: Reference `fig:conductance' on page 34 undefined on input line 1
-7.
-
-)
+])
 \tf@lof=\write5
 \openout5 = `thesis.lof'.
 
  [10]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 112.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 114.
 File: Figures/visually_simple.pdf Graphic file (type QTm)
 <use  "Figures/visually_simple.pdf" >
 
-LaTeX Warning: Citation `JTODO' on page 1 undefined on input line 121.
+LaTeX Warning: Citation `JTODO' on page 1 undefined on input line 123.
 
 [1
 
 
 ]
-
-LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 130.
-
-
-LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 131.
-
 
 LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 132.
 
@@ -601,48 +577,55 @@ LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 134.
 
 LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 135.
 
+
+LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 136.
+
+
+LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 137.
+
 [2]
 
-LaTeX Warning: Citation `JTODO' on page 3 undefined on input line 172.
+LaTeX Warning: Citation `JTODO' on page 3 undefined on input line 174.
 
 [3] [4] [5]
 
-LaTeX Warning: Citation `JTODO' on page 6 undefined on input line 210.
+LaTeX Warning: Citation `JTODO' on page 6 undefined on input line 212.
 
 [6] [7] [8]
-LaTeX Font Info:    Try loading font information for U+bbold on input line 271.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 273.
 
  (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
 [9] [10]
 Chapter 2.
 [11
 
-]
+] [12] [13]
 
-LaTeX Warning: Citation `JTODO' on page 12 undefined on input line 333.
+LaTeX Warning: Citation `JTODO' on page 14 undefined on input line 362.
 
-[12] [13] [14]
+[14] [15]
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 381.
-
-
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 385.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 409.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 389.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 413.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 392.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 417.
 
 
-LaTeX Warning: Citation `JTODO' on page 15 undefined on input line 396.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 420.
 
-[15]
 
-LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 400.
+LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 424.
 
+[16]
+
+LaTeX Warning: Citation `JTODO' on page 17 undefined on input line 428.
+
+[17]
 File: Figures/e_based_ls.pdf Graphic file (type QTm)
-<use  "Figures/e_based_ls.pdf" >
+ <use  "Figures/e_based_ls.pdf" >
 File: Figures/prev_int_ls.pdf Graphic file (type QTm)
  <use  "Figures/prev_int_ls.pdf" >
 File: Figures/volume_ls.pdf Graphic file (type QTm)
@@ -650,16 +633,16 @@ File: Figures/volume_ls.pdf Graphic file (type QTm)
 <use  "Figures/volume_ls.pdf" >
 File: Figures/cond_ls.pdf Graphic file (type QTm)
  <use  "Figures/cond_ls.pdf" >
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 410--414
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 438--442
 [][] []
  []
 
 
-Overfull \hbox (16.73381pt too wide) in paragraph at lines 410--414
+Overfull \hbox (16.73381pt too wide) in paragraph at lines 438--442
 [] []
  []
 
-[16] [17] [18]
+[18] [19] [20]
 File: Figures/cee_karate.pdf Graphic file (type QTm)
  <use  "Figures/cee_karate.pdf" >
 File: Figures/cee_cfl.pdf Graphic file (type QTm)
@@ -669,28 +652,22 @@ File: Figures/cee_relativity.pdf Graphic file (type QTm)
 <use  "Figures/cee_relativity.pdf" >
 File: Figures/cee_astro.pdf Graphic file (type QTm)
  <use  "Figures/cee_astro.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[19]
 File: Figures/k_influence_e_based.pdf Graphic file (type QTm)
- <use  "Figures/k_influence_e_based.pdf" >
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20] [21]
+<use  "Figures/k_influence_e_based.pdf" > [21] [22]
 File: Figures/volume_karate.pdf Graphic file (type QTm)
- <use  "Figures/volume_karate.pdf" >
+
+<use  "Figures/volume_karate.pdf" >
 File: Figures/volume_cfl.pdf Graphic file (type QTm)
  <use  "Figures/volume_cfl.pdf" >
 File: Figures/volume_k.pdf Graphic file (type QTm)
 
-<use  "Figures/volume_k.pdf" > [22]
+<use  "Figures/volume_k.pdf" > [23] [24]
 File: Figures/conductance_karate.pdf Graphic file (type QTm)
- <use  "Figures/conductance_karate.pdf" >
-File: Figures/conductance_cfl.pdf Graphic file (type QTm)
 
-<use  "Figures/conductance_cfl.pdf" >
+<use  "Figures/conductance_karate.pdf" >
+File: Figures/conductance_cfl.pdf Graphic file (type QTm)
+ <use  "Figures/conductance_cfl.pdf" >
 File: Figures/conductance_relativity.pdf Graphic file (type QTm)
 
 <use  "Figures/conductance_relativity.pdf" >
@@ -700,31 +677,24 @@ File: Figures/conductance_astro.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23]
 File: Figures/k_influence_conductance.pdf Graphic file (type QTm)
- <use  "Figures/k_influence_conductance.pdf" >
+<use  "Figures/k_influence_conductance.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24] [25] [26]
+[25] [26] [27]
 File: Figures/pathological_graphs.pdf Graphic file (type QTm)
  <use  "Figures/pathological_graphs.pdf" >
-Overfull \hbox (14.45378pt too wide) in paragraph at lines 596--597
+Overfull \hbox (14.45378pt too wide) in paragraph at lines 624--625
 [][]
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[27]
+[28] [29]
 File: Figures/cfl_mod_ls.pdf Graphic file (type QTm)
- <use  "Figures/cfl_mod_ls.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[28]
+ <use  "Figures/cfl_mod_ls.pdf" > [30]
 File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
- <use  "Figures/modularity_karate_sets.pdf" >
+
+<use  "Figures/modularity_karate_sets.pdf" >
 File: Figures/modularity_cfl_sets.pdf Graphic file (type QTm)
 
 <use  "Figures/modularity_cfl_sets.pdf" >
@@ -735,24 +705,21 @@ File: Figures/modularity_astro_sets.pdf Graphic file (type QTm)
 
 <use  "Figures/modularity_astro_sets.pdf" >
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Citation `JTODO' on page 31 undefined on input line 661.
 
-
-LaTeX Warning: Citation `JTODO' on page 29 undefined on input line 633.
-
-[29] [30]
+[31]
 Chapter 3.
 
-LaTeX Warning: Citation `JTODO' on page 31 undefined on input line 643.
+LaTeX Warning: Citation `JTODO' on page 32 undefined on input line 671.
 
-[31
+[32
 
 ]
 File: Figures/linear_single_ls.pdf Graphic file (type QTm)
  <use  "Figures/linear_single_ls.pdf" >
 File: Figures/linear_single_k.pdf Graphic file (type QTm)
 
-<use  "Figures/linear_single_k.pdf" > [32]
+<use  "Figures/linear_single_k.pdf" > [33]
 File: Figures/linear_single_karate.pdf Graphic file (type QTm)
 
 <use  "Figures/linear_single_karate.pdf" >
@@ -764,11 +731,17 @@ File: Figures/linear_single_relativity.pdf Graphic file (type QTm)
 <use  "Figures/linear_single_relativity.pdf" >
 File: Figures/linear_single_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/linear_single_astro.pdf" >
+<use  "Figures/linear_single_astro.pdf" > [34] [35]
+Underfull \hbox (badness 6758) in paragraph at lines 727--728
+[]\OT1/ppl/m/it/12 Given a set of com-mu-ni-ties, $\OML/txmi/m/it/12 S \OT1/txr
+/m/n/12 = \OMS/txsy/m/n/12 f\OML/txmi/m/it/12 C[]; C[]; []\OMS/txsy/m/n/12 g$
+ []
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+[36]
 
-[33] [34]
+LaTeX Warning: Reference `JTODO' on page 37 undefined on input line 749.
+
+[37] [38]
 File: Figures/linear_sets_karate.pdf Graphic file (type QTm)
  <use  "Figures/linear_sets_karate.pdf" >
 File: Figures/linear_sets_cfl.pdf Graphic file (type QTm)
@@ -783,47 +756,44 @@ File: Figures/linear_sets_astro.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35] [36]
+[39] [40]
 Chapter 4.
-[37
-
-]
-Chapter 5.
-[38
-
-]
-Overfull \vbox (206.42775pt too high) has occurred while \output is active []
-
-
-[39]
-Chapter 6.
-[40
-
-]
-Chapter 7.
 [41
 
 ]
+Chapter 5.
+[42
+
+]
+Overfull \vbox (267.372pt too high) has occurred while \output is active []
+
+
+[43]
+Chapter 6.
+[44
+
+]
+Chapter 7.
+[45
+
+]
 Appendix A.
-(./thesis.bbl [42
+(./thesis.bbl [46
 
-] [43
+] [47
 
-]) [44] (./thesis.aux)
+]) [48] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5963 strings out of 494150
- 85628 string characters out of 3152950
+ 5971 strings out of 494150
+ 85719 string characters out of 3152950
  208720 words of memory out of 3000000
- 9047 multiletter control sequences out of 15000+200000
+ 9055 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  38i,10n,51p,1511b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (55 pages).
+Output written on thesis.pdf (59 pages).
