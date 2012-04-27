@@ -33,33 +33,35 @@
 \contentsline {subsection}{\numberline {2.4.2}Study of Relevant Metrics}{29}
 \contentsline {chapter}{\numberline {3}A New Metric: Linearity}{32}
 \contentsline {section}{\numberline {3.1}Single Community Detection}{32}
-\contentsline {section}{\numberline {3.2}Multiple Community Detection}{35}
-\contentsline {chapter}{\numberline {4}Parallel Community Detection}{41}
-\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{41}
-\contentsline {section}{\numberline {4.2}Algorithm}{41}
-\contentsline {subsection}{\numberline {4.2.1}Seeds}{41}
-\contentsline {subsection}{\numberline {4.2.2}Expansion}{41}
-\contentsline {section}{\numberline {4.3}Probability of Correctness}{41}
-\contentsline {section}{\numberline {4.4}Performance}{41}
-\contentsline {chapter}{\numberline {5}Case Studies of Networks}{42}
-\contentsline {section}{\numberline {5.1}Karate Club}{42}
-\contentsline {section}{\numberline {5.2}Collaboration Networks}{43}
-\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{43}
-\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{43}
-\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{43}
-\contentsline {subsection}{\numberline {5.2.4}General Relativity}{43}
-\contentsline {section}{\numberline {5.3}Enron Email Network}{43}
-\contentsline {section}{\numberline {5.4}Epinions Social Network}{43}
-\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{43}
-\contentsline {section}{\numberline {5.6}Physics Citation Network}{43}
-\contentsline {section}{\numberline {5.7}Web Graphs}{43}
-\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{43}
-\contentsline {subsection}{\numberline {5.7.2}Google}{43}
-\contentsline {section}{\numberline {5.8}Wiki Network}{43}
-\contentsline {subsection}{\numberline {5.8.1}Communication Network}{43}
-\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{43}
-\contentsline {section}{\numberline {5.9}Amazon Product Network}{43}
-\contentsline {chapter}{\numberline {6}Evolution of Communities}{44}
-\contentsline {chapter}{\numberline {7}Conclusions}{45}
-\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{46}
-\contentsline {chapter}{Bibliography}{47}
+\contentsline {section}{\numberline {3.2}Multiple Community Detection}{34}
+\contentsline {chapter}{\numberline {4}Parallel Community Detection}{40}
+\contentsline {section}{\numberline {4.1}Introduction of Properties and Statistical Significance}{40}
+\contentsline {section}{\numberline {4.2}Algorithm}{40}
+\contentsline {subsection}{\numberline {4.2.1}Seeds}{40}
+\contentsline {subsection}{\numberline {4.2.2}Expansion}{40}
+\contentsline {section}{\numberline {4.3}Probability of Correctness}{40}
+\contentsline {section}{\numberline {4.4}Performance}{40}
+\contentsline {chapter}{\numberline {5}Case Studies of Networks}{41}
+\contentsline {section}{\numberline {5.1}Known Community Comparisons}{41}
+\contentsline {subsection}{\numberline {5.1.1}Karate Club Network}{41}
+\contentsline {subsection}{\numberline {5.1.2}College Football Network}{43}
+\contentsline {section}{\numberline {5.2}Collaboration Networks}{45}
+\contentsline {subsection}{\numberline {5.2.1}Astrophysics}{45}
+\contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{45}
+\contentsline {subsection}{\numberline {5.2.3}High Energy Physics}{45}
+\contentsline {subsection}{\numberline {5.2.4}General Relativity}{45}
+\contentsline {section}{\numberline {5.3}Enron Email Network}{45}
+\contentsline {section}{\numberline {5.4}Epinions Social Network}{45}
+\contentsline {section}{\numberline {5.5}Gnutella P2P Network}{45}
+\contentsline {section}{\numberline {5.6}Physics Citation Network}{45}
+\contentsline {section}{\numberline {5.7}Web Graphs}{45}
+\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{45}
+\contentsline {subsection}{\numberline {5.7.2}Google}{45}
+\contentsline {section}{\numberline {5.8}Wiki Network}{45}
+\contentsline {subsection}{\numberline {5.8.1}Communication Network}{45}
+\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{45}
+\contentsline {section}{\numberline {5.9}Amazon Product Network}{45}
+\contentsline {chapter}{\numberline {6}Evolution of Communities}{46}
+\contentsline {chapter}{\numberline {7}Conclusions}{47}
+\contentsline {chapter}{\numberline {A}Chapter 1 of appendix}{48}
+\contentsline {chapter}{Bibliography}{49}

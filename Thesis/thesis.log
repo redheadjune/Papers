@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  25 APR 2012 13:58
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  27 APR 2012 02:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,15 +731,15 @@ File: Figures/linear_single_relativity.pdf Graphic file (type QTm)
 <use  "Figures/linear_single_relativity.pdf" >
 File: Figures/linear_single_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/linear_single_astro.pdf" > [34] [35]
-Underfull \hbox (badness 6758) in paragraph at lines 727--728
+<use  "Figures/linear_single_astro.pdf" > [34]
+Underfull \hbox (badness 6758) in paragraph at lines 728--729
 []\OT1/ppl/m/it/12 Given a set of com-mu-ni-ties, $\OML/txmi/m/it/12 S \OT1/txr
 /m/n/12 = \OMS/txsy/m/n/12 f\OML/txmi/m/it/12 C[]; C[]; []\OMS/txsy/m/n/12 g$
  []
 
-[36]
+[35] [36]
 
-LaTeX Warning: Reference `JTODO' on page 37 undefined on input line 749.
+LaTeX Warning: Reference `JTODO' on page 37 undefined on input line 750.
 
 [37] [38]
 File: Figures/linear_sets_karate.pdf Graphic file (type QTm)
@@ -752,48 +752,69 @@ File: Figures/linear_sets_relativity.pdf Graphic file (type QTm)
 <use  "Figures/linear_sets_relativity.pdf" >
 File: Figures/linear_sets_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/linear_sets_astro.pdf" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[39] [40]
+<use  "Figures/linear_sets_astro.pdf" > [39]
 Chapter 4.
-[41
+[40
 
 ]
 Chapter 5.
-[42
+File: Figures/karate_known_plots.pdf Graphic file (type QTm)
+<use  "Figures/karate_known_plots.pdf" >
+File: Figures/karate_module_plots.pdf Graphic file (type QTm)
 
-]
+<use  "Figures/karate_module_plots.pdf" >
+File: Figures/karate_linear_plots.pdf Graphic file (type QTm)
+
+<use  "Figures/karate_linear_plots.pdf" >
+File: Figures/karate_parallel_plots.pdf Graphic file (type QTm)
+
+<use  "Figures/karate_parallel_plots.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41
+
+] [42]
+File: Figures/football_known_plots.pdf Graphic file (type QTm)
+ <use  "Figures/football_known_plots.pdf" >
+File: Figures/football_module_plots.pdf Graphic file (type QTm)
+
+<use  "Figures/football_module_plots.pdf" >
+File: Figures/football_linear_plots.pdf Graphic file (type QTm)
+
+<use  "Figures/football_linear_plots.pdf" >
+File: Figures/football_parallel_plots.pdf Graphic file (type QTm)
+
+<use  "Figures/football_parallel_plots.pdf" > [43] [44]
 Overfull \vbox (267.372pt too high) has occurred while \output is active []
 
 
-[43]
+[45]
 Chapter 6.
-[44
+[46
 
 ]
 Chapter 7.
-[45
+[47
 
 ]
 Appendix A.
-(./thesis.bbl [46
+(./thesis.bbl [48
 
-] [47
+] [49
 
-]) [48] (./thesis.aux)
+]) [50] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5971 strings out of 494150
- 85719 string characters out of 3152950
+ 5991 strings out of 494150
+ 86253 string characters out of 3152950
  208720 words of memory out of 3000000
- 9055 multiletter control sequences out of 15000+200000
+ 9067 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  38i,10n,51p,1511b,418s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (59 pages).
+Output written on thesis.pdf (61 pages).

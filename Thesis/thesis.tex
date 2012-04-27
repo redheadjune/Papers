@@ -676,7 +676,7 @@ In this chapter we will present metrics for single communities and sets of commu
 % new section************************
 \section{Single Community Detection}
 
-Let us now discuss the criteria of a good metric and find a such a metric.  In the previous chapter, we show that internal and external density provide bounds for the characteristics of diameter, average shortest path, etc.  While it is possible to design a metic that covers an arbitrary number of characteristics, we argue a metric that reflects both internal and external density provides a good measure of many characteristics.  Then, a good metric should reflect a community's internal and external density.  In particular, the metric should be optimized by the ideal community and minimized or nearly minimal for communities with poor values of internal and external density.  It easy to check the extreme cases of how a metric handles communities, but we also want an element of predictability for how the metric handles all communities.  Here is one definition of predictability.  Let communities $C$ and $C'$ have internal and external values: $(I(C), E(C)) = (x,y)$ and $(I(C'), E(C')) = (x + \delta_x, y + \delta_y)$.  Then, a metric $M$ as function of internal and external density is predictable if:
+Let us now discuss the criteria of a good metric and find a such a metric.  In the previous chapter, we show that internal and external density provide bounds for the characteristics of diameter, average shortest path, etc.  While it is possible to design a metric that covers an arbitrary number of characteristics, we argue a metric that reflects both internal and external density provides a good measure of many characteristics.  Then, a good metric should reflect a community's internal and external density.  In particular, the metric should be optimized by the ideal community and minimized, or minimal, for communities with poor values of internal and external density.  It easy to check the how a metric handles extreme communities, but we also want an element of predictability for how the metric handles all communities.  Here is one definition of predictability.  Let communities $C$ and $C'$ have internal and external values: $(I(C), E(C)) = (x,y)$ and $(I(C'), E(C')) = (x + \delta_x, y + \delta_y)$.  Then, a metric $M$ as function of internal and external density is predictable if:
  \begin{equation}
 M(x+\delta_I, y + \delta_E) - M(x,y) = M(\delta_I, \delta_E).
 \end{equation}
@@ -696,7 +696,7 @@ The constants $a$ and $b$ are restricted to $a, b \in (0,1]$.
 \label{fig:linear_single_ls_k}
 \end{figure}
 
-In some applications, we may want to relax the predictability contraint in favor of the ability to more highly value communities of a certain size, internal, or external density.  If this is the case, we suggest a polynomial approach to building a metric.
+In some applications, we may want to relax the predictability constraint to find communities of a certain size, internal, or external density.  If this is the case, we suggest a polynomial approach to building a metric.
 \begin{definition}[General Metric] The general metric for evaluating any single community is a sum of polynomial functions on internal and external density, weighted with a function of the community's size.
   \begin{equation}
    \mbox{\sc General}(C) = \sum\limits_{i = 0} f_i(C) I(C)^i - g_i(C) E(C)^i
@@ -705,17 +705,18 @@ The functions $f_i$ and $g_i$ can be any function of the size of a community.
 \end{definition}
 If an instance of the general equation for an application is used, the level sets and size community impact should be analyzed for elements of unpredictability.  In particular, the local and global maximums should correspond to the desired communities, and the level sets should aid finding desired communities in a manner similar to gradients.
 
-We now analyze {\sc Linearity} in the same way we analyzed other single community metrics.  The level sets in Figure \ref{fig:linear_single_ls_k} reveal a predictable metric that is only optimized by the ideal community. The size of the community does not change the behavior of the metric.  We test the {\sc Linearity} metric  with the Greedy Algorithm \ref{alg_greedy_single} on four networks in Figure \ref{fig:linear_single}.  The parameters were set to $a = 1$ and $b$ required a binary search.  The parameter $b$ was set within four steps, such that the greedy algorithm did not return the entire graph or the initial community. There is room for future research to explore why very few different communities will be returned, even if $b$ can take on an infinite number of values.
-
 \begin{figure}[tb]
 \centering
 \includegraphics[width=2.8in]{Figures/linear_single_karate}
 \includegraphics[width=2.8in]{Figures/linear_single_cfl}
 \includegraphics[width=2.8in]{Figures/linear_single_relativity}
 \includegraphics[width=2.8in]{Figures/linear_single_astro}
-\caption{The colored diamonds are the $(I(C), E(C))$ values produced by previously tested single community metrics.  In the Karate Club and CFL network Linearity returns a community close to conductance.  In the relativity and astrophysics network Linearity returns a community closer to internal density.}
+\caption{Single Communities produced by Linearity, in red.  The colored diamonds are the $(I(C), E(C))$ values produced by previously tested single community metrics.  In the Karate Club and CFL network Linearity returns a community close to conductance.  In the relativity and astrophysics network Linearity returns a community closer to internal density.  The black diamond is the ideal community, but does not exist in these networks.}
 \label{fig:linear_single}
 \end{figure}
+
+We now analyze {\sc Linearity} in the same way we analyzed other single community metrics.  The level sets in Figure \ref{fig:linear_single_ls_k} reveal a predictable metric that is only optimized by the ideal community. The size of the community does not change the behavior of the metric.  We test the {\sc Linearity} metric  with the Greedy Algorithm \ref{alg_greedy_single} on four networks in Figure \ref{fig:linear_single}.  The parameters were set to $a = 1$ and $b$ required a binary search.  The parameter $b$ was set within four steps, such that the greedy algorithm did not return the entire graph or the initial community. There is room for future research on the impact of $b$.  For all possible values of $b$, we find very few different communities.
+
 
 
 
@@ -739,27 +740,27 @@ Depending on the application, communities with particular values of internal den
 \end{definition}
 Whenever creating a metric of this form it is recommended to check the level sets for elements of unpredictability.
 
-To maximize our linear algorithm for sets of communities, we will create a greedy algorithm with three stages.  The first stage is to partition the graph into maximally sized cliques.  This partition will be used as the starting stage for an adapted Louvain algorithm \cite{blondel}.  The adapted algorithm will result in a partition.  The final stage will be to expand each partition to include nodes that increase linearity.  This algorithm can only heuristically maximize linearity.  We will compare the sets of communities we find with those found by modularity.
+To maximize our linear algorithm for sets of communities, we will create a greedy algorithm with two stages.  The first is to use an adapted Louvain algorithm \cite{blondel} to find a partition maximizing linearity.  The final stage will be to expand each partition to include individual nodes.  This algorithm is a heuristic to maximize linearity, but runs in complexity equivalent to the Louvain Algorithm $O(JTODO)$.
 
-The reason to begin with a partition of maximally sized cliques, comes from a conjecture.
+We first state a conjecture about greedy algorithms.
 \begin{conjecture}[Maintaining Internal Density]
 Let community $C$ have internal density $I(C)$ and external density $E(C)$.  If an expansion of $C$ to include node $v_1$ results in a decrease in internal density, ie $I(C \cup v_1) < I(C)$, then expansion will only create a community with internal density $I(C \cup v_1 \cup v_2 \cup \dots \cup v_i) = I(C)$ by including a large clique, $v_1, v_2, \dots, v_i$.
 \label{conj:int_density}
 \end{conjecture}
-We have stated the conjecture corresponding to single communities, and a similar conjecture exists for sets of communities.  The conjecture comes from our experience that once internal density is decreased it can rarely be increased by a greedy algorithm.  When internal density is decreased and then increased by a greedy algorithm a clique is involved.  While improvements to internal density are hard, improvements to external density are easy.  External density can be lowered by incorporating more nodes into the community and minimized by including the entire connected component in the community. This leads to the development of a greedy algorithm that always favors internal density, until only improvements in external density can be made.  This order of greedy algorithm is opposite the order of modularity maximization that first minimizes external density and then tries to maximize internal density, see Section \ref{JTODO}.
+We have stated the conjecture corresponding to single communities, and a similar conjecture exists for sets of communities.  The conjecture comes from our experience that once internal density is decreased it can rarely be increased by a greedy algorithm.  When internal density is decreased and then increased by a greedy algorithm a clique is involved.  Improvements to internal density are hard, improvements to external density are easy.  External density can be lowered by incorporating more nodes into the community and minimized by including the entire connected component containing the community. This leads to the development of a greedy algorithm that maintains or improves internal density, until only improvements in external density can be made.  This order of greedy algorithm is opposite the order of modularity maximization that first minimizes external density and then tries to maximize internal density, see Section \ref{JTODO}.
 
-JTODO include psuedo code for the Louvain Algorithm
+JTODO include pseudo code for the Louvain Algorithm
 
-For the second step, we first argue that we can use the Louvain algorithm to heuristically maximize linearity for a partition.  The Louvain algorithm can be used for any metric that has the following property.
+To adapt the Louvain algorithm, we must show the following property holds:
 \begin{property}[Louvain Criteria]
-Let $S = \{C_1, C_2, \dots \}$, and communities $C_i$ and $C_j$ have no edges between them.  Let $S'$ be the set of communities $S$, with communities $C_i$ and $C_j$ replaced by their union, ie $S' = S - C_i - C_j + C_i \cup C_j$, then:
+Let $M$ be any metric, $S = \{C_1, C_2, \dots \}$, and communities $C_i$ and $C_j$ have no edges between them.  Let $S'$ be the set of communities $S$, with communities $C_i$ and $C_j$ replaced by their union, ie $S' = S - C_i - C_j + C_i \cup C_j$, then:
 \begin{equation}
 M(S) \geq M(S')
 \end{equation}
 \end{property}
-The characteristics $I(S)$ and $E(S)$ can not be improved by joining unconnected sets of nodes.  The third characteristic of our linearity metric $|S|$ can be improved by joining unconnected sets of nodes to minimize the number of communities.  However, we will limit ourselves in the running of the linearity metric to $a$, $b$, and $c$ values that are not optimized by the entire graph and in doing so the entire linearity metric can not be optimized by unions of unconnected sets of nodes.
+The contributions of $I(S)$ and $E(S)$ decrease linearity by joining unconnected sets of nodes.  The third characteristic of our linearity metric $|S|$ can increase linearity by joining unconnected sets of nodes.  However, we will limit ourselves to $a$, $b$, and $c$ values such that overall linearity is not increased and use the Louvain Algorithm.
 
-Since, we can use the Louvain algorithm, we could exchange the modularity metric for the linearity metric and get a good partition.  We take it one step further and use the Conjecture \ref{conj:int_density}.  So far we have not set the parameters $a$, $b$, and $c$ in linearity.  From the conjecture, the algorithm should improve internal density rather than external density when ever possible.  We begin with the parameters set to $a = 1$, $b = 0$, and $c = \frac{1}{ |V|}$.  Maximizing the linearity metric with these parameter values results in a partitioning of maximal cliques, which is achieved in the first stage of our algorithm.  We now relax the parameter $b = \delta_b$ and complete the Louvain algorithm.  This will result in a partitioning of near cliques.  The process is continued, gradually increasing $b$ and completing the Louvain algorithm on the new parameters.  The question is when to stop increasing $b$.  In practice we find that $b$ only needs to be increased a few times before the optimal set of communities is one community of the entire graph.
+To adapt the Louvain algorithm, we could exchange the modularity metric for the linearity metric and get a good partition.  We take it one step further and use the Conjecture \ref{conj:int_density}.  So far we have not set the parameters $a$, $b$, and $c$ in linearity.  From the conjecture, the algorithm should optimize internal density first and then external density.  We begin with the parameters set to $a = 1$, $b = 0$, and $c = \frac{1}{ |V|}$.  Maximizing the linearity metric with these parameter values results in a partitioning of maximal cliques.  We now relax the parameter $b = \delta_b$ and complete the Louvain algorithm.  This will result in a partitioning of near cliques.  The process is continued, gradually increasing $b$ and completing the Louvain algorithm on the new parameters.  The question is when to stop increasing $b$.  In practice we increase $b$ until the partitioning of the graph is the entire graph and then retract $b$ by one increment.
 
 JTODO include demonstration of increasing $b$.
 
@@ -775,7 +776,7 @@ We now run our algorithm on four data sets and compare to known results and modu
 \centering
 \includegraphics[width=2.8in]{Figures/linear_sets_karate}
 \includegraphics[width=2.8in]{Figures/linear_sets_cfl}
-\caption{Compared to Known Solutions (the black stars):  For the karate club we find the two communities, but then expansion allows for an overlap between the two communities.  For the college football league we find 13 communities, rather than the 12 divisions.  One division has different characteristics than the other divisions and is split as two communities.  Overall, the results have better values in internal and external density. }
+\caption{Linearity for sets of communities compared to Known Solutions (the black stars).   Linearity produces sets of communities with better values of internal and external density. In depth analysis is provided in Figure: \ref{fig:karate_comparison}.}
 \label{fig:linear_set_known}
 \end{figure}
 
@@ -783,7 +784,7 @@ We now run our algorithm on four data sets and compare to known results and modu
 \centering
 \includegraphics[width=2.8in]{Figures/linear_sets_relativity}
 \includegraphics[width=2.8in]{Figures/linear_sets_astro}
-\caption{The $I(S)$, $E(S)$ values produced by modularity are provided by black squares.  The linearity path is traced in red.  The first segment corresponds to finding maximal cliques, the moddle segments correspond to improvements in the partition due to the Louvain algorithm.  The last segment is from expanding the partitions to produce overlapping communities. In both cases linearity produces sets of communities with better internal and external density values.}
+\caption{The $I(S)$, $E(S)$ values produced by modularity are provided by black squares.  The linearity path is traced in red.  The first segment corresponds to finding maximal cliques, the middle segments correspond to improvements in the partition due to the Louvain algorithm.  The last segment is from expanding the partitions to produce overlapping communities. In both cases linearity produces sets of communities with better internal and external density values.}
 \label{fig:linear_set}
 \end{figure}
 
@@ -811,14 +812,74 @@ The previously covered algorithms for metric maximization is one train of though
 \chapter{Case Studies of Networks}
 \label{ch:datasets}
 
-in this chapter we compare a variety of community detection methods including the ones introduced in the previous chapters.
-
-\section{Karate Club}
-\cite{zachary}
-
-The Karate club network is a set of students their social interactions.  The club was studied by JTODO and eventually split into two groups of students.  The interest in the network is for the predictive power of communities to determine how the students split into two groups.  We now c
+So far we have been developing algorithms.  Here, we show how those algorithms perform on a variety of networks.
 
 
+\section{Known Community Comparisons}
+
+We cover in depth community detection performance on two networks with known community structure.
+
+\subsection{Karate Club Network}
+
+The Karate Club Network represents a set of students belonging to a karate club.  Zachary studied the students in \cite{zachary} and found that students interacted with each other outside of the club's practice times.  In our representation the students are the nodes and their interactions are the edges.  In the course of Zachary's observations, the club split into two groups that wanted to practice seperately.  We consider the two groups the club split into to be the known communities.  We now compare the communities found by different detection methods with the known communities in Figure \ref{fig:karate_comparison}.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=2.8in]{Figures/karate_known_plots}
+\includegraphics[width=2.8in]{Figures/karate_module_plots}
+\includegraphics[width=2.8in]{Figures/karate_linear_plots}
+\includegraphics[width=2.8in]{Figures/karate_parallel_plots}
+\caption{Communities produced by the different community detection methods, communities are marked by coloration.  Linearity produces two communities with the overlap colored in grey.  Parallel produces four communities with four nodes in black not belonging to any community.}
+\label{fig:karate_comparison}
+\end{figure}
+
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c|ccc}
+Communities From & $I(S)$ & $E(S)$ & $|S|$ \\ \hline
+Known & $0.25$ & $0.13$ & $2$\\
+Modularity & $0.39$ & $0.27$ & $4$\\
+Linearity &$0.21$ & $0.0$ & $2$ \\
+Parallel &$0.43$ & $0.35$ & $4$\\
+\end{tabular}
+\caption{Internal Density, External Density, and number of communities for the set of communities returned by each detection method on the Karate Club network.}
+\label{tbl:karate_all}
+\end{table}
+
+
+Each of the detection methods produces different sets of communities, each with its own merit.  Compared to the known communities, the communities produced by linearity are the most similar.  Linearity produces two communities with an overlap.  Within the network there is a set of centerally connected nodes, these are the ones in the overlap.  Maximizing modularity produces four communities.  Two of the communities are large portions of the two known communities.  The additional two communities are more independent and near clique like.  Parallel produces four communities that are subsets of the communities produced by maximizing modularity.  Parallel does not classify five nodes, marked in black.  These nodes have exactly two edges, each going to a different community.  These nodes do not to have a statistically strong connection to any community.
+
+
+
+\subsection{College Football Network}
+
+The college football network represents the $115$ collegiate football teams and their games.  The nodes are the teams and the edges represent the two teams played a game.  The collegiate teams are split into divisional conferences, we consider these to be the known communities.  For the games, a team must play nearly every member of its conference.  Additionally, each team plays teams from other conferences.  If team $A$ belongs to a conference with only a few teams, then $A$ must play more teams from other conferences than a team within a larger conference.  This makes large conferences easy to detect and smaller conferences harder to detect.  
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c|ccc}
+Communities From & $I(S)$ & $E(S)$ & $|S|$ \\ \hline
+Known & $0.75$ & $0.36$ &  $12.0$\\
+Modularity & $0.68$ & $0.29$ & $10.0$\\
+Linearity &$0.85$ & $0.34$ & $13.0$ \\
+Parallel &$0.87$ & $0.35$ &  $13.0$\\
+\end{tabular}
+\caption{Internal Density, External Density, and number of communities for the set of communities returned by each detection method on the CFL network.}
+\label{tbl:football_all}
+\end{table}
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=2.8in]{Figures/football_known_plots}
+\includegraphics[width=2.8in]{Figures/football_module_plots}
+\includegraphics[width=2.8in]{Figures/football_linear_plots}
+\includegraphics[width=2.8in]{Figures/football_parallel_plots}
+\caption{Different solutions produced by the different community detection methods, communities are marked by coloration.  }
+\label{fig:football_comparison}
+\end{figure}
+
+The communities returned by different detection methods are in Figure \ref{fig:football_comparison}.  There are twelve conferences and we plot each at an hour on a clock face.  Each color represents a different community.  For a majority of the nodes all detection methods produce the same communities.  The smallest conferences are located at five o'clock and ten.  Each detection method breaks these conferences up and handles their nodes in a different way.  Modularity places each node another conference.  The nodes from the five o'clock conference are incorporated into the six and seven o'clock conferences.  Linearity and parallel create two communities for the split five o'clock conference.  Parallel does not classify four of the nodes, in black, in the ten o'clock conference.  These nodes do not have a strong connection to another community.  The last difference is that linearity and parallel break the nine o'clock conference into two communities.  Overall, modularity deviated from the known communities by creating fewer communities to cover more of the edges.  Linearity and parallel deviated from the known communities by creating more and denser communities.
 
 
 
@@ -873,29 +934,6 @@ The number of communities a node belongs to follows a power law distribution.
 
 Communities in citation networks evolve from a unioning of previous topics.  However, not all papers that union topics produce successful communities.
 
-\cite{fort}
-\cite{porter}
-\cite{kanna}
-\cite{newman}
-\cite{duch}
-\cite{blondel}
-\cite{mishra}
-\cite{jain}
-\cite{zhang}
-\cite{andersen}
-\cite{capocci}
-\cite{lanc:2009}
-\cite{danon}
-\cite{leskovec}
-\cite{hui}
-\cite{maiya}
-\cite{lan:2008}
-\cite{hastings}
-\cite{leskovec:2008}
-\cite{chen}
-\cite{lanc:2010}
-\cite{girvan}
-
 
 \appendix
 \chapter{Chapter 1 of appendix}
@@ -904,12 +942,4 @@ Appendix chapter 1 text goes here
 \bibliography{thesis}
 
 \end{document}
-
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=3in]{Figures/ideal_single_community}
-\caption{The $(I, E)$ domain for evaluating single communities.  The ideal community is marked by the black square}
-\label{fig_ideal_single}
-\end{figure}
 
