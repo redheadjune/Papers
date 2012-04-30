@@ -48,6 +48,7 @@
 \newtheorem{corollary}[definition]{Corollary}
 \newtheorem{conjecture}[definition]{Conjecture}
 \newtheorem{property}[definition]{Property}
+\newtheorem{proof}[definition]{Proof}
 
 \renewcommand{\caption}[1]{\singlespacing\hangcaption{#1}\normalspacing}
 \renewcommand{\topfraction}{0.85}
@@ -321,52 +322,43 @@ $E(S)$ & External Density of a set of Communities, $S$, Definition \ref{def_ext_
 % New Chapter
 \chapter{A Framework for the Comparing Metric Based Detection Methods}
 
-There are a variety of community detection metrics and they are difficult to compare.  To date only experimental methods have been available to analyze them.  Lancichinetti and Fortunato \cite{lanc:2009} found [algorithms that optimize metrics] work better on certain networks.  Leskovec et. al \cite{leskovec} found as community size increases, the communities that optimize certain metrics diverge from our understanding of a strong community.  The pattern for comparing metrics is to begin with a set of metrics, a set of algorithms to optimize each metric, and a network.  Communities found by the algorithms are then compared via their characteristics.  Characteristics include: diameter, average path length, degree distribution, size, internal density, etc.
+Given the variety of community detection methods, we would like to know the differences and similarities between each.  Experimental comparisons from Lancichinetti and Fortunato \cite{lanc:2009} found that an algorithm's performance depends on the network it is provided.  Also from experiments, Leskovec et. al \cite{leskovec} found large communities optimizing metrics diverge from our understanding of a strong community.  The process for developing experimental results is to begin with a set of metrics, a set of algorithms to optimize each metric, and a network.  Communities found by the algorithms are then compared via their characteristics.  Characteristics include: diameter, average path length, degree distribution, size, internal density, etc.
 
-Our approach is the reverse of previous comparisons.  We begin with considering the characteristics of a community.  The possible values of these characteristics create a multidimensional space.  Metrics collapse this multidimensional space onto the real numbers.  We can then categorize the multidimensional space according to how the metric evaluates communities with certain characteristic values.  In this sense we can get a theoretical understanding of metrics.  We follow through with experiments on four networks to confirm our findings.
+Our approach is the reverse of previous comparisons.  We begin with considering the characteristics of a community.  The possible values of these characteristics create a multidimensional space.  Metrics collapse this multidimensional space onto the real numbers.  We can then categorize the multidimensional space according to how the metric evaluates communities in the space.  With this method, we can get an understanding of metrics independent of particular networks.  We follow through with experiments on four networks to confirm our findings.
 
-
-% New Section*****************
-\section{Previous Comparisons}
-
-
-
-
-
-
-
-Communities are defined by two characteristics, members of the community interact with each other in a particular way and interact with nonmembers of the community in a different way.  Generally, a community is accepted as a set of nodes that interact frequently with each other and interact infrequently with nonmembers of the community.  The first characteristic corresponds to a high internal density, see Definition \ref{def:int_density_single}.  The second corresponds to a low external density, see Definition \ref{def:ext_density_single}.  Detection methods vary in their formulation of density and their prioritization of finding communities with higher internal density verse lower external density.
-
-All known comparisons have been experimental.  The experiments are run by first selecting a set of networks.  Then, each detection method finds the communities within each network.  Finally, using a set of metrics the communities found by each method are compared.  Lancichinetti and Fortunato \cite{lanc:2009} compared three popular partition algorithms with generated graphs and used normalized mutual information as the comparison metric.  Their results conclude that partition algorithms are fast and work well for non-overlapping communities.  Leskovec et. al \cite{leskovec} conducted a broader study.  They used eight classes of algorithms over $40$ networks and compared the results with a series of metrics covered in this chapter.
 
 
 % New Section******************************
 \section{Community Characteristics}
 
-Each characteristic of a community is a dimension in the multidimensional space that a metric compresses.  Here is a sampling of the more common characteristics of a community.
+A community can be described by a variety of characteristics.  Each characteristic provides a dimension in the multidimensional space for describing communities.  We now outline the more commonly used characteristics of a community.
 \begin{itemize}
 \item {\sc Internal Density} is density of edges within the community.
 \item {\sc External Density} is the density of edges leaving the community.
 \item {\sc Size} is the number of nodes within the community.
-\item {\sc Diameter} is the longest, shortest path between any two members of the community.
+\item {\sc Diameter} is the longest, shortest path between all pairs of members of the community, using only edges within the community.
 \item {\sc Average Shortest Path} is the average shortest path between any two members of the community.
-\item {\sc Out Degree Fraction} is the fraction of a node's edges leaving the community.
+\item {\sc Out Degree Fraction} is the fraction of a node's edges leaving the community.  Characteristics of the community are then the maximum, minimum, and average of out degree fraction of all nodes in the community.
 \item {\sc Degree Distribution} is the distribution of the degrees of nodes within the community.
 \end{itemize}
-There are many more specific characteristics, but we find that a community can be well described by the above list.  The listed characteristics are not independent.  A high internal density indicates a small diameter and short average path length.  A low external density limits the out degree fraction.  In fact, the value of most characteristics can be bounded by internal and external density values.  The size of a community can not be.  Hence, the characteristics of internal density, external density, and community size capture a large amount of information about a community's set of characteristics.  We will use this to our advantage and simplify our analysis by only using these three characteristics: internal density, external density, and size.
+There are more characteristics, but we find that a community can be well described by the above list.  The listed characteristics are not independent.  A high internal density indicates a small diameter and short average path length.  A low external density limits the average out degree fraction.  In fact, the value of most characteristics can be bounded by internal and external density values.  The size of a community can not be.  Hence, the characteristics of internal density, external density, and community size capture a large amount of information about a community's set of characteristics.
 
+
+% New Section*****************
+\section{Previous Comparisons}
+
+All known comparisons have been experimental.  The experiments are run by first selecting a set of networks.  Then, each detection method finds the communities within each network.  Finally, using a set of metrics the communities found by each method are compared.  Lancichinetti and Fortunato \cite{lanc:2009} compared three popular partition algorithms with generated graphs and used normalized mutual information as the comparison metric.  Their results conclude that partition algorithms are fast and work well for non-overlapping communities.  Leskovec et. al \cite{leskovec} conducted a broader study.  They used eight classes of algorithms over $40$ networks and compared the results with a series of metrics covered in this chapter.
 
 % New Section*******************************
 \section{Individual Community Based Metrics}
 
-Here, we explore metrics that evaluate the strength of a single community.  There are three uses of such metrics.  The first is for use in a Top Down (Section \ref{sec:top_down}) or Bottom Up style (Section \ref{sec:bottom_up}) style algorithm to find a partitioning of the network.  The second is to find a single community within the network.  The third is to compare communities found by complex detection techniques.  The later use is more common for these metrics, of which conductance is the most popular \cite{JTODO}.
+Here, we explore metrics that evaluate the strength of a single community.  There are three uses of such metrics.  The first is for use in a Top Down (Section \ref{sec:top_down}) or Bottom Up style (Section \ref{sec:bottom_up}) style algorithm to find a partitioning of the network.  The second is to find a single community within the network.  The third is to compare communities found by complex detection techniques.  The later use is more common for these metrics, of which conductance is the most popular and used in \cite{JTODO}.  From the multidimensional space describing communities, we will use the subspace of internal density, external density, and community size.  We analyze how single community metrics evaluate this three dimensional space.
 
 
 % New subsection********************************
 \subsection{Internal and External Density}
 
-The most distinct community is a clique, disconnected from the rest of the graph.  The internal density is maximized and the external density is minimized.  Formal definitions follow.
-
+We now provide formal definitions of internal and external density.
 \begin{definition}[Internal Density]
 \label{def:int_density_single}
 Internal density is the total weight of edges that exist between members of the community, {\it internal edges}, compared to the total possible weight that could exist within the community.  Hence, $I(C) : C \rightarrow \mathbb{R}_{[0, 1]}$, where
@@ -375,25 +367,33 @@ Internal density is the total weight of edges that exist between members of the 
 \end{equation}
 \label{def_int_density}
 \end{definition}
-
 For a community $C$ that has no edges between its members, the {\it internal density} will be minimized with, $I(C) = 0$.  For a community $C$ that is a clique, {\it internal density} will be maximized with $I(C) = 1$.  The closer a community, $C$ is to an {\it internal density} value of $1$, the close it is to being a clique.  
-
 \begin{definition}[External Density]
 \label{def:ext_density_single}
-External density is the total weight of edges that exist between a member of the community and a nonmember of the community, {\it external edges}, compared to the total possible edge weight that could exist leaving the community:
+External density is the total weight of edges that exist between a member of the community and a nonmember of the community, compared to the total possible edge weight that could exist leaving the community:
 \begin{equation}
  E(C) = \frac{\sum_{u \in C} \sum_{v \notin C} w(u,v)}{|C|(|V| - |C|)}.
 \end{equation}
 \label{def_ext_density}
 \end{definition}
-
 For a community $C$ that has all possible {\it external edges}, external density will be maximized at $E(C)=1$.  For a community $C$, disconnected from the rest of the graph, external density will be minimized at $E(C) = 0$.
 
 There are other representations of $I(C)$ and $E(C)$ that vary how the $|C|$ and $|V|$ terms are used.  The analysis and conclusions that follow are not sensitive to such variations.
 
-With our parameterization, all communities can be mapped to a point $(I(C), E(C))$ in the square $\mathbb{R}_{[0, 1]} x \mathbb{R}_{[0, 1]}$.   Communities with certain values do not correspond to our understanding of a strong community.  Such values are $\left(0, \frac{1}{2}\right)$, $\left(\frac{1}{2}, 1\right)$, etc.  However, a community mapped to $\left(\frac{1}{2}, 0\right)$ corresponds to a strong community.  We define the strongest possible community to be ideal.
+With our parameterization, all communities can be mapped to a point $(I(C), E(C))$ in the square $\mathbb{R}_{[0, 1]} x \mathbb{R}_{[0, 1]}$.   Communities with certain values do not correspond to our understanding of a strong community.  Such values are listed in Table \ref{tbl:bad_single}.
+\begin{table}[tb]
+\centering
+\begin{tabular}{|c | c  |}
+ \hline $(I(C), E(C))$ & Weak Community Characteristic\\ \hline
+$\left(0, \frac{1}{2}\right)$ & Infinite Diameter\\ \hline
+$\left(\frac{1}{2}, 1\right)$ & Large Average Out Degree Fraction \\ \hline
+\end{tabular}
+\caption{Examples of internal and external density value and why they represent poor communities.}
+\label{tbl:bad_single}
+\end{table}
+However, a community mapped to $\left(\frac{1}{2}, 0\right)$ has a short average path length, minimal average out degree fraction, and small diameter.  This corresponds to a strong community.  The higher the internal density and the lower the external density the strong a community must be in all characteristics.  We define the strongest possible community to be ideal.
 \begin{definition}[Ideal Single Community]
-A community, $C$, is ideal if it is an isolated clique, specifically has the following properties:
+A community, $C$, is ideal if it is an isolated clique, specifically it has the following properties:
 \begin{eqnarray*}
 I(C) &=& 1\\
 E(C) &=& 0.
@@ -404,7 +404,7 @@ E(C) &=& 0.
 % New subsection********************
 \subsection{Study of Relevant Metrics}
 
-Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now analyze how different metric based detection methods operate in the $I,E$ plane.  We cover six metrics that evaluate a single community.  We use one approximation to simplify the equations, $|C| \approx |C| - 1$.  This approximation has a larger impact on smaller communities, but most communities of interest are large enough to allow the approximation.  Additionally, we introduce variable, $k$, representing the portion of the nodes within community, $C$, such that $|C| = k |V|$
+Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now analyze how different metric based detection methods operate in the $I,E$ plane.  We cover six metrics that evaluate a single community.  We use one approximation to simplify the equations, $|C| \approx |C| - 1$.  This approximation has a larger impact on smaller communities, but most communities of interest are large enough to allow the approximation.  Additionally, we introduce a variable $k$ representing the portion of the nodes within community $C$ such that $|C| = k |V|$
 \begin{itemize}
 \item {\sc Conductance} is the probability that a step in a random walk will leave the community \cite{JTODO}.
 \begin{equation}
@@ -430,9 +430,9 @@ Given that we can map a community, $C$, to the point $(I(C), E(C))$, we now anal
 \mbox{\sc Volume} = |C|^2 I(C) + k(1-k)|V|^2E(C)
 \end{equation}
 \end{itemize}
- With this parameterization of the metrics, we can already draw some conclusions.  All metrics, besides {\sc Volume} and {\sc Conductance} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While it is possible to find all disconnected components in linear time, it also provides no information about most datasets.
+ With this parameterization of the metrics, we can already draw some conclusions.  All metrics mentioned, besides {\sc Volume} and {\sc Conductance} are a function of either $I(C)$ or $E(C)$, but not both.  A metric that considers only $I(C)$ will be optimized by any clique.  Which is a very restrictive definition of a community and finding all communities in the graph under such a definition is equivalent to finding all the cliques in a graph, a NP-hard problem.  A metric that considers only $E(C)$ will be optimized by any disconnected component of the graph, including a community that includes the entire graph.  While it is possible to find all disconnected components in linear time, it also provides no information about most datasets.
 
-For the metrics that can be parameterized in terms of $I(C)$ and $E(C)$, we can use level sets.  Level sets are a way to visually categorize a space.  Let us pick the metric conductance.  An optimal value of conductance is $0$.  We can find all points of $(I(C), E(C))$ (without knowing $C$) that evaluate to {\sc Conductance}$(C) = 0$.  These points form a line in the $(I, E)$ space.  Now, we find all the points of $(I(C), E(C))$ that have a conductance value of {\sc Conductance}$(C) = \delta$.  These points will also form a line in the $(I, E)$ space.  Because of the continuity of conductance, any community, $C$, that evaluates to an $(I, E)$ point that lies between these two lines must have a conductance value of {\sc Conductance}$(C) \in (0, \delta)$.  In this way we can visually categorize the space.
+For the metrics that can be parameterized in terms of $I(C)$ and $E(C)$, all mentioned metrics, we can use level sets.  Level sets are a way to visually categorize a space.  Let us pick the metric conductance.  An optimal value of conductance is $0$.  We can find all points of $(I(C), E(C))$ (without knowing $C$) that evaluate to {\sc Conductance}$(C) = 0$.  These points form a line in the $(I, E)$ space.  Now, we find all the points of $(I(C), E(C))$ that have a conductance value of {\sc Conductance}$(C) = \delta$.  These points will also form a line in the $(I, E)$ space.  Because of the continuity of conductance, any community, $C$, that evaluates to an $(I, E)$ point that lies between these two lines must have a conductance value of {\sc Conductance}$(C) \in (0, \delta)$.  In this way we can visually categorize the space.
 
 \begin{figure}
 \includegraphics[width=3in]{Figures/e_based_ls}
@@ -506,7 +506,7 @@ For these three metrics, their definitions vary, but their level sets are identi
 \label{fig_real_e_based}
 \end{figure}
 
-Because all of these metrics only respond to changes in external density, the order of nodes the greedy algorithm adds to the community does not vary between the three metrics.  The difference between the three metrics is when they terminate.  Termination in this case is determined by the size of the community, $k = \frac{|C|}{|V|}$.  Cut ratio is unresponsive to changes in the size of the community, while expansion linearly discounts against larger communities.  Edges cut heavily favors very large or very small communities.  See {\it Fig. \ref{fig_k_e_based}}.  
+Because all of these metrics only respond to changes in external density, the order of nodes the greedy algorithm adds to the community does not vary between the three metrics.  The difference between the three metrics is when they terminate.  Termination in this case is determined by the size of the community, $k = \frac{|C|}{|V|}$.  Cut ratio is unresponsive to changes in the size of the community, while expansion linearly discounts larger communities.  Edges cut heavily favors very large or very small communities.  See {\it Fig. \ref{fig_k_e_based}}.  
 
 \begin{figure}[!h]
 \centering
@@ -521,7 +521,7 @@ Because all of these metrics only respond to changes in external density, the or
 % subsubsection*************************************
 \subsubsection{Internal Density as Previously Defined}
 
-Internal density is a function of internal density and is unresponsive to changes in the the external density.  Hence, only cliques and subsets of cliques optimize internal density. We do not include indepth analysis, but rather a summary.  The level sets of internal density are vertical lines in the $I,E$ plane, as seen in Figure \ref{fig_single_ls}.  The greedy algorithm augments our input of two connected nodes to the largest clique it can find(if forced to), as two connected nodes are already a clique.
+{\sc Internal Density} is a function in that has been in use before our formalization of $I(C)$.  {\sc Internal Density} is a function of only $I(C)$ and is unresponsive to changes in the the external density.  Hence, only cliques and subsets of cliques optimize internal density. We do not include indepth analysis, but rather a summary.  The level sets of internal density are vertical lines in the $I,E$ plane, as seen in Figure \ref{fig_single_ls}.  The greedy algorithm augments our input of two connected nodes to the largest clique it can find(if forced to), as two connected nodes are already a clique.
 
 
 % subsubsection*************************************
@@ -703,7 +703,7 @@ In some applications, we may want to relax the predictability constraint to find
   \end{equation}
 The functions $f_i$ and $g_i$ can be any function of the size of a community.
 \end{definition}
-If an instance of the general equation for an application is used, the level sets and size community impact should be analyzed for elements of unpredictability.  In particular, the local and global maximums should correspond to the desired communities, and the level sets should aid finding desired communities in a manner similar to gradients.
+When using the general equation, the level sets and size community impact should be analyzed.  In particular, the local and global maximums should correspond to the desired communities, and the level sets should aid finding desired communities in a manner similar to gradients.
 
 \begin{figure}[tb]
 \centering
@@ -715,7 +715,7 @@ If an instance of the general equation for an application is used, the level set
 \label{fig:linear_single}
 \end{figure}
 
-We now analyze {\sc Linearity} in the same way we analyzed other single community metrics.  The level sets in Figure \ref{fig:linear_single_ls_k} reveal a predictable metric that is only optimized by the ideal community. The size of the community does not change the behavior of the metric.  We test the {\sc Linearity} metric  with the Greedy Algorithm \ref{alg_greedy_single} on four networks in Figure \ref{fig:linear_single}.  The parameters were set to $a = 1$ and $b$ required a binary search.  The parameter $b$ was set within four steps, such that the greedy algorithm did not return the entire graph or the initial community. There is room for future research on the impact of $b$.  For all possible values of $b$, we find very few different communities.
+We now analyze {\sc Linearity} in the same way we analyzed other single community metrics.  The level sets in Figure \ref{fig:linear_single_ls_k} reveal a predictable metric that is only optimized by the ideal community. The size of the community does not change the behavior of the metric.  We test the {\sc Linearity} metric  with the Greedy Algorithm \ref{alg_greedy_single} on four networks in Figure \ref{fig:linear_single}.  The parameter $a$ was set to one, while $b$ required a binary search.  The parameter $b$ was set within four steps, such that the greedy algorithm did not return the entire graph or the initial community. There is room for future research on the impact of $b$.  For all possible values of $b$, we find very few different communities.
 
 
 
@@ -724,7 +724,7 @@ We now analyze {\sc Linearity} in the same way we analyzed other single communit
 % new section *************************
 \section{Multiple Community Detection}
 
-As we constructed a linear metric for a single community, we now construct a linear metric for sets of communities, $S$.  The characteristics of a set of communities can be summarized by internal density (definition \ref{def_int_set}), external density(definition \ref{def_ext_set}) and the number of communities in the set (definition \ref{def_conciseness}).  A good metric should reflect a set of community's $E(S)$, $I(S)$, and $|S|$ values.  In particular, the metric should be optimized by the ideal set of communities and minimal for sets of communities with poor values of $E(S)$, $I(S)$, or $|S|$.  As with single community metrics, we want a predictable metric for sets of communities.  The most predictable metric is linear.
+As we constructed a linear metric for a single community, we now construct a linear metric for sets of communities, $S$.  The characteristics of a set of communities can be summarized by internal density (Definition \ref{def_int_set}), external density(Definition \ref{def_ext_set}) and the number of communities in the set (Definition \ref{def_conciseness}).  A good metric should reflect a set of community's $E(S)$, $I(S)$, and $|S|$ values.  In particular, the metric should be optimized by the ideal set of communities and minimal for sets of communities with poor values of $E(S)$, $I(S)$, or $|S|$.  As with single community metrics, we want a predictable metric for sets of communities.  The most predictable metric is linear.
 \begin{definition}[Linearity] Given a set of communities, $S = \{C_1, C_2, \dots \}$ {\sc Linearity}$(S)$ is a metric mapping $S$ to $[-2, 1]$.
   \begin{equation}
    \mbox{\sc Linearity}(S) = a I(S) - b E(S) - c |S|,
@@ -793,22 +793,249 @@ We now run our algorithm on four data sets and compare to known results and modu
 
 \chapter{Parallel Community Detection}
 
-The previously covered algorithms for metric maximization is one train of thought
+The metric based detection methods can analyze networks up to $\approx 50$k nodes.  At that point, the computational time for these methods to complete becomes prohibitive, but there is not the limit of a network's size.  The Amazon network has $500$ thousand nodes, the twitter network has $17$ million nodes, and the memetracker network has $96$ million nodes.  Analysis of these large networks will require a parallel algorithm.  In this chapter we adapt and modify our understanding of communities to develop an embarrassingly parallel algorithm for community detection.
+
+\section{Parallel Algorithms}
+
+Here we briefly introduce the two important aspects to good parallel algorithms.
+
+Parallel algorithms take an application and divide the computational cost up into units.  Each unit of computation is then assigned to a processor.  The wall clock time of an application is the time it takes from beginning the computation to receiving an answer.  The computational time is the number of processors times the wall clock time, in other words the man hours for cpu's.  For most applications we are most concerned with lowering the wall clock time.  For parallel algorithms, this can be achieved by increasing the number of processors used.  Ideally, if we double the number of processors, we can halve the wall clock time; this is known as perfect scalability.  How close an algorithm comes to perfect scalability is the scalability of the algorithm.  The primary bottleneck preventing algorithms from having perfect scalability is the communication cost between processors.  In order for one processor to finish computations it may rely on the results produced by another processor.   For a good parallel algorithm it is essential to minimize communication between processors.
+
+The second aspect of a good parallel algorithm is it does not work well on small datasets.  The intuition with which we design algorithms for small datasets typically does not apply to large datasets.  Additionally, the algorithm techniques for small datasets do not scale.  The first step to design an algorithm for large datasets is to abandon the algorithms and intuitions used for small datasets.
+
+We will design a parallel algorithm with these two aspects in mind.  The perspective of algorithms for small networks, metric based detection methods, has been, {\it is this community a good community to include in the set of communities.}  Modularity and linearity have a parameter that depends on the entire set of communities.  This perspective requires knowledge of all other communities within the network.  Parallelizing this perspective leads to a high communication cost.  For a good parallel algorithm we need a new perspective.  The perspective we use is {\it given a node and a set of nodes, do they belong to the same community?}  There is no communication necessary for this perspective to be parallelized.
+
 
 \section {Introduction of Properties and Statistical Significance}
 
+
+We introduce the idea of a property between a node and a set of nodes.  In a social network a property would be between a person, $n$, and a set of people, $S$.  An example property may be the number of friends $n$ has in $S$ or the number of times per day $n$ sees a member of $S$.  Whatever the physical explanation, we label the property $X_i$ as a function of $n$ and $S$, ie $X_i : (n, S) \rightarrow \mathbb{R}$.  Without loss of generality, we presume the higher the value of $X_i(n, S)$ the more strongly related $n$ and $S$ are.  In a single network there may be several properties, $X_0, X_1, \dots$.  Social networks can have properties corresponding to friends, colleagues, sport teams, etc.  Biological networks may have predator and prey properties.  In general, for unweighted undirected graphs with unlabeled nodes and edges there are two properties.  Let the function $E(n, S)$ return the edges from $n$ to members of $S$.
+
+\begin{definition}[Property $X_e$]
+The property $X_e$ is the number of edges between a node, $n$, and a set, $S$:
+\begin{equation}
+X_e(n, S) = |E(n, S)|.
+\end{equation}
+\end{definition}
+
+\begin{definition}[Property $X_p$]
+The property $X_p$ is the percentage of edges $n$ has that lead to members of $S$:
+\begin{equation}
+X_p(n, S) = \frac{|E(n, S)|}{degree(n)}.
+\end{equation}
+\end{definition}
+
+We introduce one more piece of notation about properties.  Given a set $S$, let $\Phi (X_i, C)$, be the set of all nodes, $n \in S$, such that $X_i(n, S)$ is statistically significant.
+
+Using properties, we now develop an understanding of communities.  We do not define a community; we define the properties a community possesses.
+
+\begin{definition}[Closed Community]
+A community $C$ is closed under two conditions.  The first is for every node, $n$, in $C$, there exists at least one property $X_i$, such that $X_i(n, C)$ is statistically significant.  The second is that for all properties $X_i$, there is a bound $b_i$ satisfying:
+\begin{itemize}
+\item For all nodes $n \in C$ such that $X_i(n, C)$ is statistically significant, ie $n \in \Phi(X_i, C)$, $X_i(n, C) \geq b_i$
+\item For all nodes, $m$, outside of $C$, ie, $m \in V - C$, $X_i(m, C) < b_i$
+\end{itemize}
+In other words, every property, $X_i$, has a line of statistical significance that bounds all nodes not in $C$ from above, and bounds all nodes that belong in $C$ because of $X_i$ from below.
+\end{definition}
+
+\begin{definition}[Maximally Closed Community]
+A community $C$ is maximally closed, if it is closed and includes all statistically significant nodes.  {\it The definition of statistically significant is application specific.}
+\end{definition}
+
+\begin{definition}[Strength of a Community]
+The strength of a community $C$ is a set of bounds, $\{b_i\}$, where bound $b_i$ is the lower bound of statistical significance for nodes to be in the community with property $X_i$:
+\begin{equation}
+b_i = \min \{X_i(n, C) | n \in \Phi(X_i, C)\}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Homogeneous Community]
+A community $C$ is homogeneous if there exists some property such that all nodes are in the community for the same reason.  Ie, there exists $X_i$ such that $C = \Phi(X_i, C)$.
+\end{definition}
+
+\begin{definition}[Heterogeneous Community]
+A community $C$ is heterogeneous if it is not homogeneous.
+\end{definition}
+
+The most desirable communities are {\it maximally closed communities}.
+
+
 \section{Algorithm}
+
+
+\begin{algorithm}[!h]                              % enter the algorithm environment
+\caption{\sc Get\_All\_Communities}         % give the algorithm a caption
+\label{alg_all_c}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G=(V,E)$
+\STATE Seeds = {\sc Get\_Seeds}$(G)$
+\RETURN $\{\mbox{\sc Expand}(G, S) |  S \in \mbox{\sc Seeds}\}$
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[!h]                              % enter the algorithm environment
+\caption{{\sc Get\_Seeds}}         % give the algorithm a caption
+\label{alg_seed}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G$
+\STATE $Seeds = \{\}$
+\WHILE{There exists a clique of size $\geq 5$ in $G$}
+\STATE Let $L$ be one of the largest cliques in $G$.
+\STATE Let $S$ be a strong, large, local community in the ball of radius $1$ around $L$.
+\STATE $Seeds \leftarrow Seeds \cup \{S\}$
+\STATE Remove all nodes in a ball of radius 1 around $S$ from $G$
+\ENDWHILE
+\RETURN{$Seeds$}
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]                              % enter the algorithm environment
+\caption{{\sc Expand}}         % give the algorithm a caption
+\label{alg_expand}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G, S$
+\WHILE{not {\sc Closed}$(G, S)$}
+\STATE $S \leftarrow S \cup \mbox{\sc Candidate}(G, S)$
+\ENDWHILE
+\RETURN $S$
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[!h]                              % enter the algorithm environment
+\caption{\sc Closed}         % give the algorithm a caption
+\label{alg_closed}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G, S$
+\FOR{$n \in S$}
+\STATE Let $n$ be a member of $S$ because of property $X$
+\IF{There exists $m \in V - S$, such that $X(m, S) \geq X(n, S)$}
+\RETURN False
+\ENDIF
+\ENDFOR
+\RETURN True
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[!h]                              % enter the algorithm environment
+\caption{Candidate}         % give the algorithm a caption
+\label{alg_candidate}                                   % and a label for \ref{} commands later in the document
+\begin{algorithmic}                        % enter the algorithmic environment
+\REQUIRE $G, S$
+\STATE Find node $m \in V-S$ with highest probability of belonging to $S$.
+\RETURN $m$
+\end{algorithmic}
+\end{algorithm}
 
 \subsection{Seeds}
 
+
+\begin{theorem}[Size of $C_s$ with diameter at most $3$]
+Within a community, $C$, there exists a subset $C_s$ with diameter at most $3$, and of size:
+\begin{equation}
+ |C_s| \geq \max_{L \subset C}\left\{|\cup_{n \in L} E(n, C)| \right\},
+\end{equation}
+where $L$ is a clique subset of $C$.
+\end{theorem}
+\begin{proof}
+The proof is straight forward.  Let $L$ be a clique such that $ L \subset C$.  Consider the ball $B_1(L) \cap C$, ie all nodes in $C$ that are connected to a member of $L$.  For all $u, v \in B_1(L) \cap C$, let  $u$ be connected to the member $m_u \in C$ and $v$ be connected to the member $m_v \in L$.  Then a candidate shortest path between $u$ and $v$ is $(u, m_u), (m_u, m_v), (m_v, v)$, a path of length $3$.  Thereby, $B_1(L) \cup C$ has a diameter of at most $3$.  The size of $B_1(L) \cap C$ is $|\cup_{n \in L} E(n, C)|$.  Since this is true for all such balls centered around cliques within the community, it must be true for the largest such ball.
+\end{proof}
+
+{\it JTODO:}Expand these tools with a community definition to get a proper size bound.
+
+
 \subsection{Expansion}
 
-\section{Probability of Correctness}
 
-\section {Performance}
+Given a set $C_s$, let $n$ be the node with the greatest number of edges going into $C_s$.  Expansion is then the act of expanding $C_s$ to include $n$.  We would like to show the probability with which $n$ belongs to the same community that $C_s$ is a subset of.
+
+If $P_I$ and $P_E$ are the distributions of the number of edges a node has into $C_s$ for internal and external nodes respectively, then we can calculate $P_{win}$, the probability the maximally connected node to $C_s$ is indeed an internal node.  In particular, for continuous probabilities, or weighted edges:
+\begin{equation}
+ P_{win} = 1 - \left(1 - \int\limits_{0}^{\infty} P_I(X = x) P_E(X < x)^{|V - C|}dx \right)^{|C - C_s|}.
+\end{equation}
+For unweighted edges:
+\begin{equation}
+ P_{win} = 1 - \left(1 - \sum\limits_{0}^{|C_s|} P_I(X = x) P_E(X < x)^{|V - C|} \right)^{|C - C_s|}.
+\end{equation}
+
+Now while these are a bit involved, let us say we wanted $P_{win}$ to grow as:
+\begin{equation}
+ P_{win} \geq 1 - \left( \frac{1}{2} + a \right)^{|C - C_s|}.
+\end{equation}
+Then we would just need:
+\begin{equation}
+\frac{1}{2} - a \leq \sum\limits_{0}^{|C_s|} P_I(X = x) P_E(X < x)^{|V - C|}
+\end{equation}
+
+For certain $P_I$ and $P_E$, this may be hard to calculate.  A trick is to use a step function to bound $P_E^{|V-C|}$ from below.  Then, find what $a$ and $P_I$ must be in relation to each other.
+
+\subsubsection{Binomial Distribution}
+Presume the graph is a random graph where internal edges within communities exist with probability $p$ and external edges between communities exist with probability $q$.  Then the number of edges of an internal node into the subset $C_s$ is the random variable $B(|C_s|, p)$ and for external nodes, the number of edges they have into $C_s$ is r.v. $B(|C_s|, q)$.
+
+The function $P_E^{|V-C|}$ is monotonically increasing function from $0$ to $1$.  At some point $y$,  $P_E(X < y)^{|V-C|} = \frac{1}{2}$.  In particular:
+\begin{equation}
+P_E(X < y) \geq \frac{1}{2^{\frac{1}{|V-C|}}}
+\end{equation}
+While it may seem impossible to meet this criteria for $y < |C_s|$, as it is an exponentially decreasing function in terms of the potentially very large $|V-C|$ factor, it is in fact possible.  For graphs of the size $10^z$ the equation is roughly $1 - 10^{-z}$.  Now if $|C_s| > 20$, we approximate $B(|C_s|, q)$ with a normal distribution variable.  We now bring in the standard deviation to figure out what $y$ must be to satisfy this equation.  To have the criteria $P_E(X< y)$ is to imply that there can not be too much weight outside of the range $(0, y)$.  We can use the standard deviation to find how far out from the mean $\mu = |C_s|q$, $y$ must be to satisfy the equation.  The weight outside of the range $\mu \pm d \sigma$ grows as  $1 - erf\left(\frac{d}{\sqrt{2}} \right)$ function, which is why we can find a $y$ to satisfy the equation.  To have weight less than $1 - 10^{-6}$ outside of the range $(0, y)$, we need only be $d \geq 5.5$ deviations from the mean for a million node network.  Hence, for any network with less than a million nodes we approximate $P_E(X<x)^{|V-C|}$ by the step function $I_{x > 7q|C_s|}$.
+
+Using the lower bound gives us the new relation to satisfy:
+\begin{equation}
+\frac{1}{2} - a \leq  \left(\frac{1}{2} \right) \sum\limits_{7q|C_s|}^{|C_s|} P_I(X = x) \leq \sum\limits_{0}^{|C_s|} P_I(X = x) P_E(X < x)^{|V - C|}
+\end{equation}
+Now we wish to find how $B(|C_s|, p)$ must compare to $a$ for these equations to hold.  Hence we want a $p$ large enough to satisfy:
+\begin{equation}
+1 - 2a \leq \sum\limits_{7q|C_s|}^{|C_s|} P_I(X = x)
+\end{equation}
+The stricter the value for $a$ we want, the higher $p$ must be.  For a loose value of $a = \frac{1}{4}$, then $p = 7 q$.
+
+We note that for large graphs the expectation that $p \geq 7 q$ is not unreasonable.
 
 
+\subsubsection{Pareto Distribution}
 
+The pareto distribution is a power law distribution.  In the following section, we explore the calculated values of $P_{win}$ with this power law distribution.  Our assumption is that the number of edges a node $m \in V - C$ has into $C_s$ follows:
+\begin{eqnarray}
+ P_E(X = x) &=& \frac{\alpha x_m^{\alpha}}{x^{\alpha + 1}} \nonumber \\
+ P_E(X < x) &=& 1 - \left( \frac{x_m}{x}\right)^{\alpha}, \nonumber
+\end{eqnarray}
+where $x_m$ and $\alpha$ are the parameters of the distribution.  Following the assumption that nodes from $n \in C - C_s$ have a number edges into $C_s$ following the same distribution, produces:
+\begin{equation}
+ P_I(X = x) = \frac{\alpha (x_m + \delta)^{\alpha}}{x^{\alpha + 1}}. 
+\end{equation}
+If a node in the graph need not be connected to the subset at all $x_m = 0$.  The parameter $\delta$ is then the minimum number of edges a node of the community must have into the subset to be a member of the community.
+
+Given these $P_I$ and $P_E$, the equation for $P_{win}$ can then be calculated:
+\begin{eqnarray}
+ P_{win} = &1& - \nonumber\\ 
+&&\left(1 - \frac{(x_m + \delta)^{\alpha}}{(|V-C|+1) x_m^{\alpha}}\left(1 - \left( 1 - \frac{x_m^{\alpha}}{(x_m + \delta)^{\alpha}} \right)^{|V-C|+1}\right) \right)^{|C - C_s|}. \nonumber
+\end{eqnarray}
+
+{\it JTODO: find a good way to express that this crazy equation actually produces quite workable probabilities. for the algorithm.}
+\begin{table}
+\begin{center}
+\begin{tabular}{ccccc|cc}
+ $\alpha$ & $x_m$ & $V - C$ & $C - C_s$ & $\delta$ & $P_{win}$ & description \\ \hline
+$1.5$ & $1$ & $200$ & $20$ & $5$ &  $78\%$ & $C_s$ is half of $C$ \\
+$1.5$ & $1$ & $200$ & $30$ & $5$ &  $90\%$ & $C_s$ is $\frac{1}{4}$ of $C$\\
+$1.5$ & $1$ & $400$ & $30$ & $5$ &  $67\%$& size of graph doubled \\
+$1.5$ & $1$ & $200$ & $30$ & $2.5$ &  $63\%$ & $P_I$ shift halved\\
+\end{tabular}
+\caption{The likelihood of a good recovery}
+\label{tbl:pareto}
+\end{center}
+\end{table}
+
+
+\section{Analysis}
+
+\subsection{Probability of Correctness}
+
+\subsection {Scalability}
+
+
+% New Chapter********************
 \chapter{Case Studies of Networks}
 \label{ch:datasets}
 
@@ -825,10 +1052,10 @@ The Karate Club Network represents a set of students belonging to a karate club.
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=2.8in]{Figures/karate_known_plots}
-\includegraphics[width=2.8in]{Figures/karate_module_plots}
-\includegraphics[width=2.8in]{Figures/karate_linear_plots}
-\includegraphics[width=2.8in]{Figures/karate_parallel_plots}
+\includegraphics[width=2.8in]{Figures/karate_known}
+\includegraphics[width=2.8in]{Figures/karate_module}
+\includegraphics[width=2.8in]{Figures/karate_linear}
+\includegraphics[width=2.8in]{Figures/karate_parallel}
 \caption{Communities produced by the different community detection methods, communities are marked by coloration.  Linearity produces two communities with the overlap colored in grey.  Parallel produces four communities with four nodes in black not belonging to any community.}
 \label{fig:karate_comparison}
 \end{figure}
@@ -854,7 +1081,7 @@ Each of the detection methods produces different sets of communities, each with 
 
 \subsection{College Football Network}
 
-The college football network represents the $115$ collegiate football teams and their games.  The nodes are the teams and the edges represent the two teams played a game.  The collegiate teams are split into divisional conferences, we consider these to be the known communities.  For the games, a team must play nearly every member of its conference.  Additionally, each team plays teams from other conferences.  If team $A$ belongs to a conference with only a few teams, then $A$ must play more teams from other conferences than a team within a larger conference.  This makes large conferences easy to detect and smaller conferences harder to detect.  
+The college football network represents the $115$ collegiate football teams and their games.  The nodes are the teams and the edges represent pairs of teams that played a game.  The collegiate teams are split into divisional conferences, we consider these to be the known communities.  For the games, a team must play nearly every member of its conference.  Additionally, each team plays teams from other conferences.  If team $A$ belongs to a conference with only a few teams, then $A$ must play more teams from other conferences than a team within a larger conference.  This makes large conferences easy to detect and smaller conferences harder to detect.  
 
 \begin{table}[!h]
 \centering
@@ -871,28 +1098,115 @@ Parallel &$0.87$ & $0.35$ &  $13.0$\\
 
 \begin{figure}[tb]
 \centering
-\includegraphics[width=2.8in]{Figures/football_known_plots}
-\includegraphics[width=2.8in]{Figures/football_module_plots}
-\includegraphics[width=2.8in]{Figures/football_linear_plots}
-\includegraphics[width=2.8in]{Figures/football_parallel_plots}
+\includegraphics[width=2.8in]{Figures/football_known}
+\includegraphics[width=2.8in]{Figures/football_module}
+\includegraphics[width=2.8in]{Figures/football_linear}
+\includegraphics[width=2.8in]{Figures/football_parallel}
 \caption{Different solutions produced by the different community detection methods, communities are marked by coloration.  }
 \label{fig:football_comparison}
 \end{figure}
 
-The communities returned by different detection methods are in Figure \ref{fig:football_comparison}.  There are twelve conferences and we plot each at an hour on a clock face.  Each color represents a different community.  For a majority of the nodes all detection methods produce the same communities.  The smallest conferences are located at five o'clock and ten.  Each detection method breaks these conferences up and handles their nodes in a different way.  Modularity places each node another conference.  The nodes from the five o'clock conference are incorporated into the six and seven o'clock conferences.  Linearity and parallel create two communities for the split five o'clock conference.  Parallel does not classify four of the nodes, in black, in the ten o'clock conference.  These nodes do not have a strong connection to another community.  The last difference is that linearity and parallel break the nine o'clock conference into two communities.  Overall, modularity deviated from the known communities by creating fewer communities to cover more of the edges.  Linearity and parallel deviated from the known communities by creating more and denser communities.
+The communities returned by different detection methods are in Figure \ref{fig:football_comparison}.  There are twelve conferences and we plot each at an hour on a clock face.  Each color represents a different community.  For a majority of the nodes, all detection methods produce the same communities.  The smallest conferences are located at five o'clock and ten.  Each detection method breaks these conferences up and handles their nodes in a different way.  Modularity places each node in another conference.  The nodes from the five o'clock conference are incorporated into the six and seven o'clock conferences.  Linearity and parallel create two communities for the split five o'clock conference.  Parallel does not classify four of the nodes, in black, in the ten o'clock conference.  These nodes do not have a strong connection to another community.  The last difference is that linearity and parallel break the nine o'clock conference into two communities.  Overall, modularity deviated from the known communities by creating fewer communities to cover more of the edges.  Linearity and parallel deviated from the known communities by creating more and denser communities.
 
 
 
 \section{Collaboration Networks}
 
+The set of collaboration networks consist of authors as nodes and edges representing a collaboration.  We modify these networks slightly.  In collaboration networks there are several graduate students that collaborate with only one professor.  We eliminate these nodes in a way that maintains the structure of the graph.
 
-\subsection{Astrophysics}
+\begin{definition}[Bridge]
+A bridge is an edge that replaces a low degree node connecting two high degree nodes.  If the graph has edges $(i, j)$ and $(j, k)$, but not $(i, k)$ and $i,k$ are nodes with degree greater than $d$ and $j$ is a node with degree less than or equal $d$, we replace node $j$ with a bridge connecting $i$ and $k$.
+
+JTODO include diagram
+\end{definition}
+
+There are no known solutions to the collaboration networks, but we can compare the communities returned by each method.  Our comparison reveals the resolution limit of modularity.  Modularity returns fewer and larger communities than our linearity and parallel methods.  In particular, we can see how modularity returns communities that deviate from our understanding of a strong community.  Linearity and Parallel illuminate different community structure, much closer to our understanding of strong communities.
+
+
+\subsection{General Relativity}
+
+Modularity produces $34$ communities in the general relativity graph.  It is the smallest of the coauthor networks, but we begin to see the resolution limit of modularity.
+
+
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c|ccc}
+Communities From & $I(S)$ & $E(S)$ & $|S|$ \\ \hline
+Linearity & $0.33$ & $0.05$ & $235$ \\
+Parallel & $0.18$ & $0.07$ & $408$ \\
+Modularity& $0.06$ & $0.11$ & $34$
+\end{tabular}
+\caption{Internal Density, External Density, and number of communities for the set of communities returned by each detection method on the astrophysics coauthor network.}
+\label{tbl:astro_all}
+\end{table}
+
+We now provide a sample of communities found.  Figure \ref{fig:rel_24} has a stricking example of 
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=2.8in]{Figures/relativity_29_module}
+\includegraphics[width=2.8in]{Figures/relativity_29_linear}
+\includegraphics[width=2.8in]{Figures/relativity_29_parallel}
+\caption{One of the smaller communities produced by Modularity with  $57$ nodes.  Grey nodes are nodes shared by communities and black nodes are nodes not within a community.  Note the resolution limit of modularity.}
+\label{fig:rel_29}
+\end{figure}
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/relativity_24_module}
+\includegraphics[width=2.8in]{Figures/relativity_24_linear}
+\includegraphics[width=2.8in]{Figures/relativity_24_parallel}
+\caption{One of the smaller communities produced by Modularity with  $40$ nodes.  Grey nodes are nodes shared by communities and black nodes are nodes not within a community.  Note the resolution limit of modularity.}
+\label{fig:rel_24}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/relativity_linear_parallel_csize}
+\includegraphics[width=2.8in]{Figures/relativity_module_csize}
+\caption{The distribution of community sizes.}
+\label{fig:rel_csize}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/relativity_linear_parallel_n_communities}
+\caption{The number of communities a node belongs to.  Follows a power law distribution.  Comes from the degree distribution}
+\label{fig:rel_n_communities}
+\end{figure}
 
 \subsection{Condensed Matter}
 
-\subsection{High Energy Physics}
+Condensed Matter is the largest of the coauthor networks
 
-\subsection{General Relativity}
+\begin{figure}[tb]
+\centering
+\includegraphics[width=2.8in]{Figures/cond_17_module}
+\includegraphics[width=2.8in]{Figures/cond_17_linear}
+\includegraphics[width=2.8in]{Figures/cond_17_parallel}
+\caption{One of the smaller communities produced by Modularity with  $103$ nodes.  Grey nodes are nodes shared by communities and black nodes are nodes not within a community.  Note the resolution limit of modularity.}
+\label{fig:cond_17}
+\end{figure}
+
+
+
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c|ccc}
+Communities From & $I(S)$ & $E(S)$ & $|S|$ \\ \hline
+Linearity & $0.18$ & $0.11$ & $626$ \\
+Parallel & $0.18$ & $0.39$ & $825$ \\
+Modularity & $0.01$ & $0.25$ & $52$
+\end{tabular}
+\caption{Internal Density, External Density, and number of communities for the set of communities returned by each detection method on the astrophysics coauthor network.}
+\label{tbl:astro_all}
+\end{table}
+
+
+\section{Physics ArchiveX}
 
 
 
@@ -901,8 +1215,6 @@ The communities returned by different detection methods are in Figure \ref{fig:f
 \section{Epinions Social Network}
 
 \section{Gnutella P2P Network}
-
-\section{Physics Citation Network}
 
 \section{Web Graphs}
 
@@ -920,8 +1232,6 @@ The communities returned by different detection methods are in Figure \ref{fig:f
 
 
 \section{Amazon Product Network}
-
-\chapter{Evolution of Communities}
 
 
 \chapter{Conclusions}
