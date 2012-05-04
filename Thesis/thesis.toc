@@ -2,8 +2,8 @@
 \contentsline {section}{Dedication}{iv}
 \contentsline {section}{Acknowledgements}{v}
 \contentsline {section}{Table of Contents}{vi}
-\contentsline {section}{List of Tables}{vii}
-\contentsline {section}{List of Figures}{viii}
+\contentsline {section}{List of Tables}{viii}
+\contentsline {section}{List of Figures}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Community Detection}{1}
 \contentsline {section}{\numberline {1.2}Graph Partitioning Methods}{3}
@@ -52,16 +52,16 @@
 \contentsline {section}{\numberline {5.2}Collaboration Networks}{56}
 \contentsline {subsection}{\numberline {5.2.1}General Relativity}{58}
 \contentsline {subsection}{\numberline {5.2.2}Condensed Matter}{59}
-\contentsline {section}{\numberline {5.3}Physics ArchiveX}{60}
-\contentsline {section}{\numberline {5.4}Enron Email Network}{60}
-\contentsline {section}{\numberline {5.5}Epinions Social Network}{60}
-\contentsline {section}{\numberline {5.6}Gnutella P2P Network}{60}
-\contentsline {section}{\numberline {5.7}Web Graphs}{60}
-\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{60}
-\contentsline {subsection}{\numberline {5.7.2}Google}{60}
-\contentsline {section}{\numberline {5.8}Wiki Network}{60}
-\contentsline {subsection}{\numberline {5.8.1}Communication Network}{60}
-\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{60}
-\contentsline {section}{\numberline {5.9}Amazon Product Network}{60}
-\contentsline {chapter}{\numberline {6}Conclusions}{65}
-\contentsline {chapter}{Bibliography}{66}
+\contentsline {section}{\numberline {5.3}Physics ArchiveX}{59}
+\contentsline {section}{\numberline {5.4}Enron Email Network}{63}
+\contentsline {section}{\numberline {5.5}Epinions Social Network}{63}
+\contentsline {section}{\numberline {5.6}Gnutella P2P Network}{63}
+\contentsline {section}{\numberline {5.7}Web Graphs}{63}
+\contentsline {subsection}{\numberline {5.7.1}Berkeley Webpage}{63}
+\contentsline {subsection}{\numberline {5.7.2}Google}{63}
+\contentsline {section}{\numberline {5.8}Wiki Network}{63}
+\contentsline {subsection}{\numberline {5.8.1}Communication Network}{63}
+\contentsline {subsection}{\numberline {5.8.2}Election Voting Network}{63}
+\contentsline {section}{\numberline {5.9}Amazon Product Network}{63}
+\contentsline {chapter}{\numberline {6}Conclusions}{68}
+\contentsline {chapter}{Bibliography}{69}

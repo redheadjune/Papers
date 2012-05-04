@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  2 MAY 2012 20:49
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (TeX Live 2011) (format=xelatex 2011.7.3)  4 MAY 2012 12:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -433,13 +433,13 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@theorem=\count146
 \c@definition=\count147
 
-No file thesis.aux.
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 65.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 65.
 
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omltxmi.fd
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 65.
@@ -450,8 +450,7 @@ LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 65.
 LaTeX Font Info:    Try loading font information for OMS+txsy on input line 65.
 
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omstxsy.fd
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    ... okay on input line 65.
@@ -506,29 +505,68 @@ File: Figures/windy.jpg Graphic file (type QTm)
 ] [5
 
 
-] (./thesis.toc)
+] (./thesis.toc
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/ot1txr.fd
+File: ot1txr.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txmia on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxmia.fd
+File: utxmia.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsya on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsya.fd
+File: utxsya.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsyb.fd
+File: utxsyb.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 1.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsyc.fd
+File: utxsyc.fd 2000/12/15 v3.1
+) [6
+
+
+])
 \tf@toc=\write3
 \openout3 = `thesis.toc'.
 
- [6
-
-
-] (./thesis.lot)
+ [7]
+(./thesis.lot)
 \tf@lot=\write4
 \openout4 = `thesis.lot'.
-
-
-[7
-
-
-] (./thesis.lof)
-\tf@lof=\write5
-\openout5 = `thesis.lof'.
 
  [8
 
 
+] (./thesis.lof
+
+LaTeX Warning: Reference `alg_greedy_single' on page 21 undefined on input line
+ 6.
+
+
+LaTeX Warning: Reference `alg_greedy_single' on page 23 undefined on input line
+ 8.
+
+[9
+
+
 ]
+
+LaTeX Warning: Reference `fig:karate_comparison' on page 39 undefined on input 
+line 18.
+
+[10])
+\tf@lof=\write5
+\openout5 = `thesis.lof'.
+
+ [11]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 115.
@@ -541,39 +579,6 @@ LaTeX Warning: Citation `JTODO' on page 1 undefined on input line 124.
 
 
 ]
-
-LaTeX Warning: Reference `tbl_app_method' on page 2 undefined on input line 127
-.
-
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 127.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/ot1txr.fd
-File: ot1txr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txmia on input line 127.
-
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxmia.fd
-File: utxmia.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsya on input line 127.
-
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsya.fd
-File: utxsya.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 127.
-
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsyb.fd
-File: utxsyb.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 127.
-
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/txfonts/utxsyc.fd
-File: utxsyc.fd 2000/12/15 v3.1
-)
 
 LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 133.
 
@@ -594,110 +599,25 @@ LaTeX Warning: Citation `JTODO' on page 2 undefined on input line 138.
 
 [2]
 
-LaTeX Warning: Reference `alg_rec_part' on page 3 undefined on input line 155.
-
-
 LaTeX Warning: Citation `JTODO' on page 3 undefined on input line 175.
 
-[3]
-
-LaTeX Warning: Citation `girvan' on page 4 undefined on input line 186.
-
-[4]
-
-LaTeX Warning: Reference `alg_rec_union' on page 5 undefined on input line 192.
-
-
-
-LaTeX Warning: Citation `newman' on page 5 undefined on input line 211.
-
-[5]
-
-LaTeX Warning: Citation `blondel' on page 6 undefined on input line 213.
-
+[3] [4] [5]
 
 LaTeX Warning: Citation `JTODO' on page 6 undefined on input line 213.
 
-[6]
-
-LaTeX Warning: Citation `mishra' on page 7 undefined on input line 230.
-
-
-LaTeX Warning: Reference `table_variables' on page 7 undefined on input line 23
-0.
-
-
-LaTeX Warning: Citation `mishra' on page 7 undefined on input line 230.
-
-
-LaTeX Warning: Citation `mishra' on page 7 undefined on input line 240.
-
-[7]
-
-LaTeX Warning: Reference `table_variables' on page 8 undefined on input line 26
-9.
-
-[8]
+[6] [7] [8]
 LaTeX Font Info:    Try loading font information for U+bbold on input line 274.
 
  (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd)
-
-LaTeX Warning: Reference `def_int_density' on page 9 undefined on input line 30
-8.
-
-
-LaTeX Warning: Reference `def_ext_density' on page 9 undefined on input line 30
-9.
-
-
-LaTeX Warning: Reference `def_int_set' on page 9 undefined on input line 310.
-
-
-LaTeX Warning: Reference `def_ext_set' on page 9 undefined on input line 311.
-
-
-LaTeX Warning: Reference `def_conciseness' on page 9 undefined on input line 31
-2.
-
-
-Overfull \hbox (1.05727pt too wide) in paragraph at lines 306--314
- [] 
- []
-
 [9] [10]
 Chapter 2.
-
-LaTeX Warning: Citation `lanc:2009' on page 11 undefined on input line 324.
-
-
-LaTeX Warning: Citation `leskovec' on page 11 undefined on input line 324.
-
 [11
 
 ] [12]
 
-LaTeX Warning: Citation `lanc:2009' on page 13 undefined on input line 349.
-
-
-LaTeX Warning: Citation `leskovec' on page 13 undefined on input line 349.
-
-
-LaTeX Warning: Reference `sec:top_down' on page 13 undefined on input line 354.
-
-
-
-LaTeX Warning: Reference `sec:bottom_up' on page 13 undefined on input line 354
-.
-
-
 LaTeX Warning: Citation `JTODO' on page 13 undefined on input line 354.
 
-[13] [14]
-
-LaTeX Warning: Reference `tbl:bad_single' on page 15 undefined on input line 38
-2.
-
-[15]
+[13] [14] [15]
 
 LaTeX Warning: Citation `JTODO' on page 16 undefined on input line 408.
 
@@ -735,22 +655,9 @@ Overfull \hbox (16.73381pt too wide) in paragraph at lines 437--441
 [] []
  []
 
-
-LaTeX Warning: Reference `alg_greedy_single' on page 17 undefined on input line
- 446.
-
-[17] [18]
-
-LaTeX Warning: Reference `alg_greedy_single' on page 19 undefined on input line
- 470.
-
-[19]
-
-LaTeX Warning: Reference `fig_single_ls' on page 20 undefined on input line 496
-.
-
+[17] [18] [19]
 File: Figures/cee_karate.pdf Graphic file (type QTm)
-<use  "Figures/cee_karate.pdf" >
+ <use  "Figures/cee_karate.pdf" >
 File: Figures/cee_cfl.pdf Graphic file (type QTm)
  <use  "Figures/cee_cfl.pdf" >
 File: Figures/cee_relativity.pdf Graphic file (type QTm)
@@ -759,19 +666,7 @@ File: Figures/cee_relativity.pdf Graphic file (type QTm)
 File: Figures/cee_astro.pdf Graphic file (type QTm)
  <use  "Figures/cee_astro.pdf" >
 
-LaTeX Warning: Reference `alg_greedy_single' on page 20 undefined on input line
- 504.
-
-
-LaTeX Warning: Reference `alg_greedy_single' on page 20 undefined on input line
- 504.
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig_k_e_based' on page 20 undefined on input line 508
-.
 
 [20]
 File: Figures/k_influence_e_based.pdf Graphic file (type QTm)
@@ -779,72 +674,34 @@ File: Figures/k_influence_e_based.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig_single_ls' on page 21 undefined on input line 523
-.
-
 [21] [22]
 File: Figures/volume_karate.pdf Graphic file (type QTm)
  <use  "Figures/volume_karate.pdf" >
 File: Figures/volume_cfl.pdf Graphic file (type QTm)
  <use  "Figures/volume_cfl.pdf" >
-
-LaTeX Warning: Reference `alg_greedy_single' on page 23 undefined on input line
- 536.
-
-
-LaTeX Warning: Reference `alg_greedy_single' on page 23 undefined on input line
- 536.
-
 File: Figures/volume_k.pdf Graphic file (type QTm)
-<use  "Figures/volume_k.pdf" >
 
-LaTeX Warning: Reference `fig_single_ls' on page 23 undefined on input line 550
-.
-
-[23]
-
-LaTeX Warning: Reference `alg_greedy_single' on page 24 undefined on input line
- 552.
-
-
-LaTeX Warning: Reference `fig:conductance' on page 24 undefined on input line 5
-52.
-
-
-LaTeX Warning: Citation `leskovec' on page 24 undefined on input line 554.
-
-[24]
+<use  "Figures/volume_k.pdf" > [23] [24]
 File: Figures/conductance_karate.pdf Graphic file (type QTm)
- <use  "Figures/conductance_karate.pdf" >
-File: Figures/conductance_cfl.pdf Graphic file (type QTm)
 
-<use  "Figures/conductance_cfl.pdf" >
+<use  "Figures/conductance_karate.pdf" >
+File: Figures/conductance_cfl.pdf Graphic file (type QTm)
+ <use  "Figures/conductance_cfl.pdf" >
 File: Figures/conductance_relativity.pdf Graphic file (type QTm)
 
 <use  "Figures/conductance_relativity.pdf" >
 File: Figures/conductance_astro.pdf Graphic file (type QTm)
 
 <use  "Figures/conductance_astro.pdf" >
-
-LaTeX Warning: Reference `fig:k_conductance' on page 25 undefined on input line
- 567.
-
 File: Figures/k_influence_conductance.pdf Graphic file (type QTm)
+
 <use  "Figures/k_influence_conductance.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `newman' on page 25 undefined on input line 580.
-
 [25] [26] [27]
-
-LaTeX Warning: Reference `fig_corner_sets' on page 28 undefined on input line 6
-20.
-
 File: Figures/pathological_graphs.pdf Graphic file (type QTm)
-<use  "Figures/pathological_graphs.pdf" >
+ <use  "Figures/pathological_graphs.pdf" >
 Overfull \hbox (14.45378pt too wide) in paragraph at lines 623--624
 [][]
  []
@@ -852,20 +709,11 @@ Overfull \hbox (14.45378pt too wide) in paragraph at lines 623--624
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `newman' on page 28 undefined on input line 631.
-
-
-LaTeX Warning: Citation `blondel' on page 28 undefined on input line 631.
-
 [28]
 File: Figures/cfl_mod_ls.pdf Graphic file (type QTm)
  <use  "Figures/cfl_mod_ls.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:mod_ls' on page 29 undefined on input line 647.
 
 [29]
 File: Figures/modularity_karate_sets.pdf Graphic file (type QTm)
@@ -879,12 +727,6 @@ File: Figures/modularity_relativity_sets.pdf Graphic file (type QTm)
 File: Figures/modularity_astro_sets.pdf Graphic file (type QTm)
 
 <use  "Figures/modularity_astro_sets.pdf" >
-
-LaTeX Warning: Citation `blondel' on page 30 undefined on input line 655.
-
-
-LaTeX Warning: Citation `blondel' on page 30 undefined on input line 655.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -915,66 +757,24 @@ File: Figures/linear_single_relativity.pdf Graphic file (type QTm)
 <use  "Figures/linear_single_relativity.pdf" >
 File: Figures/linear_single_astro.pdf Graphic file (type QTm)
 
-<use  "Figures/linear_single_astro.pdf" >
-
-LaTeX Warning: Reference `fig:linear_single_ls_k' on page 34 undefined on input
- line 715.
-
-
-LaTeX Warning: Reference `alg_greedy_single' on page 34 undefined on input line
- 715.
-
-
-LaTeX Warning: Reference `fig:linear_single' on page 34 undefined on input line
- 715.
-
-
-LaTeX Warning: Reference `def_int_set' on page 34 undefined on input line 724.
-
-
-LaTeX Warning: Reference `def_ext_set' on page 34 undefined on input line 724.
-
-
-LaTeX Warning: Reference `def_conciseness' on page 34 undefined on input line 7
-24.
-
-[34]
+<use  "Figures/linear_single_astro.pdf" > [34]
 Underfull \hbox (badness 6758) in paragraph at lines 725--726
 []\OT1/ppl/m/it/12 Given a set of com-mu-ni-ties, $\OML/txmi/m/it/12 S \OT1/txr
 /m/n/12 = \OMS/txsy/m/n/12 f\OML/txmi/m/it/12 C[]; C[]; []\OMS/txsy/m/n/12 g$
  []
 
-[35]
-
-LaTeX Warning: Citation `blondel' on page 36 undefined on input line 740.
-
-[36]
+[35] [36]
 
 LaTeX Warning: Reference `JTODO' on page 37 undefined on input line 747.
 
-[37]
-
-LaTeX Warning: Reference `conj:int_density' on page 38 undefined on input line 
-760.
-
-
-LaTeX Warning: Reference `ch:datasets' on page 38 undefined on input line 769.
-
-[38]
+[37] [38]
 File: Figures/linear_sets_karate.pdf Graphic file (type QTm)
  <use  "Figures/linear_sets_karate.pdf" >
 File: Figures/linear_sets_cfl.pdf Graphic file (type QTm)
 
 <use  "Figures/linear_sets_cfl.pdf" >
-
-LaTeX Warning: Reference `fig:karate_comparison' on page 39 undefined on input 
-line 776.
-
-
-LaTeX Warning: Reference `fig:karate_comparison' on page 39 undefined on input 
-line 776.
-
 File: Figures/linear_sets_relativity.pdf Graphic file (type QTm)
+
 <use  "Figures/linear_sets_relativity.pdf" >
 File: Figures/linear_sets_astro.pdf Graphic file (type QTm)
 
@@ -984,58 +784,24 @@ Chapter 4.
 
 ] [41] [42] [43]
 
-LaTeX Warning: Reference `sec:seeds' on page 44 undefined on input line 860.
-
-
-LaTeX Warning: Reference `alg_all_c' on page 44 undefined on input line 860.
-
-
-LaTeX Warning: Reference `sec:seeds' on page 44 undefined on input line 860.
-
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44] [45]
-
-LaTeX Warning: Reference `eq:bound' on page 46 undefined on input line 912.
-
-[46]
-
-LaTeX Warning: Reference `eq:bound' on page 47 undefined on input line 914.
-
-[47]
+[44] [45] [46] [47]
 Overfull \hbox (19.49217pt too wide) in alignment at lines 953--956
  [][][] []
  []
 
-[48]
-
-LaTeX Warning: Reference `tbl:pareto' on page 49 undefined on input line 957.
-
-[49]
+[48] [49]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `alg:seed' on page 50 undefined on input line 1008.
 
 
 Underfull \hbox (badness 2393) in paragraph at lines 1008--1009
 []\OT1/ppl/m/it/12 Let seeds, $\OML/txmi/m/it/12 S[]$
  []
 
-
-LaTeX Warning: Reference `alg:seed' on page 50 undefined on input line 1012.
-
 [50] [51] [52]
 Chapter 5.
-
-LaTeX Warning: Citation `zachary' on page 53 undefined on input line 1048.
-
-
-LaTeX Warning: Reference `fig:karate_comparison' on page 53 undefined on input 
-line 1048.
-
 File: Figures/karate_known.pdf Graphic file (type QTm)
 <use  "Figures/karate_known.pdf" >
 File: Figures/karate_module.pdf Graphic file (type QTm)
@@ -1075,82 +841,80 @@ File: Figures/football_metis.pdf Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `fig:football_comparison' on page 55 undefined on inpu
-t line 1110.
-
 [55] [56] [57]
-
-LaTeX Warning: Reference `fig:rel_24' on page 58 undefined on input line 1147.
-
 File: Figures/relativity_24_module.pdf Graphic file (type QTm)
-<use  "Figures/relativity_24_module.pdf" >
+ <use  "Figures/relativity_24_module.pdf" >
+File: Figures/relativity_24_metis.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_24_metis.pdf" >
 File: Figures/relativity_24_linear.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_24_linear.pdf" >
 File: Figures/relativity_24_parallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_24_parallel.pdf" >
-File: Figures/relativity_24_metis.pdf Graphic file (type QTm)
-
-<use  "Figures/relativity_24_metis.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: Figures/relativity_lin_108module.pdf Graphic file (type QTm)
 <use  "Figures/relativity_lin_108module.pdf" >
+File: Figures/relativity_lin_108metis.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_lin_108metis.pdf" >
 File: Figures/relativity_lin_108linear.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_lin_108linear.pdf" >
 File: Figures/relativity_lin_108parallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_lin_108parallel.pdf" >
-File: Figures/relativity_lin_108metis.pdf Graphic file (type QTm)
-
-<use  "Figures/relativity_lin_108metis.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: Figures/relativity_par_319_module.pdf Graphic file (type QTm)
 <use  "Figures/relativity_par_319_module.pdf" >
+File: Figures/relativity_par_319_metis.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_par_319_metis.pdf" >
 File: Figures/relativity_par_319_linear.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_par_319_linear.pdf" >
 File: Figures/relativity_par_319_parallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_par_319_parallel.pdf" >
-File: Figures/relativity_par_319_metis.pdf Graphic file (type QTm)
-
-<use  "Figures/relativity_par_319_metis.pdf" >
 File: Figures/relativity_par_319_subparallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_par_319_subparallel.pdf" >
+File: Figures/relativity_par_319_e_p.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_par_319_e_p.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: Figures/relativity_mod_10_module.pdf Graphic file (type QTm)
 <use  "Figures/relativity_mod_10_module.pdf" >
+File: Figures/relativity_mod_10_metis.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_mod_10_metis.pdf" >
 File: Figures/relativity_mod_10_linear.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_mod_10_linear.pdf" >
 File: Figures/relativity_mod_10_parallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_mod_10_parallel.pdf" >
-File: Figures/relativity_mod_10_metis.pdf Graphic file (type QTm)
 
-<use  "Figures/relativity_mod_10_metis.pdf" >
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: Figures/relativity_mod_3_module.pdf Graphic file (type QTm)
-
 <use  "Figures/relativity_mod_3_module.pdf" >
+File: Figures/relativity_mod_3_metis.pdf Graphic file (type QTm)
+
+<use  "Figures/relativity_mod_3_metis.pdf" >
 File: Figures/relativity_mod_3_linear.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_mod_3_linear.pdf" >
 File: Figures/relativity_mod_3_parallel.pdf Graphic file (type QTm)
 
 <use  "Figures/relativity_mod_3_parallel.pdf" >
-File: Figures/relativity_mod_3_metis.pdf Graphic file (type QTm)
-
-<use  "Figures/relativity_mod_3_metis.pdf" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1165,38 +929,49 @@ Tm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: Figures/cond_17_module.pdf Graphic file (type QTm)
-<use  "Figures/cond_17_module.pdf" >
-File: Figures/cond_17_linear.pdf Graphic file (type QTm)
- <use  "Figures/cond_17_linear.pdf" >
-File: Figures/cond_17_parallel.pdf Graphic file (type QTm)
+[58]
 
-<use  "Figures/cond_17_parallel.pdf" > [58] [59]
-Overfull \vbox (338.6368pt too high) has occurred while \output is active []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: Figures/cond_mod_48_module.pdf Graphic file (type QTm)
+<use  "Figures/cond_mod_48_module.pdf" >
+File: Figures/cond_mod_48_metis.pdf Graphic file (type QTm)
+
+<use  "Figures/cond_mod_48_metis.pdf" >
+File: Figures/cond_mod_48_linear.pdf Graphic file (type QTm)
+
+<use  "Figures/cond_mod_48_linear.pdf" >
+File: Figures/cond_mod_48_parallel.pdf Graphic file (type QTm)
+
+<use  "Figures/cond_mod_48_parallel.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: Figures/cond__csize.pdf Graphic file (type QTm)
+<use  "Figures/cond__csize.pdf" >
+File: Figures/cond_linear_parallel_n_communities.pdf Graphic file (type QTm)
+
+<use  "Figures/cond_linear_parallel_n_communities.pdf" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[59] [60] [61]
+File: Figures/correlation_c_cites_citations.pdf Graphic file (type QTm)
+ <use  "Figures/correlation_c_cites_citations.pdf" > [62]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-[60] [61] [62] [63] [64]
+Overfull \vbox (321.19237pt too high) has occurred while \output is active []
+
+
+[63] [64] [65] [66] [67]
 Chapter 6.
+(./thesis.bbl [68
 
-LaTeX Warning: Reference `ch:linear' on page 65 undefined on input line 1283.
+] [69
 
-
-LaTeX Warning: Reference `ch:parallel' on page 65 undefined on input line 1287.
-
-
-
-LaTeX Warning: Reference `ch:datasets' on page 65 undefined on input line 1288.
-
-
-
-LaTeX Warning: Reference `ch:datasets' on page 65 undefined on input line 1292.
-
-
-(./thesis.bbl [65
-
-] [66
-
-]) [67] (./thesis.aux)
+]) [70] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1205,12 +980,12 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6063 strings out of 494150
- 88053 string characters out of 3152950
- 210720 words of memory out of 3000000
- 9113 multiletter control sequences out of 15000+200000
+ 6080 strings out of 494150
+ 88493 string characters out of 3152950
+ 211720 words of memory out of 3000000
+ 9123 multiletter control sequences out of 15000+200000
  17580 words of font info for 56 fonts, out of 3000000 for 9000
  1018 hyphenation exceptions out of 8191
  38i,12n,51p,1517b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (76 pages).
+Output written on thesis.pdf (82 pages).

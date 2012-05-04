@@ -1126,9 +1126,7 @@ There are no known solutions to the collaboration networks, but we can compare t
 
 \subsection{General Relativity}
 
-Modularity produces $34$ communities in the general relativity graph.  It is the smallest of the coauthor networks, but we begin to see the resolution limit of modularity.
-
-
+Modularity produces $34$ communities in the general relativity graph.  It is the smallest of the coauthor networks, but we begin to see the resolution limit of modularity.  A clear example of resolution limit is in Figure \ref{fig:rel_24}.  We provide visualizations of the largest community returned by each method.  Linearity and Parallel return several small dense and isolated communities.
 
 \begin{table}[!h]
 \centering
@@ -1143,104 +1141,140 @@ Metis & $0.19$ & $0.50$ & $117$ & $4.57$ & $0.00006$
 \label{tbl:astro_all}
 \end{table}
 
-
-We now provide a sample of communities found.  Figure \ref{fig:rel_24} has a stricking example of 
-
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=2.8in]{Figures/relativity_24_module}
+\includegraphics[width=2.8in]{Figures/relativity_24_metis}
 \includegraphics[width=2.8in]{Figures/relativity_24_linear}
 \includegraphics[width=2.8in]{Figures/relativity_24_parallel}
-\includegraphics[width=2.8in]{Figures/relativity_24_metis}
 \caption{One of the smaller communities produced by Modularity with  $40$ nodes.  Grey nodes are nodes shared by communities and black nodes are nodes not within a community.  Note the resolution limit of modularity.}
 \label{fig:rel_24}
 \end{figure}
 
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=2.8in]{Figures/relativity_lin_108module}
+\includegraphics[width=2.8in]{Figures/relativity_lin_108metis}
 \includegraphics[width=2.8in]{Figures/relativity_lin_108linear}
 \includegraphics[width=2.8in]{Figures/relativity_lin_108parallel}
-\includegraphics[width=2.8in]{Figures/relativity_lin_108metis}
 \caption{The largest community produced by Linearity at $54$ nodes.}
 \label{fig:rel_108}
 \end{figure}
 
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=2.8in]{Figures/relativity_par_319_module}
+\includegraphics[width=2.8in]{Figures/relativity_par_319_metis}
 \includegraphics[width=2.8in]{Figures/relativity_par_319_linear}
 \includegraphics[width=2.8in]{Figures/relativity_par_319_parallel}
-\includegraphics[width=2.8in]{Figures/relativity_par_319_metis}
 \includegraphics[width=2.8in]{Figures/relativity_par_319_subparallel}
-\caption{The largest community produced by Parallel within $10$ forces at $94$ nodes.  Five subcommunities were created by parallel.}
-\label{fig:rel_108}
+\includegraphics[width=2.8in]{Figures/relativity_par_319_e_p}
+\caption{The largest community produced by Parallel within $10$ forces at $94$ nodes.  Five subcommunities were created by parallel. The core of the community has $65$ nodes and $I(C) = 0.22$.}
+\label{fig:rel_319}
 \end{figure}
 
-
-\begin{figure}[tb]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=2.8in]{Figures/relativity_mod_10_module}
+\includegraphics[width=2.8in]{Figures/relativity_mod_10_metis}
 \includegraphics[width=2.8in]{Figures/relativity_mod_10_linear}
 \includegraphics[width=2.8in]{Figures/relativity_mod_10_parallel}
-\includegraphics[width=2.8in]{Figures/relativity_mod_10_metis}
 \caption{The median sized community for Modularity with  $63$ nodes.  Grey nodes are nodes shared by communities and black nodes are nodes not within a community.  Note the resolution limit of modularity.}
-\label{fig:rel_29}
+\label{fig:rel_10}
 \end{figure}
-
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=2.8in]{Figures/relativity_mod_3_module}
+\includegraphics[width=2.8in]{Figures/relativity_mod_3_metis}
 \includegraphics[width=2.8in]{Figures/relativity_mod_3_linear}
 \includegraphics[width=2.8in]{Figures/relativity_mod_3_parallel}
-\includegraphics[width=2.8in]{Figures/relativity_mod_3_metis}
-\caption{The largest community produced by Modularity with $234$ nodes. The most discernable difference is that the wiskers connected by two or fewer edges are broken off.}
-\label{fig:rel_108}
+\caption{The largest community produced by Modularity with $234$ nodes. The most discernable difference is that the wiskers connected by two or fewer edges are broken off.  The core of the community has $80$ nodes and an internal density of $I(C) = 0.07$}
+\label{fig:rel_3}
 \end{figure}
-
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=2.8in]{Figures/relativity__csize}
+\includegraphics[width=4in]{Figures/relativity__csize}
 \caption{The distribution of community sizes.}
 \label{fig:rel_csize}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width=2.8in]{Figures/relativity_linear_parallel_n_communities}
+\includegraphics[width=4in]{Figures/relativity_linear_parallel_n_communities}
 \caption{The number of communities a node belongs to.  Follows a power law distribution.  Comes from the degree distribution}
 \label{fig:rel_n_communities}
 \end{figure}
 
+
+% new section****************
 \subsection{Condensed Matter}
 
-Condensed Matter is the largest of the coauthor networks
-
-
-
-
+Condensed Matter is the largest of the coauthor networks.  The properties found in the relativity network are found in the condensed matter network.
 
 \begin{table}[!h]
 \centering
-\begin{tabular}{c|ccc}
-Communities From & $I(S)$ & $E(S)$ & $|S|$ \\ \hline
-Linearity & $0.18$ & $0.11$ & $626$ \\
-Parallel & $0.18$ & $0.39$ & $825$ \\
-Modularity & $0.01$ & $0.25$ & $52$
+\begin{tabular}{c|ccccc}
+Communities From & $I(S)$ & $E(S)$ & $|S|$& Avg Diameter & Avg NCP \\ \hline
+Linearity & $0.42$ & $0.22$ & $1451$ & $3.32$ & $0.004$ \\
+Parallel & $0.17$ & $0.36$ & $825$ & $3.92$ & $0.36$ \\
+Modularity & $0.01$ & $0.25$ & $52$ & $10.8$ & $0.206$ \\
+Metis& $0.25$ & $0.44$ & $725$ & $4.19$& $0.0008$ 
 \end{tabular}
 \caption{Internal Density, External Density, and number of communities for the set of communities returned by each detection method on the astrophysics coauthor network.}
-\label{tbl:astro_all}
+\label{tbl:cond_all}
 \end{table}
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=2.8in]{Figures/cond_mod_48_module}
+\includegraphics[width=2.8in]{Figures/cond_mod_48_metis}
+\includegraphics[width=2.8in]{Figures/cond_mod_48_linear}
+\includegraphics[width=2.8in]{Figures/cond_mod_48_parallel}
+\caption{Condensed Matter Coauthor network.  One of the smallest communities returned by Modularity with $103$ nodes.}
+\label{fig:cond_48}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=4in]{Figures/cond__csize}
+\includegraphics[width=4in]{Figures/cond_linear_parallel_n_communities}
+\caption{The number of communities a node belongs to.  Follows a power law distribution.  Comes from the degree distribution.  The number of communities a node belongs to.}
+\label{fig:condl_n_communities}
+\end{figure}
 
 \section{Physics ArchiveX}
 
+Notes on the physics archive.
 
+There is an anatomy to a community.
+
+\begin{itemize}
+\item Over time a larger precentage of citations come from outside communities - Modularity confirms
+\item The more communities you are cited by the higher your citation rate. - Modularity does not confirm
+\item The more communities you cite the lower your citation rate. - Modularity does not confirm
+\item The anatomy of a highly cited paper : quick citations in home community, then a burst of citations from other communities?? expected number of citations per community
+\end{itemize}
+
+Can I find new communities - or tell what stage they are in ie need a review, need an interpretor
+Can I tell when a community is up and coming and how long it will last?
+
+Questions about review
+\begin{itemize}
+\item how many papers in a community before and after it?
+\item how many communities do they cite from?
+\end{itemize}
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=4in]{Figures/correlation_c_cites_citations}
+\caption{The number of communities that cite a paper and the number of citations received by a paper in the physics archive.  In Modularity the conclusion is that once you are cited by 20 communities, then you may become a highly cited paper.  In Parallel the conclusion is the more communities you are cited by, the more citations you will receive.}
+\label{fig:archive_correlation}
+\end{figure}
+
+Belongs to a power law distribution of communities because of citations or cites?
 
 \section{Enron Email Network}
 
