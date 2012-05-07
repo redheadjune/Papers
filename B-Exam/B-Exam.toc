@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Motivation}{4}{0}{1}
+\beamer@sectionintoc {2}{Past Work}{11}{0}{2}
+\beamer@sectionintoc {3}{Metrics for a Single Community}{13}{0}{3}
+\beamer@sectionintoc {4}{Metrics for a Set of Communities}{19}{0}{4}
+\beamer@sectionintoc {5}{Parallel Technique}{25}{0}{5}
+\beamer@sectionintoc {6}{Applications}{33}{0}{6}
+\beamer@subsectionintoc {6}{1}{Known Communities}{34}{0}{6}
+\beamer@subsectionintoc {6}{2}{Physics Archive}{36}{0}{6}
+\beamer@subsectionintoc {6}{3}{Wikipedia Voting}{37}{0}{6}
