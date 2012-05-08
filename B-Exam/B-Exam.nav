@@ -22,84 +22,83 @@
 \headcommand {\beamer@framepages {9}{9}}
 \headcommand {\slideentry {1}{0}{10}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\sectionentry {2}{Past Work}{11}{Past Work}{0}}
-\headcommand {\beamer@sectionpages {4}{10}}
-\headcommand {\beamer@subsectionpages {4}{10}}
-\headcommand {\slideentry {2}{0}{11}{11/11}{}{0}}
+\headcommand {\slideentry {1}{0}{11}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {2}{0}{12}{12/12}{}{0}}
+\headcommand {\slideentry {1}{0}{12}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\sectionentry {3}{Metrics for a Single Community}{13}{Metrics for a Single Community}{0}}
-\headcommand {\beamer@sectionpages {11}{12}}
-\headcommand {\beamer@subsectionpages {11}{12}}
-\headcommand {\slideentry {3}{0}{13}{13/13}{}{0}}
+\headcommand {\sectionentry {2}{Framework for Understanding Methods}{13}{Framework for Understanding Methods}{0}}
+\headcommand {\beamer@sectionpages {4}{12}}
+\headcommand {\beamer@subsectionpages {4}{12}}
+\headcommand {\slideentry {2}{0}{13}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {3}{0}{14}{14/14}{}{0}}
+\headcommand {\slideentry {2}{0}{14}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {3}{0}{15}{15/15}{}{0}}
+\headcommand {\slideentry {2}{0}{15}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {3}{0}{16}{16/16}{}{0}}
+\headcommand {\slideentry {2}{0}{16}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {3}{0}{17}{17/17}{}{0}}
+\headcommand {\slideentry {2}{0}{17}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {3}{0}{18}{18/18}{}{0}}
+\headcommand {\slideentry {2}{0}{18}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\sectionentry {4}{Metrics for a Set of Communities}{19}{Metrics for a Set of Communities}{0}}
-\headcommand {\beamer@sectionpages {13}{18}}
-\headcommand {\beamer@subsectionpages {13}{18}}
-\headcommand {\slideentry {4}{0}{19}{19/19}{}{0}}
+\headcommand {\slideentry {2}{0}{19}{19/19}{}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {4}{0}{20}{20/20}{}{0}}
+\headcommand {\slideentry {2}{0}{20}{20/20}{}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\slideentry {4}{0}{21}{21/21}{}{0}}
+\headcommand {\slideentry {2}{0}{21}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {4}{0}{22}{22/22}{}{0}}
+\headcommand {\slideentry {2}{0}{22}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {4}{0}{23}{23/23}{}{0}}
+\headcommand {\slideentry {2}{0}{23}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {4}{0}{24}{24/24}{}{0}}
+\headcommand {\slideentry {2}{0}{24}{24/24}{}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\sectionentry {5}{Parallel Technique}{25}{Parallel Technique}{0}}
-\headcommand {\beamer@sectionpages {19}{24}}
-\headcommand {\beamer@subsectionpages {19}{24}}
-\headcommand {\slideentry {5}{0}{25}{25/25}{}{0}}
+\headcommand {\slideentry {2}{0}{25}{25/25}{}{0}}
 \headcommand {\beamer@framepages {25}{25}}
-\headcommand {\slideentry {5}{0}{26}{26/26}{}{0}}
+\headcommand {\slideentry {2}{0}{26}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\slideentry {5}{0}{27}{27/27}{}{0}}
+\headcommand {\slideentry {2}{0}{27}{27/27}{}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {5}{0}{28}{28/28}{}{0}}
+\headcommand {\slideentry {2}{0}{28}{28/28}{}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\slideentry {5}{0}{29}{29/29}{}{0}}
+\headcommand {\slideentry {2}{0}{29}{29/29}{}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {5}{0}{30}{30/30}{}{0}}
+\headcommand {\slideentry {2}{0}{30}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {5}{0}{31}{31/31}{}{0}}
+\headcommand {\sectionentry {3}{Parallel Technique for Large Complex Networks}{31}{Parallel Technique for Large Complex Networks}{0}}
+\headcommand {\beamer@sectionpages {13}{30}}
+\headcommand {\beamer@subsectionpages {13}{30}}
+\headcommand {\slideentry {3}{0}{31}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\slideentry {5}{0}{32}{32/32}{}{0}}
+\headcommand {\slideentry {3}{0}{32}{32/32}{}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\sectionentry {6}{Applications}{33}{Applications}{0}}
-\headcommand {\beamer@sectionpages {25}{32}}
-\headcommand {\beamer@subsectionpages {25}{32}}
-\headcommand {\slideentry {6}{0}{33}{33/33}{}{0}}
+\headcommand {\slideentry {3}{0}{33}{33/33}{}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\beamer@subsectionentry {0}{6}{1}{34}{Known Communities}}\headcommand {\beamer@subsectionpages {33}{33}}
-\headcommand {\slideentry {6}{1}{1}{34/34}{Known Communities}{0}}
+\headcommand {\slideentry {3}{0}{34}{34/34}{}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {6}{1}{2}{35/35}{Known Communities}{0}}
+\headcommand {\slideentry {3}{0}{35}{35/35}{}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\beamer@subsectionentry {0}{6}{2}{36}{Physics Archive}}\headcommand {\beamer@subsectionpages {34}{35}}
-\headcommand {\slideentry {6}{2}{1}{36/36}{Physics Archive}{0}}
+\headcommand {\slideentry {3}{0}{36}{36/36}{}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\beamer@subsectionentry {0}{6}{3}{37}{Wikipedia Voting}}\headcommand {\beamer@subsectionpages {36}{36}}
-\headcommand {\slideentry {6}{3}{1}{37/37}{Wikipedia Voting}{0}}
+\headcommand {\sectionentry {4}{Applications}{37}{Applications}{0}}
+\headcommand {\beamer@sectionpages {31}{36}}
+\headcommand {\beamer@subsectionpages {31}{36}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{37}{Physics Archive}}\headcommand {\beamer@subsectionpages {37}{36}}
+\headcommand {\slideentry {4}{1}{1}{37/37}{Physics Archive}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\slideentry {6}{3}{2}{38/38}{Wikipedia Voting}{0}}
+\headcommand {\slideentry {4}{1}{2}{38/38}{Physics Archive}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {6}{3}{3}{39/39}{Wikipedia Voting}{0}}
+\headcommand {\slideentry {4}{1}{3}{39/39}{Physics Archive}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\beamer@partpages {1}{39}}
-\headcommand {\beamer@subsectionpages {37}{39}}
-\headcommand {\beamer@sectionpages {33}{39}}
-\headcommand {\beamer@documentpages {39}}
-\headcommand {\def \inserttotalframenumber {39}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{40}{Wikipedia Voting}}\headcommand {\beamer@subsectionpages {37}{39}}
+\headcommand {\slideentry {4}{2}{1}{40/40}{Wikipedia Voting}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {4}{2}{2}{41/41}{Wikipedia Voting}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {4}{2}{3}{42/42}{Wikipedia Voting}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\beamer@partpages {1}{42}}
+\headcommand {\beamer@subsectionpages {40}{42}}
+\headcommand {\beamer@sectionpages {37}{42}}
+\headcommand {\beamer@documentpages {42}}
+\headcommand {\def \inserttotalframenumber {42}}

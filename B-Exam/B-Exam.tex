@@ -17,11 +17,19 @@
 \usecolortheme{beaver}
 \usefonttheme{structurebold}
 
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multicol}
+\usepackage{bbold}
+\usepackage{graphicx}
+
 \beamersetuncovermixins{\opaqueness<1>{25}}{\opaqueness<2->{15}}
 \begin{document}
 \title{Community Detection}
 \subtitle{In Large Networks}
 \author{June Andrews}
+\institute{Cornell University}
 \date{\today} 
 
 \begin{frame}
@@ -54,6 +62,29 @@ It goes without saying, these people have been inspiring forces of nature to wor
 
 
 \section{Motivation}
+
+
+
+\begin{frame}\frametitle{Applications In General}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{.9in} p{.1in} p{1.3in} p{.1in} p{2in}}
+Build Network &  & Find Communities &  & Analyze \\
+& $\rightarrow$ & & $\rightarrow$ & \\
+\includegraphics[width=1.3in]{Figures/random_graph} &  & \includegraphics[width=1.3in]{Figures/abstract_community} &  & Who are the leaders? \newline How do groups interact? \newline 
+\end{tabular}
+\end{table}
+
+
+\begin{block}{}
+\begin{center}
+How do you detect communities?
+\end{center}
+\end{block}
+
+\end{frame}
+
 
 \begin{frame}\frametitle{Dolphins}
 Dolphins form pods.
@@ -89,7 +120,7 @@ People are members of a group.
 \begin{frame}\frametitle{Karate Club}
 If we know the groups people form:
 \begin{itemize}
-\item If something happens to split the social network, which people will do what?
+\item If students disagree, who will disagree with who?
 \item How many groups is someone a member of?
 \item Who are the influential members of a group?
 \end{itemize}
@@ -99,22 +130,10 @@ If we know the groups people form:
 \end{frame}
 
 
-\begin{frame}\frametitle{In General}
-
-JTODO insert figure of:
-Build Network $\rightarrow$ Find Communities $\rightarrow$ Analyze
-
-\begin{block}{}
-\begin{center}
-How do you detect communities?
-\end{center}
-\end{block}
-
-\end{frame}
 
 \begin{frame}\frametitle{Science on Networks}
 
-Many applications have developed their own methods.
+Many fields of applications have developed their own methods.
 
 \begin{table}[!h]
 \centering
@@ -122,7 +141,7 @@ Many applications have developed their own methods.
 Application & Community Detection Method \\ \hline
 Computation Distribution & Recursive Bi-section [Karypis \& Kumar] \\
 Statistical Mechanics & Belief Propogation [Hastings]\\
-Storage of Large Matrices & Local Spectral Analysis [Andersen \& Chung] \\
+PageRank & Local Spectral Analysis [Andersen \& Chung] \\
 Taxonomy & Neighbor Joining [Saitou \& Nei] \\
 $\vdots$ & $\vdots$
 \end{tabular}
@@ -133,26 +152,69 @@ $\vdots$ & $\vdots$
 How do we compare them?
 \end{center}
 \end{block}
+Experimental comparisons have been made for certain networks.
 
 \end{frame}
+
+
+
+\begin{frame}\frametitle{Size of Networks}
+Applications are increasing in size as they become available.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c|c|c}
+Network & Number of Nodes & Date Available \\ \hline
+Karate Club & 34 & 1970s \\
+Astrophysics Co-authors & 19k & 1999 \\
+Twitter & 20 million & 2009\\
+\vdots & \vdots & \vdots \\
+Facebook & 1 Billion & ???
+\end{tabular}
+\end{table}
+
+\begin{block}{}
+\begin{center}
+We need a parallel method that scales.
+\end{center}
+\end{block}
+Pioneer parallel methods are being developed.
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Complexity of Communities, always increasing}
+\begin{figure}
+\includegraphics[width=3in]{Figures/complex}
+\caption{The umbrella community is results on computing {\it flow equations}.  The subcommunities are different approaches to calculating the equations.}
+\end{figure}
+\begin{block}{}
+\begin{center}
+We need a method for weighted networks and overlapping communities.
+\end{center}
+\end{block}
+Only predictably overlapping communities have been found.
+\end{frame}
+
 
 \begin{frame}\frametitle{This Talk}
 \begin{center}
 \begin{itemize}
-\item Create a way to understand Community Detection Methods.
-\item Create a method to handle large complex networks.
-\item Demonstrate power of new method on:
-	\begin{enumerate}
-		\item Wikipedia Elections 
+\item Framework to understand Community Detection Methods. \newline
+\item Parallel method for large complex networks. \newline
+\item Demonstrate power of new method on: \newline
+	\begin{itemize}
+		\item Wikipedia Elections \newline
 		\item Physics Archive Citation Network
-	\end{enumerate}
+	\end{itemize}
 \end{itemize}
 \end{center}
 
 \end{frame}
 
 
-\section{Past Work}
+\section{Framework for Understanding Methods}
 
 
 \begin{frame}\frametitle{Brief Terminology}
@@ -160,7 +222,10 @@ How do we compare them?
 \begin{definition}[Internal Edges]
 Edges between members of the same community.
 \end{definition}
-JTODO include diagram of edges
+\begin{figure}
+\includegraphics[width=1.5in]{Figures/int_ext_edges_graph}
+\caption{Internal Edges are in Pink, External Edges are in Yellow.}
+\end{figure}
 \begin{definition}[External Edges]
 Edges between members of different communities.
 \end{definition}
@@ -168,30 +233,13 @@ Edges between members of different communities.
 
 
 \begin{frame}\frametitle{Previous Community Detection Methods}
-
-Pick a definition of a Community and then find it.
+There is no universal definition of a community.  Methods pick a definition of a Community and then find those communities.
 \begin{itemize}
 \item $(\alpha, \beta)$ communities, every node in $C$ is connected by at least $\beta$ internal edges, every node outside of $C$ is connected by at most $\alpha$ edges. [Mishra et al]
 \item Modularity, more internal edges than expected in a random graph. [Newman]
-\item Conductance, a step in a random walk will probabilistically stay within the community. [JTODO]
+\item Conductance, probability a step in a random walk will leave the community. [used in Andersen \& Chung]
 \item Edge Betweenness, remove external edges to reveal communities. [Girvan \& Newman]
-\item $\cdots$
-\end{itemize}
-
-\end{frame}
-
-
-\section{Metrics for a Single Community}
-
-
-\begin{frame}\frametitle{Dection For Single Communities}
-Let's not define a community just yet.
-\newline
-\newline
-Our approach:
-\begin{itemize}
-\item What are the desired characteristics of a community?
-\item Find a community with the best characteristics.
+\item $\cdots$ many more
 \end{itemize}
 
 \end{frame}
@@ -199,255 +247,462 @@ Our approach:
 
 
 \begin{frame}\frametitle{Characteristics of Single Communities}
-\begin{itemize}
-\item {\sc Internal Density} is density of edges within the community.
-\item {\sc External Density} is the density of edges leaving the community.
-\item {\sc Size} of the community.
-\item {\sc Diameter} of the community.
-\item {\sc Average Shortest Path} within the community.
-\item {\sc Out Degree Fraction}, {\sc Degree Distribution},  $\cdots$
-\end{itemize}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{c|c}
+Characteristic & Desired Value \\ \hline
+ {\sc Internal Density} &  large number of internal edges \\
+ {\sc External Density} & small number of external edges \\
+ {\sc Size} & application specific\\
+ {\sc Diameter} & short \\
+{\sc Average Shortest Path} & short \\
+{\sc Out Degree Fraction} & small \\
+{\sc Degree Distribution} & application specific \\ 
+$\vdots$ &
+\end{tabular}
+\end{table}
 
 \begin{block}{Representative Characteristics}
 \begin{center}
-All of the listed characteristics can be bounded by {\sc Internal Density}, {\sc External Density}, and {\sc Size}.
+All of the listed characteristics of community $C$ can be bounded by {\sc Internal Density}, $I(C)$, {\sc External Density}, $E(C)$, and {\sc Size}, $k$.
 \end{center}
 \end{block}
 \end{frame}
 
 
+\begin{frame}\frametitle{Metrics}
+
+Metrics collapse all characteristics of a community, $C$, down to a real number.
+\begin{definition}[Metric for a Single Community]
+\begin{equation}
+ M : \{C \in Communities\} \rightarrow \mathbb{R}\nonumber
+\end{equation}
+\end{definition}
+Some metrics are only functions of internal density, external density, and size of a community. We assume continuity.
+\begin{definition}[Metric for a Single Community]
+\begin{equation}
+ M : (I(C), E(C), k) \rightarrow \mathbb{R}\nonumber
+\end{equation}
+\end{definition}
+ We can visualize how these metrics collapse the $3D$ space describing these communities to the real numbers.  We cover the dimension of size in the paper, but only consider internal density and external density here.
+\end{frame}
 
 \begin{frame}\frametitle{The 3D space of Communities}
-Given a metric $M$ that evaluates communities in the $(I(C), E(C), |C|)$ space, let us find
+Consider the set of $\{ (I(C), E(C)) \in [0, 1]x[0, 1]\}$ values, such that $M(C) = m$.  This forms a level sets.  We can categorize the $(I, E)$ space with level sets.
+\begin{figure}
+\includegraphics[width=3in]{Figures/communities_on_ls}
+\end{figure}
 
-If networks were in a continuous space, we could use gradients to maximize metric.
+\end{frame}
+
+\begin{frame}\frametitle{The 3D space of Communities}
+Consider the set of $\{ (I(C), E(C)) \in [0, 1]x[0, 1]\}$ values, such that $M(C) = m$.  This forms a level sets.  We can categorize the $(I, E)$ space with level sets.
+\begin{figure}
+\includegraphics[width=3in]{Figures/community_change}
+\end{figure}
 
 \end{frame}
 
 
 
 \begin{frame}\frametitle{Conductance}
+Probability a random step leaves the community.
+\begin{block}{}
+\begin{center}
+\begin{equation}
+\mbox{\sc Conductance}(C) = \frac{(1 - k)E(C)}{kI(C) + (1 - k)E(C)} \nonumber
+\end{equation}
+\end{center}
+\end{block}
+Poor $I(C)$ value $\nearrow$ \includegraphics[width=2.5in]{Figures/cond_ls} $\nwarrow$ Good $I(C)$
 
-Level sets of Conductance.
+\end{frame}
 
+
+
+\begin{frame}\frametitle{Conductance}
+A series of communities created by including nodes that improve conductance.
+
+\begin{figure}
+\includegraphics[width=2.2in]{Figures/conductance_relativity}
+\includegraphics[width=2.2in]{Figures/conductance_astro}
+\caption{The co-authors in relativity ($\approx 3k$ nodes) and astrophysics ($\approx 18k$ nodes).}
+\end{figure}
+Makes small improvements to external density at great cost to internal density.
+\end{frame}
+
+
+\begin{frame}\frametitle{Modularity of  Single Community}
+Difference in present versus expected edges in a random graph.
+\begin{block}{}
+\begin{center}
+\begin{equation}
+\mbox{\sc Modularity}(C) = p I(C) - \left(p I(C) + q E(C)\right)^2.\nonumber
+\end{equation}
+\end{center}
+\end{block}
+\begin{figure}
+\includegraphics[width=2in]{Figures/modularity_ls}
+\caption{Level Sets have the same affect as Conductance, until external density is low enough and the level sets prevent further loss in internal density.}
+\end{figure}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Modularity of  Single Community}
+
+JTODO include picture of modularity steps for a single community.
+
+Optimizes external density and then internal density.  Optimizations of external density join together communities.  This is what causes the resolution limit in modularity.
+
+\end{frame}
+
+\begin{frame}\frametitle{More Single Community Metrics}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{p{1.5in}| p{1.5in} p{1.2in}}
+Metric & definition & Results in \\ \hline
+{\sc Conductance} & probability a random step leaves community & $\approx$disconnected components \\
+&& \\ \hline
+{\sc Edges Cut} & number edges connecting the community and graph & $\approx$disconnected components \\ && \\ \hline
+{\sc Expansion} & average number of edges per node leaving the community & $\approx$disconnected components \\ && \\ \hline
+{\sc Internal Density of Newman} & number of edges within a community & cliques
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\begin{frame}\frametitle{New Metric for a Single Community}
+
+\begin{block}{}
+\begin{center}
+\begin{equation}
+\mbox{\sc Linear}(C) = a I(C) - b E(C) \nonumber
+\end{equation}
+\end{center}
+\end{block}
+\begin{figure}
+\includegraphics[width=3in]{Figures/linear_single_ls}
+\end{figure}
 \end{frame}
 
 
 \begin{frame}\frametitle{New Metric for a Single Community}
 
-Level sets of 
+JTODO improve
+\begin{figure}
+\includegraphics[width=1.5in]{Figures/linear_single_karate}
+\includegraphics[width=1.5in]{Figures/linear_single_cfl}
 
+\includegraphics[width=1.5in]{Figures/linear_single_astro}
+\includegraphics[width=1.5in]{Figures/linear_single_relativity}
+\caption{Linear is consistently returns strong communities.}
+\end{figure}
 \end{frame}
 
-
-
-
-\begin{frame}\frametitle{Algorithmcs in the IE space}
-
-Running algorithms in the IE space.
-
-\end{frame}
-
-
-
-\section{Metrics for a Set of Communities}
 
 \begin{frame}\frametitle{Characteristics of Sets of Communities}
 
-Many characteristics, again defined by internal density, external density, and size of set.
+Same characteristics of single communities, just adapted.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{c|c}
+Characteristic & Represents \\ \hline
+ {\sc Internal Density} &  How close communities are to cliques. \\
+ {\sc External Density} & How many edges are not within a community. \\
+ {\sc Size} & Number of communities.\\
+ {\sc Average Diameter} &  \\
+{\sc Average} $\dots$ &
+\end{tabular}
+\end{table}
+
+\begin{block}{Representative Characteristics}
+\begin{center}
+Listed characteristics of  communities, $S = \{C_1, C_2, \dots\}$, can be bounded by {\sc Internal Density} $I(S)$, {\sc External Density} $E(S)$, and {\sc Size} $|S|$.
+\end{center}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{New Metric for a Sets of Communities}
+
+\begin{block}{{\sc Linear}$(S)$}
+\begin{center}
+For constants, $a,b,c \in (0, 1)$ and set of communities $S = \{C_1, C_2, \dots \}$:
+\begin{equation}
+\mbox{\sc Linear}(S) = a I(S) - b E(S) - c |S| \nonumber
+\end{equation}
+\end{center}
+\end{block}
+
+
+\begin{definition}[Internal Density of a Set of Communities]
+\begin{equation}
+I(S) = \frac{\sum_{C \in S}  \mbox{Number of edges in } C}{\sum_{C \in S} \frac{1}{2}|C|(|C| - 1)} \nonumber
+\end{equation}
+\end{definition}
+
+\begin{definition}[External Density of a Set of Communities]
+\begin{equation}
+E(S) = \frac{\mbox{Number of Edges not in some }C} {\mbox{Number of Edges in the Graph}} \nonumber
+\end{equation}
+\end{definition}
+
+\end{frame}
+
+\begin{frame}\frametitle{Tools For Building an Algorithm}
+
+\begin{block}{}
+\begin{center}
+Can use the fast Louvain heuristic algorithm to find a partition that maximizes {\sc Linear}$(S)$.
+\end{center}
+\end{block}
+
+\begin{block}{Conjecture}
+\begin{center}
+A greedy algorithm can ({\it almost always}) only decrease internal density.
+\end{center}
+\end{block}
+The known exception occurs when a comparatively large clique is involved, very rare.
+\end{frame}
+
+
+\begin{frame}\frametitle{Greedy Algorithm for Linear}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{1.2in} p{.05in} p{1.3in} p{.05in} p{1.3in}}
+Find Cliques && Find Partition &&Expand Partitions \\
+$(a,b,c) = (1, 0, 0)$ &  &  $(a, b, c)=(1, \Delta, \Delta)$ &  &  $(a, b, c)=(1, \Delta, \Delta)$\\
+& $\rightarrow$ & & $\rightarrow$ & \\
+\includegraphics[width=1.5in]{Figures/clique_stage_karate} &&
+\includegraphics[width=1.5in]{Figures/partition_stage_karate} &&
+\includegraphics[width=1.5in]{Figures/expanded_stage_karate} \\
+\includegraphics[width=1in]{Figures/prev_int_ls} &&
+\includegraphics[width=1in]{Figures/linear_single_ls} &&
+\includegraphics[width=1in]{Figures/linear_single_ls}
+\end{tabular}
+\caption{Communities are indicated by node color.  Nodes in multiple communities are grey.}
+\end{table}
 
 \end{frame}
 
 
-\begin{frame}\frametitle{The 3D space of Communities}
 
-Consider level sets of how a metric divides the space.
+\begin{frame}\frametitle{Algorithm for Linear in the IE plane}
 
-If continuous use gradient to maximize metric.
+\begin{figure}
+\includegraphics[width=1.5in]{Figures/linear_sets_karate}
+\includegraphics[width=1.5in]{Figures/linear_sets_cfl}
 
+\includegraphics[width=1.5in]{Figures/linear_sets_astro}
+\includegraphics[width=1.5in]{Figures/linear_sets_relativity}
+\caption{Black stars and squares are the sets of communities found by modularity}
+\end{figure}
 \end{frame}
 
 
-
-\begin{frame}\frametitle{Modularity}
-
-Level sets of Modularity.
-
-\end{frame}
-
-
-
-\begin{frame}\frametitle{New Metric for a Single Community}
-
-Level sets of 
-
-\end{frame}
-
-\begin{frame} \frametitle{Algorithm for maximizing new metric}
-
-Conjecture, once you decrease int density, never go back
-
-set $a=1$ and increment $b$, and $c$.
-
-Use the Louvain algorithm for maximizing the metric at each stage.
-
-\end{frame}
-
-\begin{frame}\frametitle{Algorithmcs in the IES space}
-
-Running algorithms in the IES space.
-
-\end{frame}
-
-
-\section{Parallel Technique}
+\section{Parallel Technique for Large Complex Networks}
 
 
 
 \begin{frame}\frametitle{Future}
-
-Networks are getting big.
-
-Before we asked the question of, is this a good set of communities.
-
-Now we need to ask does this node and set of nodes belong to a community?
-
-Why?  No communication in parallelization.
-
+\begin{block}{Small Network Paradigm}
+\begin{center}
+Is $C_1$ a good community within a set of communities $\{C_1, C_2, \dots\}$? \newline  \newline
+{\it Does not parallelize.}
+\end{center}
+\end{block}
+\begin{block}{Large Network Paradigm}
+\begin{center}
+Given a node $n$ and the set of nodes $X=\{n_1, n_2,\dots \}$, do they belong to the same community $C$? \newline \newline
+{\it Easily parallelized.}
+\end{center}
+\end{block}
+Large Network Paradigm has been used by [Mishra et al] and [Wang \& Hopcroft]
 \end{frame}
 
 \begin{frame}\frametitle{Characteristics}
 
-The two characteristics between a node and a set of nodes are $\chi_e$ and $\chi_p$.
+\begin{definition}[$\chi_e$]
+The number of edges a node has to members of a set of nodes, $X$, is characteristic $\chi_e$.
+\begin{equation}
+\chi_e(n, X) = |\mbox{Neighbors}(n)\cap X| \nonumber
+\end{equation}
+\end{definition}
+
+
+\begin{definition}[$\chi_p$]
+The proportion of total edges a node has to members of a set of nodes is characteristic $\chi_p$.
+\begin{equation}
+\chi_p(n, X) = \frac{|\mbox{Neighbors}(n)\cap X|}{\mbox{degree}(n)} \nonumber
+\end{equation}
+\end{definition}
+
+If $\chi_p(n, X)$ {\bf OR} $\chi_e(n, X)$ is high, then $n \cup X$ belong to a community.
 
 \end{frame}
 
-\begin{frame}\frametitle{Community}
-
-How do we know we have a community?
-
-Closure.
-
-\end{frame}
-
-
-\begin{frame}\frametitle{Algorithm}
-
-\begin{itemize}
-\item Find the seeds
-\item Expand the seeds
-\end{itemize}
-
-
+\begin{frame}
+\begin{table}
+\centering
+\begin{tabular}{cc}
+Open Community & Closed Community \\
+\includegraphics[width=1.4in]{Figures/open_community_drawn} &  \includegraphics[width=1.4in]{Figures/closed_community_drawn} \\
+\includegraphics[width=2in]{Figures/open_community_e_p} &  \includegraphics[width=2in]{Figures/closed_community_e_p} 
+\end{tabular}
+\end{table}
 \end{frame}
 
 
 \begin{frame}\frametitle{Seeds}
 
-Pick a set of nodes we know must belong to the same community.
+To begin need a set of nodes, $X$, that belong to the same community. \newline \newline
 
-Find very dense sets of nodes, presume begin with a clique, and expand into the local neighborhood.
-
-If seeds are distance 2 apart will be in the same community, if the community is large.
-
+\begin{definition}[Seed]
+A set of nodes that belong to the same community. \newline
+\end{definition}
+Strongest seeds are near cliques.  Easy to find. Can be done in parallel.
 \end{frame}
 
 
 
 \begin{frame}\frametitle{Expansion}
 
+Given the set of seeds, we can expand them in parallel to find closed communities. \newline 
+
+\begin{algorithmic}
+	\STATE Communities$=[]$
+	\FOR{$X \in $ Seeds}
+		\WHILE{there exists $n \notin X$ with a high $\chi_e(n, X)$ {\bf OR} $\chi_p(n, X)$}
+			\STATE $X \leftarrow X \cup \{n\}$
+		\ENDWHILE
+	\STATE Add $X$ to Communities
+	\ENDFOR
+\end{algorithmic}
+To optimize select $n$ with the maximum $\chi_e(n, X)$ {\bf OR} $\chi_p(n, X)$.
+
+Variations exist to find larger communities.  
+
 \end{frame}
 
 
 \begin{frame}\frametitle{Correctness of Expansion}
+In the thesis we find closed form solutions for:
+\begin{eqnarray*}
+ P(n \cup X \subset C &|& n \mbox{ has max } \chi_e(n, X)) \\
+ P(n \cup X \subset C &|& \chi_p(n, X))
+\end{eqnarray*}
+\newline
 
-Probability of Correctness.
+\begin{table}[t]
+\centering
+\begin{tabular}{ccc}
+Select & Binomial Random Graph & Power Law Graph \\
+node $n$ has $\max \{\chi_e\}$ & $> 94 \%$&  $> 90 \%$ \\
+$\chi_p(n, X) = \frac{1}{2}$ & & 
+\end{tabular}
+\caption{Probability of Correctly Expanding a seed under unfavorable conditions.}
+\end{table}
 
 \end{frame}
 
-
-
-\begin{frame}\frametitle{Algorithms}
-
-\end{frame}
 
 
 \section{Applications}
 
-
-\begin{frame}\frametitle{Checkpoint}
-
-We have new methods. 
-
-We'll leave comparisons to known methods to the thesis.
-
-We'll do a sanity check against known communities and then present results from applications that could not have been done before.
-\end{frame}
-
-
-\subsection{Known Communities}
-
-\begin{frame}\frametitle{Test on Dolphins}
-
-\end{frame}
-
-
-\begin{frame}\frametitle{Test on Karate}
-
-\end{frame}
-
-
 \subsection{Physics Archive}
 
-
-
 \begin{frame}\frametitle{Physics Archive}
-The more communities a paper is immediately popular in the more citations that paper will get.
+We know the number of citations a paper makes is not related to the number of citations a paper receives[].
+ Same is true for communities.
+\begin{figure}
+\includegraphics[width=2in]{Figures/communities_cites}
+\includegraphics[width=2in]{Figures/communities_cited_by}
+\end{figure}
+But, the more communities a paper is cited by, is correlated with a paper's success.
 
 Correlated with cross community journals - confirm.
 \end{frame}
 
 
+\begin{frame}\frametitle{Physics Archive}
+JTODO include plot of communities evolving, we can now pick out the nodes corresponding to spanners, interpretors, etc
+\end{frame}
+
+\begin{frame}\frametitle{Physics Archive}
+JTODO include diagram of number of communities a node belongs to follows a power law distribution
+\end{frame}
+
 \subsection{Wikipedia Voting}
 
-\begin{frame}\frametitle{Wikipedia Voting}
+\begin{frame}\frametitle{Wikipedia Voting, $2794$ elections}
+\begin{figure}
+\includegraphics[width=2in]{Figures/wiki_votes}
+\end{figure}
+Network: $6287$ users that vote $114k$ times in $2794$ elections ({\it not everyone votes}).  There are $\approx 624$ communities, with an average size of $24$ users.
 
-JTODO include picture of what it is
-
+Communities are sets of user with similar voting patterns, in sign and frequency.  Users not in communities have erratic voting patterns.  The number of communities a user is in, follows a power law distribution.
 \end{frame}
 
 
 \begin{frame}\frametitle{Communities Predicting a User's Vote}
-Communities are sets of user with similar voting patterns.  There are $\approx 600$ communities covering $JTODO \%$ of the nodes.
-\newline
-\newline
 
-\begin{block}{Vote Prediction}
-\begin{center}
-Given the communities a user is in, we can predict a user's vote with $86\%$ accuracy.
-\end{center}
-\end{block}
- This is close to Kleinberg et al's work of $90 \%$ accuracy.
+To predict how a user voted in an election:
+\begin{itemize}
+\item Remove the user's vote.
+\item Calculate how the communities the user is in, voted.
+\item Predict the user's vote with how a majority of the communities voted.
+\end{itemize}
+
+
+\begin{table}[t]
+\centering
+\begin{tabular}{cc}
+Accuracy & Percentage of Votes Predicted \\ \hline
+ $83\%$ & $60\%$ \\
+$86\%$ & $13\%$\\
+$95\%$ & $4\%$ 
+\end{tabular}
+\caption{The affect of smaller communities}
+\end{table}
+
+ [Leskovec, Huttenlocher, \& Kleinberg] attain $90 \%$ accuracy with a model for vote predictions.
 
 \end{frame}
 
 \begin{frame}\frametitle{Communities Predicting an Election's Outcome.}
-Users campaign to sets of communities, but not everyone from a community votes.  If they did:
+We double the number of votes, by including votes with $90\%$ accuracy. \newline
 
 \begin{block}{Election Prediction}
 \begin{center}
-Given the Communities in Wiki Voting Similiarities, $14\%$ of election results would be over turned.
+If twice as many people voted, $7\%$ of elections would be overturned.
+\end{center}
+\end{block}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{ccc}
+Did Vote & If More Users Voted & Type\\ \hline
+$\{ \mbox{Yes: 158, No: 60}\}$ & $\{ \mbox{Yes: 498, No: 82}\}$ & False Negative \\
+$\{ \mbox{Yes: 14, No: 6}\}$ & $\{ \mbox{Yes: 109, No: 25}\}$ & False Negative\\
+$\{ \mbox{Yes: 45, No:7}\}$ & $\{ \mbox{Yes: 93, No: 38}\}$ & False Positive\\
+\end{tabular}
+\caption{Sample Changes in the Vote}
+\end{table}
+\begin{block}{Application}
+\begin{center}
+Use the communities to detect if a non-representative group is voting and alert Wikipedia Bureaucrats, who can overturn the election.
 \end{center}
 \end{block}
 
 \end{frame}
 
-
 \end{document}
-
-
-
-
 
 
 

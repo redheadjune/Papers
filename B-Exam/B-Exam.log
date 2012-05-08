@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  7 MAY 2012 01:28
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  8 MAY 2012 19:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,23 +713,101 @@ Package: beamercolorthemebeaver 2010/06/17  (rcs-revision d02a7cf4d8ae)
 (/usr/local/texlive/2011/texmf-dist/tex/latex/beamer/themes/font/beamerfontthem
 estructurebold.sty
 Package: beamerfontthemestructurebold 2010/06/17  (rcs-revision d02a7cf4d8ae)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count153
+\float@exts=\toks40
+\float@box=\box53
+\@float@everytoks=\toks41
+\@floatcapt=\box54
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks42
+\c@algorithm=\count154
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count155
+\c@ALC@line=\count156
+\c@ALC@rem=\count157
+\c@ALC@depth=\count158
+\ALC@tlm=\skip57
+\algorithmicindent=\skip58
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count159
+\mult@box=\box55
+\multicol@leftmargin=\dimen182
+\c@unbalance=\count160
+\c@collectmore=\count161
+\doublecol@number=\count162
+\multicoltolerance=\count163
+\multicolpretolerance=\count164
+\full@width=\dimen183
+\page@free=\dimen184
+\premulticols=\dimen185
+\postmulticols=\dimen186
+\multicolsep=\skip59
+\multicolbaselineskip=\skip60
+\partial@page=\box56
+\last@line=\box57
+\mult@rightbox=\box58
+\mult@grightbox=\box59
+\mult@gfirstbox=\box60
+\mult@firstbox=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\c@columnbadness=\count165
+\c@finalcolumnbadness=\count166
+\last@try=\dimen187
+\multicolovershoot=\dimen188
+\multicolundershoot=\dimen189
+\mult@nat@firstbox=\box79
+\colbreak@box=\box80
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/bbold.sty
+Package: bbold 1994/04/06 Bbold symbol package
+LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
 ) (./B-Exam.aux)
 \openout1 = `B-Exam.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -767,17 +845,17 @@ LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
-\scratchdimen=\dimen182
-\scratchbox=\box53
-\nofMPsegments=\count154
-\nofMParguments=\count155
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count156
-\MPscratchDim=\dimen183
-\MPnumerator=\count157
-\makeMPintoPDFobject=\count158
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count167
+\scratchdimen=\dimen190
+\scratchbox=\box81
+\nofMPsegments=\count168
+\nofMParguments=\count169
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count170
+\MPscratchDim=\dimen191
+\MPnumerator=\count171
+\makeMPintoPDFobject=\count172
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -794,8 +872,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 21.
+\AtBeginShipoutBox=\box82
+Package hyperref Info: Link coloring OFF on input line 28.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -803,58 +881,58 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count159
+\c@section@level=\count173
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
 (./B-Exam.out) (./B-Exam.out)
 \@outlinefile=\write5
 \openout5 = `B-Exam.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 21.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 21.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 21.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 21.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 21.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 21.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 21.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 21.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 21.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 21.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 21.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 21.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 28.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 21.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 21.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 21.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 21.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 21.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 21.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 21.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 21.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 28.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 21.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 28.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -882,27 +960,27 @@ Dictionary: translator-theorem-dictionary, Language: English
 ) (./B-Exam.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 24.
+(hyperref)                setting the option has no effect on input line 31.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <4> not available
-(Font)              size <5> substituted on input line 29.
+(Font)              size <5> substituted on input line 37.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 29.
+(Font)              size <5> substituted on input line 37.
 
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Figures/nsflogo.jpg, id=65, 252.945pt x 257.96375pt>
+<Figures/nsflogo.jpg, id=54, 252.945pt x 257.96375pt>
 File: Figures/nsflogo.jpg Graphic file (type jpg)
 
 <use Figures/nsflogo.jpg>
-Package pdftex.def Info: Figures/nsflogo.jpg used on input line 50.
+Package pdftex.def Info: Figures/nsflogo.jpg used on input line 58.
 (pdftex.def)             Requested size: 50.58878pt x 51.59183pt.
 
-Overfull \vbox (12.00314pt too high) detected at line 50
+Overfull \vbox (12.00314pt too high) detected at line 58
  []
 
 [2
@@ -910,61 +988,93 @@ Overfull \vbox (12.00314pt too high) detected at line 50
  <./Figures/nsflogo.jpg>] (./B-Exam.toc) [3
 
 ]
-<Figures/dolphin_social_network.pdf, id=99, 1100.3107pt x 453.49423pt>
-File: Figures/dolphin_social_network.pdf Graphic file (type pdf)
+LaTeX Font Info:    Try loading font information for U+msa on input line 86.
 
-<use Figures/dolphin_social_network.pdf>
-Package pdftex.def Info: Figures/dolphin_social_network.pdf used on input line 
-64.
-(pdftex.def)             Requested size: 361.34999pt x 148.9339pt.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 86.
 
-Overfull \hbox (19.05469pt too wide) in paragraph at lines 64--64
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Overfull \hbox (3.7226pt too wide) in paragraph at lines 86--86
+[]$\OMS/cmsy/m/n/10.95 !$| 
+ []
+
+
+Overfull \hbox (3.7226pt too wide) in paragraph at lines 86--86
+[]$\OMS/cmsy/m/n/10.95 !$| 
+ []
+
+<Figures/random_graph.pdf, id=81, 578.16pt x 433.62pt>
+File: Figures/random_graph.pdf Graphic file (type pdf)
+
+<use Figures/random_graph.pdf>
+Package pdftex.def Info: Figures/random_graph.pdf used on input line 86.
+(pdftex.def)             Requested size: 93.95122pt x 70.4591pt.
+
+Overfull \hbox (28.90866pt too wide) in paragraph at lines 86--86
+[][]| 
+ []
+
+<Figures/abstract_community.pdf, id=82, 603.45451pt x 402.00188pt>
+File: Figures/abstract_community.pdf Graphic file (type pdf)
+
+<use Figures/abstract_community.pdf>
+Package pdftex.def Info: Figures/abstract_community.pdf used on input line 86.
+(pdftex.def)             Requested size: 93.95122pt x 62.58568pt.
+
+Overfull \hbox (35.69333pt too wide) in paragraph at lines 86--86
  [] 
  []
 
 [4
+
+ <./Figures/random_graph.pdf> <./Figures/abstract_community.pdf>]
+<Figures/dolphin_social_network.pdf, id=111, 1100.3107pt x 453.49423pt>
+File: Figures/dolphin_social_network.pdf Graphic file (type pdf)
+
+<use Figures/dolphin_social_network.pdf>
+Package pdftex.def Info: Figures/dolphin_social_network.pdf used on input line 
+95.
+(pdftex.def)             Requested size: 361.34999pt x 148.9339pt.
+
+Overfull \hbox (19.05469pt too wide) in paragraph at lines 95--95
+ [] 
+ []
+
+[5
 
  <./Figures/dolphin_social_network.pdf>]
 File: Figures/dolphin_social_network.pdf Graphic file (type pdf)
 
 <use Figures/dolphin_social_network.pdf>
 Package pdftex.def Info: Figures/dolphin_social_network.pdf used on input line 
-76.
+107.
 (pdftex.def)             Requested size: 216.81pt x 89.3548pt.
- [5
+ [6
 
 ]
-<Figures/karate_social_network.pdf, id=171, 944.02687pt x 440.84702pt>
+<Figures/karate_social_network.pdf, id=184, 944.02687pt x 440.84702pt>
 File: Figures/karate_social_network.pdf Graphic file (type pdf)
 
 <use Figures/karate_social_network.pdf>
-Package pdftex.def Info: Figures/karate_social_network.pdf used on input line 8
-5.
+Package pdftex.def Info: Figures/karate_social_network.pdf used on input line 1
+16.
 (pdftex.def)             Requested size: 325.215pt x 151.87039pt.
- [6
+ [7
 
  <./Figures/karate_social_network.pdf>]
 File: Figures/karate_social_network.pdf Graphic file (type pdf)
  <use Figures/karate_social_network.pdf>
-Package pdftex.def Info: Figures/karate_social_network.pdf used on input line 9
-9.
+Package pdftex.def Info: Figures/karate_social_network.pdf used on input line 1
+30.
 (pdftex.def)             Requested size: 216.81pt x 101.24469pt.
- [7
+ [8
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 113.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 113.
-
-(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [8
-
-]
-Overfull \hbox (3.05725pt too wide) in paragraph at lines 137--137
+Overfull \hbox (1.77979pt too wide) in paragraph at lines 157--157
  [] 
  []
 
@@ -972,69 +1082,368 @@ Overfull \hbox (3.05725pt too wide) in paragraph at lines 137--137
 
 ] [10
 
-] [11
+] <Figures/complex.pdf, id=246, 897.95473pt x 436.33014pt>
+File: Figures/complex.pdf Graphic file (type pdf)
 
-] [12
+<use Figures/complex.pdf>
+Package pdftex.def Info: Figures/complex.pdf used on input line 198.
+(pdftex.def)             Requested size: 216.81pt x 105.3472pt.
+ [11
 
-] [13
+ <./Figures/complex.pdf>] [12
+
+]
+<Figures/int_ext_edges_graph.pdf, id=292, 578.16pt x 433.62pt>
+File: Figures/int_ext_edges_graph.pdf Graphic file (type pdf)
+
+<use Figures/int_ext_edges_graph.pdf>
+Package pdftex.def Info: Figures/int_ext_edges_graph.pdf used on input line 232
+.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+ [13
+
+ <./Figures/int_ext_edges_graph.pdf>]
+[14
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 216.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 271.
 
-[14
+[15
 
-] [15
+]
+LaTeX Font Info:    Try loading font information for U+bbold on input line 289.
 
-] [16
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/bbold/Ubbold.fd) [16
 
-] [17
+]
+<Figures/communities_on_ls.pdf, id=326, 722.7pt x 542.025pt>
+File: Figures/communities_on_ls.pdf Graphic file (type pdf)
 
-] [18
+<use Figures/communities_on_ls.pdf>
+Package pdftex.def Info: Figures/communities_on_ls.pdf used on input line 297.
+(pdftex.def)             Requested size: 216.81pt x 162.60875pt.
+ [17
 
-] [19
+ <./Figures/communities_on_ls.pdf>]
+<Figures/community_change.pdf, id=356, 722.7pt x 542.025pt>
+File: Figures/community_change.pdf Graphic file (type pdf)
 
-] [20
+<use Figures/community_change.pdf>
+Package pdftex.def Info: Figures/community_change.pdf used on input line 305.
+(pdftex.def)             Requested size: 216.81pt x 162.60875pt.
+ [18
 
-] [21
+ <./Figures/community_change.pdf>]
+<Figures/cond_ls.pdf, id=386, 578.16pt x 433.62pt>
+File: Figures/cond_ls.pdf Graphic file (type pdf)
+ <use Figures/cond_ls.pdf>
+Package pdftex.def Info: Figures/cond_ls.pdf used on input line 320.
+(pdftex.def)             Requested size: 180.67499pt x 135.5059pt.
 
-] [22
+[19
 
-] [23
+ <./Figures/cond_ls.pdf>]
+<Figures/conductance_relativity.pdf, id=436, 578.16pt x 433.62pt>
+File: Figures/conductance_relativity.pdf Graphic file (type pdf)
 
-] [24
+<use Figures/conductance_relativity.pdf>
+Package pdftex.def Info: Figures/conductance_relativity.pdf used on input line 
+333.
+(pdftex.def)             Requested size: 158.99377pt x 119.24255pt.
 
-] [25
+<Figures/conductance_astro.pdf, id=437, 578.16pt x 433.62pt>
+File: Figures/conductance_astro.pdf Graphic file (type pdf)
 
-] [26
+<use Figures/conductance_astro.pdf>
+Package pdftex.def Info: Figures/conductance_astro.pdf used on input line 333.
+(pdftex.def)             Requested size: 158.99377pt x 119.24255pt.
+
+Overfull \vbox (5.50938pt too high) detected at line 333
+ []
+
+[20
+
+ <./Figures/conductance_relativity.pdf> <./Figures/conductance_astro.pdf>]
+<Figures/modularity_ls.pdf, id=532, 587.19376pt x 442.65375pt>
+File: Figures/modularity_ls.pdf Graphic file (type pdf)
+
+<use Figures/modularity_ls.pdf>
+Package pdftex.def Info: Figures/modularity_ls.pdf used on input line 349.
+(pdftex.def)             Requested size: 144.54pt x 108.96106pt.
+
+Overfull \vbox (1.73982pt too high) detected at line 349
+ []
+
+[21
+
+ <./Figures/modularity_ls.pdf>] [22
+
+]
+Underfull \hbox (badness 5231) in paragraph at lines 375--375
+[]\OT1/cmss/m/n/10.95 probability a ran-dom
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]$\OMS/cmsy/m/n/10.95 ^^Y$\OT1/cmss/m/n/10.95 disconnected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]$\OMS/cmsy/m/n/10.95 ^^Y$\OT1/cmss/m/n/10.95 disconnected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]\OT1/cmss/m/n/10.95 average num-ber of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]$\OMS/cmsy/m/n/10.95 ^^Y$\OT1/cmss/m/n/10.95 disconnected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 375--375
+[]\OT1/cmr/m/sc/10.95 Internal Den-sity
+ []
+
+[23
+
+] <Figures/linear_single_ls.pdf, id=595, 578.16pt x 433.62pt>
+File: Figures/linear_single_ls.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_ls.pdf>
+Package pdftex.def Info: Figures/linear_single_ls.pdf used on input line 389.
+(pdftex.def)             Requested size: 216.81pt x 162.6071pt.
+ [24
+
+ <./Figures/linear_single_ls.pdf>]
+<Figures/linear_single_karate.pdf, id=647, 578.16pt x 433.62pt>
+File: Figures/linear_single_karate.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_karate.pdf>
+Package pdftex.def Info: Figures/linear_single_karate.pdf used on input line 40
+3.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_single_cfl.pdf, id=648, 578.16pt x 433.62pt>
+File: Figures/linear_single_cfl.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_cfl.pdf>
+Package pdftex.def Info: Figures/linear_single_cfl.pdf used on input line 403.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_single_astro.pdf, id=649, 578.16pt x 433.62pt>
+File: Figures/linear_single_astro.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_astro.pdf>
+Package pdftex.def Info: Figures/linear_single_astro.pdf used on input line 403
+.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_single_relativity.pdf, id=650, 578.16pt x 433.62pt>
+File: Figures/linear_single_relativity.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_relativity.pdf>
+Package pdftex.def Info: Figures/linear_single_relativity.pdf used on input lin
+e 403.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+Overfull \vbox (0.61835pt too high) detected at line 403
+ []
+
+[25
+
+ <./Figures/linear_single_karate.pdf> <./Figures/linear_single_cfl.pdf> <./Figu
+res/linear_single_astro.pdf> <./Figures/linear_single_relativity.pdf>]
+[26
 
 ] [27
 
 ] [28
 
 ]
+Overfull \hbox (7.33632pt too wide) in paragraph at lines 492--492
+[]$\OMS/cmsy/m/n/10.95 !$| 
+ []
+
+
+Overfull \hbox (7.33632pt too wide) in paragraph at lines 492--492
+[]$\OMS/cmsy/m/n/10.95 !$| 
+ []
+
+<Figures/clique_stage_karate.pdf, id=885, 578.16pt x 433.62pt>
+File: Figures/clique_stage_karate.pdf Graphic file (type pdf)
+
+<use Figures/clique_stage_karate.pdf>
+Package pdftex.def Info: Figures/clique_stage_karate.pdf used on input line 492
+.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+Overfull \hbox (21.68123pt too wide) in paragraph at lines 492--492
+[][]| 
+ []
+
+<Figures/partition_stage_karate.pdf, id=886, 578.16pt x 433.62pt>
+File: Figures/partition_stage_karate.pdf Graphic file (type pdf)
+
+<use Figures/partition_stage_karate.pdf>
+Package pdftex.def Info: Figures/partition_stage_karate.pdf used on input line 
+492.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+Overfull \hbox (14.45378pt too wide) in paragraph at lines 492--492
+[][]| 
+ []
+
+<Figures/expanded_stage_karate.pdf, id=887, 578.16pt x 433.62pt>
+File: Figures/expanded_stage_karate.pdf Graphic file (type pdf)
+
+<use Figures/expanded_stage_karate.pdf>
+Package pdftex.def Info: Figures/expanded_stage_karate.pdf used on input line 4
+92.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+Overfull \hbox (14.45378pt too wide) in paragraph at lines 492--492
+[][]| 
+ []
+
+<Figures/prev_int_ls.pdf, id=888, 578.16pt x 433.62pt>
+File: Figures/prev_int_ls.pdf Graphic file (type pdf)
+
+<use Figures/prev_int_ls.pdf>
+Package pdftex.def Info: Figures/prev_int_ls.pdf used on input line 492.
+(pdftex.def)             Requested size: 72.26999pt x 54.20236pt.
+File: Figures/linear_single_ls.pdf Graphic file (type pdf)
+ <use Figures/linear_single_ls.pdf>
+Package pdftex.def Info: Figures/linear_single_ls.pdf used on input line 492.
+(pdftex.def)             Requested size: 72.26999pt x 54.20236pt.
+File: Figures/linear_single_ls.pdf Graphic file (type pdf)
+
+<use Figures/linear_single_ls.pdf>
+Package pdftex.def Info: Figures/linear_single_ls.pdf used on input line 492.
+(pdftex.def)             Requested size: 72.26999pt x 54.20236pt.
+
+Overfull \vbox (12.09247pt too high) detected at line 492
+ []
+
 [29
 
-] [30
+ <./Figures/clique_stage_karate.pdf> <./Figures/partition_stage_karate.pdf> <./
+Figures/expanded_stage_karate.pdf> <./Figures/prev_int_ls.pdf>]
+<Figures/linear_sets_karate.pdf, id=938, 578.16pt x 433.62pt>
+File: Figures/linear_sets_karate.pdf Graphic file (type pdf)
 
-] [31
+<use Figures/linear_sets_karate.pdf>
+Package pdftex.def Info: Figures/linear_sets_karate.pdf used on input line 506.
+
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_sets_cfl.pdf, id=939, 578.16pt x 433.62pt>
+File: Figures/linear_sets_cfl.pdf Graphic file (type pdf)
+
+<use Figures/linear_sets_cfl.pdf>
+Package pdftex.def Info: Figures/linear_sets_cfl.pdf used on input line 506.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_sets_astro.pdf, id=940, 578.16pt x 433.62pt>
+File: Figures/linear_sets_astro.pdf Graphic file (type pdf)
+
+<use Figures/linear_sets_astro.pdf>
+Package pdftex.def Info: Figures/linear_sets_astro.pdf used on input line 506.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+
+<Figures/linear_sets_relativity.pdf, id=941, 578.16pt x 433.62pt>
+File: Figures/linear_sets_relativity.pdf Graphic file (type pdf)
+
+<use Figures/linear_sets_relativity.pdf>
+Package pdftex.def Info: Figures/linear_sets_relativity.pdf used on input line 
+506.
+(pdftex.def)             Requested size: 108.405pt x 81.30354pt.
+ [30
+
+ <./Figures/linear_sets_karate.pdf> <./Figures/linear_sets_cfl.pdf> <./Figures/
+linear_sets_astro.pdf> <./Figures/linear_sets_relativity.pdf>] [31
 
 ] [32
 
-] [33
+]
+<Figures/open_community_drawn.pdf, id=1128, 859.10965pt x 613.3916pt>
+File: Figures/open_community_drawn.pdf Graphic file (type pdf)
 
-] [34
+<use Figures/open_community_drawn.pdf>
+Package pdftex.def Info: Figures/open_community_drawn.pdf used on input line 55
+9.
+(pdftex.def)             Requested size: 101.17755pt x 72.2373pt.
+
+<Figures/closed_community_drawn.pdf, id=1129, 859.10965pt x 613.3916pt>
+File: Figures/closed_community_drawn.pdf Graphic file (type pdf)
+
+<use Figures/closed_community_drawn.pdf>
+Package pdftex.def Info: Figures/closed_community_drawn.pdf used on input line 
+559.
+(pdftex.def)             Requested size: 101.17755pt x 72.2373pt.
+
+<Figures/open_community_e_p.pdf, id=1130, 857.30286pt x 614.295pt>
+File: Figures/open_community_e_p.pdf Graphic file (type pdf)
+
+<use Figures/open_community_e_p.pdf>
+Package pdftex.def Info: Figures/open_community_e_p.pdf used on input line 559.
+
+(pdftex.def)             Requested size: 144.54pt x 103.5664pt.
+
+<Figures/closed_community_e_p.pdf, id=1131, 856.3995pt x 616.10173pt>
+File: Figures/closed_community_e_p.pdf Graphic file (type pdf)
+
+<use Figures/closed_community_e_p.pdf>
+Package pdftex.def Info: Figures/closed_community_e_p.pdf used on input line 55
+9.
+(pdftex.def)             Requested size: 144.54pt x 103.98383pt.
+ [33
+
+ <./Figures/open_community_drawn.pdf> <./Figures/closed_community_drawn.pdf> <.
+/Figures/open_community_e_p.pdf> <./Figures/closed_community_e_p.pdf>] [34
 
 ] [35
 
 ] [36
 
-] [37
+]
+<Figures/communities_cites.pdf, id=1276, 645.91313pt x 516.73048pt>
+File: Figures/communities_cites.pdf Graphic file (type pdf)
 
-] [38
+<use Figures/communities_cites.pdf>
+Package pdftex.def Info: Figures/communities_cites.pdf used on input line 630.
+(pdftex.def)             Requested size: 144.54pt x 115.62856pt.
+
+<Figures/communities_cited_by.pdf, id=1277, 647.71986pt x 516.73048pt>
+File: Figures/communities_cited_by.pdf Graphic file (type pdf)
+
+<use Figures/communities_cited_by.pdf>
+Package pdftex.def Info: Figures/communities_cited_by.pdf used on input line 63
+0.
+(pdftex.def)             Requested size: 144.54pt x 115.3053pt.
+ [37
+
+ <./Figures/communities_cites.pdf> <./Figures/communities_cited_by.pdf>] [38
 
 ] [39
+
+]
+<Figures/wiki_votes.pdf, id=1366, 722.7pt x 542.025pt>
+File: Figures/wiki_votes.pdf Graphic file (type pdf)
+
+<use Figures/wiki_votes.pdf>
+Package pdftex.def Info: Figures/wiki_votes.pdf used on input line 650.
+(pdftex.def)             Requested size: 144.54pt x 108.40308pt.
+ [40
+
+ <./Figures/wiki_votes.pdf>] [41
+
+] [42
 
 ]
 \tf@nav=\write6
@@ -1046,39 +1455,45 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
 \tf@snm=\write8
 \openout8 = `B-Exam.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 446.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 446.
- (./B-Exam.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 446.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 446.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
+
+(./B-Exam.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 705.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 705.
 Package rerunfilecheck Info: File `B-Exam.out' has not changed.
-(rerunfilecheck)             Checksum: 2DF6FB7532F0CFBEF6DCC42CF3B51058;519.
+(rerunfilecheck)             Checksum: A5C34192EED4CCC207B5BF472234264B;373.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 446.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
  ) 
 Here is how much of TeX's memory you used:
- 15805 strings out of 493633
- 298188 string characters out of 3143378
- 366791 words of memory out of 3000000
- 18635 multiletter control sequences out of 15000+200000
- 12321 words of font info for 45 fonts, out of 3000000 for 9000
+ 16378 strings out of 493633
+ 308706 string characters out of 3143378
+ 382103 words of memory out of 3000000
+ 19139 multiletter control sequences out of 15000+200000
+ 18592 words of font info for 71 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 49i,17n,62p,435b,696s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
-b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on B-Exam.pdf (39 pages, 256901 bytes).
+ 49i,17n,62p,435b,594s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pf
+b></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></u
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on B-Exam.pdf (42 pages, 1325273 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 356 compressed objects within 4 object streams
- 88 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1461 PDF objects out of 1728 (max. 8388607)
+ 661 compressed objects within 7 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 288 words of extra memory for PDF output out of 10000 (max. 10000000)
 
